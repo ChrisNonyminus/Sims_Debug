@@ -1,0 +1,1 @@
+wine Tools/compilers/msvc6.0/Bin/CL.EXE /TP /nologo /ITools/compilers/msvc6.0/Include/ /ICode/stl /Idx8/include /EP /C "$1" > ctx.cpp
