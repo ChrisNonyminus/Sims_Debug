@@ -43,7 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /YX /FD /c
-# ADD CPP /nologo /MT /W3 /GR /GX /ZI /O2 /X /I "Z:\SimsDecomp\Code" /I "Z:\SimsDecomp\Tools\compilers\msvc6.0\Include" /I "Z:\SimsDecomp\Code\stl" /I "C:\mssdk\include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /YX /FD /c
+# ADD CPP /nologo /MT /W3 /GR /GX /ZI /O2 /X /I "Z:\SimsDecomp\Code" /I "Z:\SimsDecomp\SimsReimpl" /I "Z:\SimsDecomp\Tools\compilers\msvc6.0\Include" /I "Z:\SimsDecomp\Code\stl" /I "C:\mssdk\include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /YX /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "NDEBUG"
@@ -70,7 +70,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /Gi- /GR /GX /ZI /Od /X /I "Z:\SimsDecomp\Tools\compilers\msvc6.0\Include" /I "Z:\SimsDecomp\Code\stl" /I "C:\mssdk\include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /ZI /Od /X /I "Z:\SimsDecomp\Code" /I "Z:\SimsDecomp\SimsReimpl" /I "Z:\SimsDecomp\Tools\compilers\msvc6.0\Include" /I "Z:\SimsDecomp\Code\stl" /I "C:\mssdk\include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG"
@@ -80,7 +80,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /pdb:"Debug/SimsReimpl,pdb" /debug /debugtype:cv /machine:I386 /out:"C:\The Sims\Edith\ddraw.dll" /pdbtype:sept /libpath:"C:\mssdk\lib"
+# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /pdb:"Debug/SimsReimpl,pdb" /debug /machine:I386 /out:"C:\The Sims\Edith\ddraw.dll" /pdbtype:sept /libpath:"C:\mssdk\lib"
 # SUBTRACT LINK32 /verbose /pdb:none /incremental:no
 
 !ENDIF 
@@ -98,6 +98,14 @@ LINK32=link.exe
 # Begin Source File
 
 SOURCE=.\Hooks\Hooks.cpp
+# End Source File
+# End Group
+# Begin Group "Framework"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=..\Code\Framework\gzframe.cpp
 # End Source File
 # End Group
 # Begin Source File
