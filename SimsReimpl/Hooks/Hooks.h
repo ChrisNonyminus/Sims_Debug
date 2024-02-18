@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include <WINDOWS.H>
+#include <windows.h>
 
 // Helper Functions based on those from OpenMC2
 

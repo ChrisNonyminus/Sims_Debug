@@ -50,6 +50,11 @@
     ],
     "symbols": [
         {
+            "name": "j_cGZWin::ResizeByRect",
+            "address": 4198425,
+            "size": 5
+        },
+        {
             "name": "j_Neighborhood_00474e5b",
             "address": 4198430,
             "size": 5
@@ -77,6 +82,11 @@
         {
             "name": "j_bstring_00431357",
             "address": 4198510,
+            "size": 5
+        },
+        {
+            "name": "j_cGZWin::GetName",
+            "address": 4198565,
             "size": 5
         },
         {
@@ -120,6 +130,11 @@
             "size": 5
         },
         {
+            "name": "cWinTextWrap_vtbl_func_24",
+            "address": 4198840,
+            "size": 5
+        },
+        {
             "name": "j_ObjTestSim_004c5d2b",
             "address": 4198870,
             "size": 5
@@ -135,7 +150,7 @@
             "size": 5
         },
         {
-            "name": "j_Neighborhood__GetID",
+            "name": "j_Neighborhood::GetID",
             "address": 4198990,
             "size": 5
         },
@@ -170,6 +185,11 @@
             "size": 5
         },
         {
+            "name": "j_?construct@@YAXPAV?$basic_string@D@@ABV1@@Z_0",
+            "address": 4199250,
+            "size": 5
+        },
+        {
             "name": "j_vitaboy_007ff80f",
             "address": 4199270,
             "size": 5
@@ -195,7 +215,7 @@
             "size": 5
         },
         {
-            "name": "j_ObjectSelector__GetDefinition",
+            "name": "j_ObjectSelector::GetDefinition",
             "address": 4199530,
             "size": 5
         },
@@ -295,6 +315,11 @@
             "size": 5
         },
         {
+            "name": "House_vtbl_func_0",
+            "address": 4200245,
+            "size": 5
+        },
+        {
             "name": "j_DDDSimsView_006012e9",
             "address": 4200290,
             "size": 5
@@ -362,6 +387,11 @@
         {
             "name": "j_wallundoable_0056e0f5",
             "address": 4200840,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_30",
+            "address": 4200915,
             "size": 5
         },
         {
@@ -620,6 +650,11 @@
             "size": 5
         },
         {
+            "name": "j_?delete_ref@?$basic_string@D@@IAEXXZ_0",
+            "address": 4202430,
+            "size": 5
+        },
+        {
             "name": "j_gzbuffer_00677380",
             "address": 4202510,
             "size": 5
@@ -647,6 +682,11 @@
         {
             "name": "j_GetPersonalityAd",
             "address": 4202635,
+            "size": 5
+        },
+        {
+            "name": "j_SetupCheatCode_644DDD0",
+            "address": 4202660,
             "size": 5
         },
         {
@@ -685,7 +725,7 @@
             "size": 5
         },
         {
-            "name": "j_ObjectFolder_0049170b",
+            "name": "j_ObjectFolder::Init",
             "address": 4202900,
             "size": 5
         },
@@ -702,6 +742,11 @@
         {
             "name": "j_skeleton_007d42a7",
             "address": 4203035,
+            "size": 5
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_57",
+            "address": 4203050,
             "size": 5
         },
         {
@@ -722,6 +767,11 @@
         {
             "name": "j_Patch_007b1179",
             "address": 4203170,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_1",
+            "address": 4203190,
             "size": 5
         },
         {
@@ -752,6 +802,11 @@
         {
             "name": "j_MacDrawing_00461af7",
             "address": 4203315,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_9",
+            "address": 4203395,
             "size": 5
         },
         {
@@ -835,13 +890,18 @@
             "size": 5
         },
         {
-            "name": "j_StringSet__StringSet",
+            "name": "j_StringSet::StringSet",
             "address": 4204210,
             "size": 5
         },
         {
             "name": "j_Rooms_004f16b6",
             "address": 4204225,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_2",
+            "address": 4204230,
             "size": 5
         },
         {
@@ -900,7 +960,7 @@
             "size": 5
         },
         {
-            "name": "j_EdithElem__GetTreeID",
+            "name": "j_EdithElem::GetTreeID",
             "address": 4204725,
             "size": 5
         },
@@ -917,6 +977,11 @@
         {
             "name": "j_Patch_007b0be3",
             "address": 4204910,
+            "size": 5
+        },
+        {
+            "name": "j_cGZWin::GetW",
+            "address": 4204935,
             "size": 5
         },
         {
@@ -945,13 +1010,28 @@
             "size": 5
         },
         {
+            "name": "TreeSim_vtbl_func_4",
+            "address": 4205125,
+            "size": 5
+        },
+        {
             "name": "j_FreshnessUtil_00798ca5",
             "address": 4205170,
             "size": 5
         },
         {
-            "name": "j_cTreeSim__GetMemReserved",
+            "name": "cSimsApp_vtbl_func_4",
+            "address": 4205225,
+            "size": 5
+        },
+        {
+            "name": "j_GetMemReserved",
             "address": 4205305,
+            "size": 5
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_89",
+            "address": 4205310,
             "size": 5
         },
         {
@@ -1085,6 +1165,11 @@
             "size": 5
         },
         {
+            "name": "j_cRZString::cRZString",
+            "address": 4206070,
+            "size": 5
+        },
+        {
             "name": "j_WinSubpanelJob_006a636c",
             "address": 4206115,
             "size": 5
@@ -1110,7 +1195,7 @@
             "size": 5
         },
         {
-            "name": "j_MouseObject__GetContainedObject",
+            "name": "j_MouseObject::GetContainedObject",
             "address": 4206285,
             "size": 5
         },
@@ -1175,7 +1260,7 @@
             "size": 5
         },
         {
-            "name": "j_MouseObject__GetContainer",
+            "name": "j_MouseObject::GetContainer",
             "address": 4206740,
             "size": 5
         },
@@ -1192,6 +1277,11 @@
         {
             "name": "j_Patch_007aec60",
             "address": 4206860,
+            "size": 5
+        },
+        {
+            "name": "j_?ref_count@?$basic_string@D@@ABEIXZ",
+            "address": 4206900,
             "size": 5
         },
         {
@@ -1330,6 +1420,11 @@
             "size": 5
         },
         {
+            "name": "cDDDSimsView::IsDDDAware",
+            "address": 4207920,
+            "size": 5
+        },
+        {
             "name": "j_BehaviorSearchDialog_006ba9a2",
             "address": 4208010,
             "size": 5
@@ -1337,6 +1432,11 @@
         {
             "name": "j_vector_00514a14",
             "address": 4208095,
+            "size": 5
+        },
+        {
+            "name": "cWinCPanel_vtbl_func_29",
+            "address": 4208145,
             "size": 5
         },
         {
@@ -1367,6 +1467,11 @@
         {
             "name": "j_world_0052c121",
             "address": 4208225,
+            "size": 5
+        },
+        {
+            "name": "j_cRZString::cRZString_0",
+            "address": 4208265,
             "size": 5
         },
         {
@@ -1490,6 +1595,11 @@
             "size": 5
         },
         {
+            "name": "j_?end@?$vector@V?$basic_string@D@@@@QBEPBV?$basic_string@D@@XZ",
+            "address": 4208965,
+            "size": 5
+        },
+        {
             "name": "j_litevector_006a6967",
             "address": 4209055,
             "size": 5
@@ -1550,6 +1660,11 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_11",
+            "address": 4209455,
+            "size": 5
+        },
+        {
             "name": "j_WallManager_0074d523",
             "address": 4209470,
             "size": 5
@@ -1595,7 +1710,7 @@
             "size": 5
         },
         {
-            "name": "j_MTObject__IsDynamic",
+            "name": "j_MTObject::IsDynamic",
             "address": 4209735,
             "size": 5
         },
@@ -1785,13 +1900,33 @@
             "size": 5
         },
         {
+            "name": "cWinTextWrap_vtbl_func_39",
+            "address": 4211095,
+            "size": 5
+        },
+        {
             "name": "j_NeighborhoodDialog_00723349",
             "address": 4211140,
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_32",
+            "address": 4211145,
+            "size": 5
+        },
+        {
             "name": "j_HouseViewer_005a6628",
             "address": 4211190,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_4",
+            "address": 4211240,
+            "size": 5
+        },
+        {
+            "name": "cGZWinDlg_vtbl_func_1",
+            "address": 4211250,
             "size": 5
         },
         {
@@ -1817,6 +1952,11 @@
         {
             "name": "j_Routing_004f8e7f",
             "address": 4211410,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_96",
+            "address": 4211425,
             "size": 5
         },
         {
@@ -1862,6 +2002,11 @@
         {
             "name": "j_wallundoable_00569414",
             "address": 4211785,
+            "size": 5
+        },
+        {
+            "name": "House_vtbl_func_1",
+            "address": 4211795,
             "size": 5
         },
         {
@@ -1990,8 +2135,18 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_9",
+            "address": 4212715,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007de802",
             "address": 4212725,
+            "size": 5
+        },
+        {
+            "name": "SeqResFile_vtbl_func_9",
+            "address": 4212835,
             "size": 5
         },
         {
@@ -2007,6 +2162,11 @@
         {
             "name": "j_ObjectStream_004bc762",
             "address": 4212885,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_57",
+            "address": 4212895,
             "size": 5
         },
         {
@@ -2035,6 +2195,11 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_24",
+            "address": 4213085,
+            "size": 5
+        },
+        {
             "name": "j_WaterSpr2Decoder_005de851",
             "address": 4213105,
             "size": 5
@@ -2052,6 +2217,11 @@
         {
             "name": "j_ptrlist_0049949f",
             "address": 4213165,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_33",
+            "address": 4213190,
             "size": 5
         },
         {
@@ -2200,6 +2370,11 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_29",
+            "address": 4214205,
+            "size": 5
+        },
+        {
             "name": "j_vector_00515784",
             "address": 4214290,
             "size": 5
@@ -2232,6 +2407,11 @@
         {
             "name": "j_Zodiac_0053f2ca",
             "address": 4214630,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_89",
+            "address": 4214655,
             "size": 5
         },
         {
@@ -2280,7 +2460,7 @@
             "size": 5
         },
         {
-            "name": "j_cSimulator__GetProbe",
+            "name": "j_cSimulator::GetProbe",
             "address": 4214875,
             "size": 5
         },
@@ -2297,6 +2477,11 @@
         {
             "name": "j_HouseViewer_005aa343",
             "address": 4214970,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_61",
+            "address": 4215055,
             "size": 5
         },
         {
@@ -2380,8 +2565,13 @@
             "size": 5
         },
         {
-            "name": "j_cTreeSim__GetCurElem",
+            "name": "j_cTreeSim::GetCurElem",
             "address": 4215590,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_0",
+            "address": 4215595,
             "size": 5
         },
         {
@@ -2497,6 +2687,11 @@
         {
             "name": "j_poollayer_00549259",
             "address": 4216650,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_28",
+            "address": 4216655,
             "size": 5
         },
         {
@@ -2670,6 +2865,11 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_20",
+            "address": 4217600,
+            "size": 5
+        },
+        {
             "name": "j_PersonFinder_00635457",
             "address": 4217625,
             "size": 5
@@ -2722,6 +2922,11 @@
         {
             "name": "j_ObjectModule_004a0a45",
             "address": 4218075,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_17",
+            "address": 4218100,
             "size": 5
         },
         {
@@ -2815,6 +3020,11 @@
             "size": 5
         },
         {
+            "name": "iResFile_vtbl_func_22",
+            "address": 4218550,
+            "size": 5
+        },
+        {
             "name": "j_Patch_007a3963",
             "address": 4218560,
             "size": 5
@@ -2840,7 +3050,7 @@
             "size": 5
         },
         {
-            "name": "j_WaterLayer__HasWater",
+            "name": "j_WaterLayer::HasWater",
             "address": 4218665,
             "size": 5
         },
@@ -2940,6 +3150,16 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_55",
+            "address": 4219215,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_51",
+            "address": 4219220,
+            "size": 5
+        },
+        {
             "name": "j_bstring_00428dac",
             "address": 4219265,
             "size": 5
@@ -3030,6 +3250,11 @@
             "size": 5
         },
         {
+            "name": "cXObject_vtbl_func_21",
+            "address": 4220100,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007d5f74",
             "address": 4220190,
             "size": 5
@@ -3042,6 +3267,11 @@
         {
             "name": "j_Patch_007b1889",
             "address": 4220300,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_9",
+            "address": 4220305,
             "size": 5
         },
         {
@@ -3077,6 +3307,11 @@
         {
             "name": "j_worldimp_00527acd",
             "address": 4220555,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_12",
+            "address": 4220565,
             "size": 5
         },
         {
@@ -3117,6 +3352,16 @@
         {
             "name": "j_wallimp_00741501",
             "address": 4220875,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_15",
+            "address": 4220935,
+            "size": 5
+        },
+        {
+            "name": "cWinTextWrap_vtbl_func_4",
+            "address": 4220985,
             "size": 5
         },
         {
@@ -3240,6 +3485,11 @@
             "size": 5
         },
         {
+            "name": "j_??3@YAXPAX0@Z",
+            "address": 4221785,
+            "size": 5
+        },
+        {
             "name": "j_Boxx_007844d1",
             "address": 4221810,
             "size": 5
@@ -3320,6 +3570,11 @@
             "size": 5
         },
         {
+            "name": "cXObject_vtbl_func_10",
+            "address": 4222190,
+            "size": 5
+        },
+        {
             "name": "j_StringBuffer_005096ab",
             "address": 4222210,
             "size": 5
@@ -3330,8 +3585,18 @@
             "size": 5
         },
         {
+            "name": "cXObject_vtbl_func_11",
+            "address": 4222370,
+            "size": 5
+        },
+        {
             "name": "j_gzcheatcodemanager_0058e9aa",
             "address": 4222390,
+            "size": 5
+        },
+        {
+            "name": "GetGlobalPalette",
+            "address": 4222440,
             "size": 5
         },
         {
@@ -3360,6 +3625,11 @@
             "size": 5
         },
         {
+            "name": "cSimsApp_vtbl_func_15",
+            "address": 4222565,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007e3a95",
             "address": 4222660,
             "size": 5
@@ -3367,6 +3637,11 @@
         {
             "name": "j_vector_00476671",
             "address": 4222695,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_0",
+            "address": 4222710,
             "size": 5
         },
         {
@@ -3395,8 +3670,18 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_26",
+            "address": 4222885,
+            "size": 5
+        },
+        {
             "name": "j_ObjectBrowserDialog_0070928d",
             "address": 4222915,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_50",
+            "address": 4222930,
             "size": 5
         },
         {
@@ -3440,6 +3725,21 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_26",
+            "address": 4223250,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_22",
+            "address": 4223255,
+            "size": 5
+        },
+        {
+            "name": "j_?throwrange@?$basic_string_ref@D@@CAXXZ",
+            "address": 4223260,
+            "size": 5
+        },
+        {
             "name": "j_cNodekNormal",
             "address": 4223305,
             "size": 5
@@ -3447,6 +3747,11 @@
         {
             "name": "j_EditTreeDialog_006f6611",
             "address": 4223315,
+            "size": 5
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_3",
+            "address": 4223380,
             "size": 5
         },
         {
@@ -3460,6 +3765,11 @@
             "size": 5
         },
         {
+            "name": "SeqResFile_vtbl_func_0",
+            "address": 4223495,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007d738b",
             "address": 4223510,
             "size": 5
@@ -3467,6 +3777,11 @@
         {
             "name": "j_SAnimator_007cc108",
             "address": 4223530,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_3",
+            "address": 4223535,
             "size": 5
         },
         {
@@ -3490,6 +3805,11 @@
             "size": 5
         },
         {
+            "name": "cSimsApp_vtbl_func_10",
+            "address": 4223620,
+            "size": 5
+        },
+        {
             "name": "j_WallGraphicsMgr_005db356",
             "address": 4223655,
             "size": 5
@@ -3497,6 +3817,11 @@
         {
             "name": "j_TraceDialog_00735b44",
             "address": 4223660,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_2",
+            "address": 4223670,
             "size": 5
         },
         {
@@ -3577,6 +3902,11 @@
         {
             "name": "j_vector_007f2f91",
             "address": 4224055,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_18",
+            "address": 4224100,
             "size": 5
         },
         {
@@ -3680,7 +4010,7 @@
             "size": 5
         },
         {
-            "name": "j_cGameTools__GetUndoManager",
+            "name": "j_cGameTools::GetUndoManager",
             "address": 4225020,
             "size": 5
         },
@@ -3695,8 +4025,18 @@
             "size": 5
         },
         {
+            "name": "CPState_vtbl_func_0",
+            "address": 4225070,
+            "size": 5
+        },
+        {
             "name": "j_vector_004f5e69",
             "address": 4225080,
+            "size": 5
+        },
+        {
+            "name": "cWinCPanel_vtbl_func_37",
+            "address": 4225115,
             "size": 5
         },
         {
@@ -3745,6 +4085,11 @@
             "size": 5
         },
         {
+            "name": "j_?end@?$vector@V?$basic_string@D@@@@QAEPAV?$basic_string@D@@XZ",
+            "address": 4225370,
+            "size": 5
+        },
+        {
             "name": "j_vector_004c6177",
             "address": 4225415,
             "size": 5
@@ -3772,6 +4117,11 @@
         {
             "name": "j_Neighborhood_0046e464",
             "address": 4225575,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_12",
+            "address": 4225580,
             "size": 5
         },
         {
@@ -3840,6 +4190,11 @@
             "size": 5
         },
         {
+            "name": "j_GetCTGFileManager",
+            "address": 4225920,
+            "size": 5
+        },
+        {
             "name": "j_SAnimatorSetCurAnim",
             "address": 4225950,
             "size": 5
@@ -3852,6 +4207,11 @@
         {
             "name": "j_rmemwrap_004edc6e",
             "address": 4225970,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_6",
+            "address": 4226005,
             "size": 5
         },
         {
@@ -3872,6 +4232,11 @@
         {
             "name": "j_TreeConstantsDialog_0071786c",
             "address": 4226180,
+            "size": 5
+        },
+        {
+            "name": "j_?begin@?$vector@D@@QBEPBDXZ",
+            "address": 4226190,
             "size": 5
         },
         {
@@ -3970,8 +4335,18 @@
             "size": 5
         },
         {
+            "name": "j_?delete_ref@?$basic_string@D@@IAEXXZ",
+            "address": 4227080,
+            "size": 5
+        },
+        {
             "name": "j_PersonFinder_00637887",
             "address": 4227085,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_28",
+            "address": 4227115,
             "size": 5
         },
         {
@@ -4140,6 +4515,16 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_97",
+            "address": 4228465,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_10",
+            "address": 4228550,
+            "size": 5
+        },
+        {
             "name": "j_FloorGraphicsMgr_00581636",
             "address": 4228605,
             "size": 5
@@ -4162,6 +4547,11 @@
         {
             "name": "j_ObjFnTableDialog_0072ba62",
             "address": 4228815,
+            "size": 5
+        },
+        {
+            "name": "cWinCPanel_vtbl_func_90",
+            "address": 4228825,
             "size": 5
         },
         {
@@ -4265,6 +4655,11 @@
             "size": 5
         },
         {
+            "name": "iResFile_vtbl_func_17",
+            "address": 4229640,
+            "size": 5
+        },
+        {
             "name": "j_Patch_007a64e4",
             "address": 4229655,
             "size": 5
@@ -4275,7 +4670,7 @@
             "size": 5
         },
         {
-            "name": "j_cTreeSim__GetMemUsed",
+            "name": "j_GetMemUsed",
             "address": 4229740,
             "size": 5
         },
@@ -4300,6 +4695,11 @@
             "size": 5
         },
         {
+            "name": "j_?point@?$basic_string@D@@AAEPADXZ",
+            "address": 4229875,
+            "size": 5
+        },
+        {
             "name": "j_EditPerson_0043b51e",
             "address": 4229885,
             "size": 5
@@ -4315,7 +4715,7 @@
             "size": 5
         },
         {
-            "name": "MTObject__sub_408B4D",
+            "name": "MTObject::sub_408B4D",
             "address": 4229965,
             "size": 5
         },
@@ -4327,6 +4727,11 @@
         {
             "name": "j_vector_006785a4",
             "address": 4229995,
+            "size": 5
+        },
+        {
+            "name": "j_MungeFPCW",
+            "address": 4230005,
             "size": 5
         },
         {
@@ -4410,7 +4815,12 @@
             "size": 5
         },
         {
-            "name": "j_ResFile__GetError",
+            "name": "ChainResFile_vtbl_func_29",
+            "address": 4230665,
+            "size": 5
+        },
+        {
+            "name": "j_ResFile::GetError",
             "address": 4230680,
             "size": 5
         },
@@ -4505,6 +4915,11 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_37",
+            "address": 4231365,
+            "size": 5
+        },
+        {
             "name": "j_tilewalls_0073e8e9",
             "address": 4231390,
             "size": 5
@@ -4512,6 +4927,11 @@
         {
             "name": "j_WinCatalog_00664636",
             "address": 4231415,
+            "size": 5
+        },
+        {
+            "name": "cWinCPanel_vtbl_func_57",
+            "address": 4231440,
             "size": 5
         },
         {
@@ -4532,6 +4952,11 @@
         {
             "name": "j_tilewallsimp_00567509",
             "address": 4231545,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_27",
+            "address": 4231560,
             "size": 5
         },
         {
@@ -4567,6 +4992,11 @@
         {
             "name": "j_vector_00585ee1",
             "address": 4231915,
+            "size": 5
+        },
+        {
+            "name": "cIGZUnknown::cIGZUnknown",
+            "address": 4231925,
             "size": 5
         },
         {
@@ -4645,6 +5075,11 @@
             "size": 5
         },
         {
+            "name": "ObjResFile_vtbl_func_0",
+            "address": 4232650,
+            "size": 5
+        },
+        {
             "name": "j_CPState_005f7184",
             "address": 4232735,
             "size": 5
@@ -4652,6 +5087,11 @@
         {
             "name": "j_ResolveResFile_004eca9a",
             "address": 4232760,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_27",
+            "address": 4232765,
             "size": 5
         },
         {
@@ -4720,6 +5160,11 @@
             "size": 5
         },
         {
+            "name": "j_ObjectFolder::ObjectFolder",
+            "address": 4233235,
+            "size": 5
+        },
+        {
             "name": "j_strset_0055e183",
             "address": 4233245,
             "size": 5
@@ -4735,6 +5180,11 @@
             "size": 5
         },
         {
+            "name": "cXObject_vtbl_func_14",
+            "address": 4233415,
+            "size": 5
+        },
+        {
             "name": "j_Patch_007a5453",
             "address": 4233420,
             "size": 5
@@ -4747,6 +5197,11 @@
         {
             "name": "j_tilewalls_0073e326",
             "address": 4233480,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_32",
+            "address": 4233565,
             "size": 5
         },
         {
@@ -4802,6 +5257,11 @@
         {
             "name": "j_vector_00435401",
             "address": 4233850,
+            "size": 5
+        },
+        {
+            "name": "StdResFile_vtbl_func_0",
+            "address": 4233875,
             "size": 5
         },
         {
@@ -4865,7 +5325,7 @@
             "size": 5
         },
         {
-            "name": "AlphaZSpriteBlitter__GetPixelType",
+            "name": "AlphaZSpriteBlitter::GetPixelType",
             "address": 4234640,
             "size": 5
         },
@@ -4940,7 +5400,7 @@
             "size": 5
         },
         {
-            "name": "j_GZBuffer__GetBufferArea",
+            "name": "j_GZBuffer::GetBufferArea",
             "address": 4235175,
             "size": 5
         },
@@ -4955,6 +5415,11 @@
             "size": 5
         },
         {
+            "name": "j::ChainResFile::ValidFile",
+            "address": 4235205,
+            "size": 5
+        },
+        {
             "name": "j_ctilept_004dce0b",
             "address": 4235230,
             "size": 5
@@ -4965,8 +5430,18 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_31",
+            "address": 4235270,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007e8167",
             "address": 4235350,
+            "size": 5
+        },
+        {
+            "name": "j_??2@YAPAXIPAX@Z",
+            "address": 4235385,
             "size": 5
         },
         {
@@ -4982,6 +5457,11 @@
         {
             "name": "j_MoveTool_00543a2a",
             "address": 4235615,
+            "size": 5
+        },
+        {
+            "name": "j_?assign@?$string_char_baggage@D@@SAXAADABD@Z",
+            "address": 4235635,
             "size": 5
         },
         {
@@ -5025,6 +5505,11 @@
             "size": 5
         },
         {
+            "name": "cWinPictureDialog_vtbl_func_55",
+            "address": 4235885,
+            "size": 5
+        },
+        {
             "name": "j_Patch_007a73c8",
             "address": 4235935,
             "size": 5
@@ -5040,6 +5525,11 @@
             "size": 5
         },
         {
+            "name": "cGZWinDlg_vtbl_func_0",
+            "address": 4236025,
+            "size": 5
+        },
+        {
             "name": "j_wallsprite_005e24e5",
             "address": 4236040,
             "size": 5
@@ -5052,6 +5542,11 @@
         {
             "name": "j_RelMatrix_004e8c2d",
             "address": 4236055,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_6",
+            "address": 4236165,
             "size": 5
         },
         {
@@ -5085,6 +5580,11 @@
             "size": 5
         },
         {
+            "name": "j_?construct@@YAXPAV?$basic_string@D@@ABV1@@Z",
+            "address": 4236360,
+            "size": 5
+        },
+        {
             "name": "j_OwnerDataControlSet_0070a2e9",
             "address": 4236375,
             "size": 5
@@ -5097,6 +5597,16 @@
         {
             "name": "j_cGZWinCtrlMgrInit",
             "address": 4236505,
+            "size": 5
+        },
+        {
+            "name": "j_?begin@?$vector@V?$basic_string@D@@@@QAEPAV?$basic_string@D@@XZ",
+            "address": 4236525,
+            "size": 5
+        },
+        {
+            "name": "cGZWin::IsVisible",
+            "address": 4236580,
             "size": 5
         },
         {
@@ -5187,6 +5697,11 @@
         {
             "name": "j_HouseViewer_005a9589",
             "address": 4237345,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_5",
+            "address": 4237400,
             "size": 5
         },
         {
@@ -5320,6 +5835,11 @@
             "size": 5
         },
         {
+            "name": "cGZApp_vtbl_func_1",
+            "address": 4238280,
+            "size": 5
+        },
+        {
             "name": "j_UWCensor",
             "address": 4238325,
             "size": 5
@@ -5347,6 +5867,11 @@
         {
             "name": "j_vector_00585cad",
             "address": 4238410,
+            "size": 5
+        },
+        {
+            "name": "j_PalWrap::GetPalette",
+            "address": 4238430,
             "size": 5
         },
         {
@@ -5400,6 +5925,11 @@
             "size": 5
         },
         {
+            "name": "j_?eos@?$basic_string@D@@CADXZ",
+            "address": 4238985,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007d6239",
             "address": 4239015,
             "size": 5
@@ -5432,6 +5962,11 @@
         {
             "name": "j_litevector_0067a697",
             "address": 4239150,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_23",
+            "address": 4239345,
             "size": 5
         },
         {
@@ -5555,6 +6090,11 @@
             "size": 5
         },
         {
+            "name": "j_GetGamePath",
+            "address": 4240035,
+            "size": 5
+        },
+        {
             "name": "j_ObjectModule_0049fb1d",
             "address": 4240060,
             "size": 5
@@ -5562,6 +6102,11 @@
         {
             "name": "j_XRouting_00539004",
             "address": 4240075,
+            "size": 5
+        },
+        {
+            "name": "ObjectModule_vtbl_func_0",
+            "address": 4240100,
             "size": 5
         },
         {
@@ -5597,6 +6142,11 @@
         {
             "name": "j_vector_004ea44f",
             "address": 4240485,
+            "size": 5
+        },
+        {
+            "name": "cWinCPanel_vtbl_func_5",
+            "address": 4240510,
             "size": 5
         },
         {
@@ -5700,6 +6250,11 @@
             "size": 5
         },
         {
+            "name": "TreeSim_vtbl_func_5",
+            "address": 4241275,
+            "size": 5
+        },
+        {
             "name": "j_ObjectProbe_004a81b0",
             "address": 4241350,
             "size": 5
@@ -5717,6 +6272,11 @@
         {
             "name": "j_MacDrawing_00461e97",
             "address": 4241460,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_16",
+            "address": 4241470,
             "size": 5
         },
         {
@@ -5825,6 +6385,11 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_6",
+            "address": 4242375,
+            "size": 5
+        },
+        {
             "name": "j_VertexConfig_007433d1",
             "address": 4242410,
             "size": 5
@@ -5872,6 +6437,11 @@
         {
             "name": "j_Routing_004f96d7",
             "address": 4242690,
+            "size": 5
+        },
+        {
+            "name": "j_?assign@?$basic_string@D@@QAEAAV1@PBD@Z",
+            "address": 4242830,
             "size": 5
         },
         {
@@ -5945,8 +6515,13 @@
             "size": 5
         },
         {
-            "name": "j_CPState__ArchCanUndo",
+            "name": "j_CPState::ArchCanUndo",
             "address": 4243690,
+            "size": 5
+        },
+        {
+            "name": "j_?ne@?$string_char_baggage@D@@SA_NABD0@Z",
+            "address": 4243725,
             "size": 5
         },
         {
@@ -6010,6 +6585,11 @@
             "size": 5
         },
         {
+            "name": "cWinCPanel_vtbl_func_89",
+            "address": 4244110,
+            "size": 5
+        },
+        {
             "name": "j_ObjectModule_0049d6c6",
             "address": 4244185,
             "size": 5
@@ -6032,6 +6612,11 @@
         {
             "name": "j_skeleton_007e77d0",
             "address": 4244450,
+            "size": 5
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_54",
+            "address": 4244475,
             "size": 5
         },
         {
@@ -6060,6 +6645,16 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_3",
+            "address": 4244735,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_94",
+            "address": 4244755,
+            "size": 5
+        },
+        {
             "name": "j_ObjModuleDialog_0072e558",
             "address": 4244815,
             "size": 5
@@ -6067,6 +6662,11 @@
         {
             "name": "j_SAnimator_007bb782",
             "address": 4244825,
+            "size": 5
+        },
+        {
+            "name": "j_TreeSim::TreeSim",
+            "address": 4244850,
             "size": 5
         },
         {
@@ -6120,6 +6720,11 @@
             "size": 5
         },
         {
+            "name": "cSimsApp_vtbl_func_6",
+            "address": 4245195,
+            "size": 5
+        },
+        {
             "name": "j_u3dbox3d_0059fb10",
             "address": 4245270,
             "size": 5
@@ -6160,6 +6765,11 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_17",
+            "address": 4245600,
+            "size": 5
+        },
+        {
             "name": "j_XRouting_0053e652",
             "address": 4245610,
             "size": 5
@@ -6192,6 +6802,11 @@
         {
             "name": "j_skeleton_007eac5d",
             "address": 4245860,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_1",
+            "address": 4245920,
             "size": 5
         },
         {
@@ -6250,6 +6865,11 @@
             "size": 5
         },
         {
+            "name": "cWinPictureDialog_vtbl_func_5",
+            "address": 4246335,
+            "size": 5
+        },
+        {
             "name": "j_attribtable_00427d67",
             "address": 4246420,
             "size": 5
@@ -6267,6 +6887,11 @@
         {
             "name": "j_ObjectIcon_0062be6d",
             "address": 4246490,
+            "size": 5
+        },
+        {
+            "name": "cGZWinDlg_vtbl_func_5",
+            "address": 4246575,
             "size": 5
         },
         {
@@ -6345,6 +6970,11 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_21",
+            "address": 4247075,
+            "size": 5
+        },
+        {
             "name": "j_PersonFinder_00636868",
             "address": 4247100,
             "size": 5
@@ -6362,6 +6992,11 @@
         {
             "name": "j_object_00481e07",
             "address": 4247250,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_22",
+            "address": 4247265,
             "size": 5
         },
         {
@@ -6420,6 +7055,11 @@
             "size": 5
         },
         {
+            "name": "??2@YAPAXI@Z_0",
+            "address": 4247630,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007d9c91",
             "address": 4247660,
             "size": 5
@@ -6450,7 +7090,7 @@
             "size": 5
         },
         {
-            "name": "j_DrawGroup__IsReading",
+            "name": "j_DrawGroup::IsReading",
             "address": 4247880,
             "size": 5
         },
@@ -6472,6 +7112,11 @@
         {
             "name": "j_Patch_007a5bd3",
             "address": 4248035,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_39",
+            "address": 4248115,
             "size": 5
         },
         {
@@ -6510,6 +7155,11 @@
             "size": 5
         },
         {
+            "name": "j_?end@?$vector@D@@QBEPBDXZ",
+            "address": 4248435,
+            "size": 5
+        },
+        {
             "name": "j_person_004cf7eb",
             "address": 4248460,
             "size": 5
@@ -6522,6 +7172,11 @@
         {
             "name": "j_PersonFinder_006366da",
             "address": 4248480,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_15",
+            "address": 4248565,
             "size": 5
         },
         {
@@ -6625,6 +7280,11 @@
             "size": 5
         },
         {
+            "name": "cWinTextWrap_vtbl_func_3",
+            "address": 4249275,
+            "size": 5
+        },
+        {
             "name": "j_vector_0060a2ca",
             "address": 4249375,
             "size": 5
@@ -6635,6 +7295,11 @@
             "size": 5
         },
         {
+            "name": "TreeSim_vtbl_func_3",
+            "address": 4249420,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007ea23d",
             "address": 4249440,
             "size": 5
@@ -6642,6 +7307,11 @@
         {
             "name": "j_Recon_004e6492",
             "address": 4249500,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_15",
+            "address": 4249505,
             "size": 5
         },
         {
@@ -6740,6 +7410,11 @@
             "size": 5
         },
         {
+            "name": "cXObject_vtbl_func_25",
+            "address": 4250210,
+            "size": 5
+        },
+        {
             "name": "j_vitaboy_007fa62f",
             "address": 4250230,
             "size": 5
@@ -6767,6 +7442,11 @@
         {
             "name": "j_treesim_005186c5",
             "address": 4250505,
+            "size": 5
+        },
+        {
+            "name": "j_cRZString::CStr",
+            "address": 4250510,
             "size": 5
         },
         {
@@ -6820,6 +7500,11 @@
             "size": 5
         },
         {
+            "name": "j_cSimsApp::OpenMemView",
+            "address": 4250825,
+            "size": 5
+        },
+        {
             "name": "j_xrender_005e1821",
             "address": 4250865,
             "size": 5
@@ -6860,6 +7545,16 @@
             "size": 5
         },
         {
+            "name": "j_??Y?$basic_string@D@@QAEAAV0@PBD@Z",
+            "address": 4251180,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_8",
+            "address": 4251185,
+            "size": 5
+        },
+        {
             "name": "j_Rooms_004efa73",
             "address": 4251200,
             "size": 5
@@ -6867,6 +7562,11 @@
         {
             "name": "j_undoable_005648d4",
             "address": 4251300,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_11",
+            "address": 4251310,
             "size": 5
         },
         {
@@ -6892,6 +7592,11 @@
         {
             "name": "j_WinLotBtn_00761b0c",
             "address": 4251455,
+            "size": 5
+        },
+        {
+            "name": "ObjectModule_vtbl_func_1",
+            "address": 4251530,
             "size": 5
         },
         {
@@ -6950,6 +7655,11 @@
             "size": 5
         },
         {
+            "name": "j_cGZWinDlg::cGZWinDlg",
+            "address": 4251965,
+            "size": 5
+        },
+        {
             "name": "j_worldimp_0054cc5a",
             "address": 4252010,
             "size": 5
@@ -6997,6 +7707,11 @@
         {
             "name": "j_GZResMgr_00807175",
             "address": 4252370,
+            "size": 5
+        },
+        {
+            "name": "cGZWin_vtbl_func_89",
+            "address": 4252400,
             "size": 5
         },
         {
@@ -7055,6 +7770,11 @@
             "size": 5
         },
         {
+            "name": "cXObject_vtbl_func_24",
+            "address": 4252860,
+            "size": 5
+        },
+        {
             "name": "j_TraceDialog_00736f27",
             "address": 4252865,
             "size": 5
@@ -7092,6 +7812,11 @@
         {
             "name": "j_skeleton_007ebfef",
             "address": 4253200,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_8",
+            "address": 4253315,
             "size": 5
         },
         {
@@ -7177,6 +7902,21 @@
         {
             "name": "j_patch_007a2f00",
             "address": 4254075,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_17",
+            "address": 4254110,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_12",
+            "address": 4254250,
+            "size": 5
+        },
+        {
+            "name": "iResFile_vtbl_func_0",
+            "address": 4254260,
             "size": 5
         },
         {
@@ -7295,6 +8035,11 @@
             "size": 5
         },
         {
+            "name": "StdResFile_vtbl_func_3",
+            "address": 4255200,
+            "size": 5
+        },
+        {
             "name": "j_ObjSelector_004c2fa2",
             "address": 4255230,
             "size": 5
@@ -7317,6 +8062,11 @@
         {
             "name": "j_rmemwrap_004ee026",
             "address": 4255355,
+            "size": 5
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_1",
+            "address": 4255380,
             "size": 5
         },
         {
@@ -7435,11 +8185,6 @@
             "size": 5
         },
         {
-            "name": "j_??Dconst_iterator@?$_Tree@V?$_Tmap_traits@KV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@K@2@V?$allocator@U?$pair@$$CBKV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QBEABU?$pair@$$CBKV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ",
-            "address": 4256170,
-            "size": 5
-        },
-        {
             "name": "j_WinDesignCharacter_0075a897",
             "address": 4256185,
             "size": 5
@@ -7465,6 +8210,11 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_24",
+            "address": 4256300,
+            "size": 5
+        },
+        {
             "name": "j_LightSetPlacement",
             "address": 4256315,
             "size": 5
@@ -7485,6 +8235,11 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_5",
+            "address": 4256570,
+            "size": 5
+        },
+        {
             "name": "j_vector_004d8c2b",
             "address": 4256580,
             "size": 5
@@ -7497,6 +8252,11 @@
         {
             "name": "j_WinRoofPanel_0069a5d3",
             "address": 4256615,
+            "size": 5
+        },
+        {
+            "name": "iResFile_vtbl_func_34",
+            "address": 4256630,
             "size": 5
         },
         {
@@ -7550,8 +8310,18 @@
             "size": 5
         },
         {
+            "name": "j_cSimsApp::ShowSimpleMessageBox",
+            "address": 4256960,
+            "size": 5
+        },
+        {
             "name": "j_person_004caa4f",
             "address": 4256975,
+            "size": 5
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_76",
+            "address": 4257020,
             "size": 5
         },
         {
@@ -7572,6 +8342,11 @@
         {
             "name": "j_CutawayWallThickBlitter_0057d5f7",
             "address": 4257115,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_0",
+            "address": 4257120,
             "size": 5
         },
         {
@@ -7635,6 +8410,16 @@
             "size": 5
         },
         {
+            "name": "cXObject_vtbl_func_27",
+            "address": 4257640,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_23",
+            "address": 4257660,
+            "size": 5
+        },
+        {
             "name": "j_vector_0068cbde",
             "address": 4257730,
             "size": 5
@@ -7650,6 +8435,11 @@
             "size": 5
         },
         {
+            "name": "cXObject_vtbl_func_4",
+            "address": 4257805,
+            "size": 5
+        },
+        {
             "name": "j_VertexConfigkW",
             "address": 4257820,
             "size": 5
@@ -7657,6 +8447,11 @@
         {
             "name": "j_ptrlist_0042812b",
             "address": 4257830,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_2",
+            "address": 4257855,
             "size": 5
         },
         {
@@ -7685,6 +8480,11 @@
             "size": 5
         },
         {
+            "name": "j_IFFResFile::IFFResFile",
+            "address": 4258030,
+            "size": 5
+        },
+        {
             "name": "j_WinPersonalityWidget_0076c09a",
             "address": 4258035,
             "size": 5
@@ -7697,6 +8497,11 @@
         {
             "name": "j_FloorGraphicsMgr_0058431d",
             "address": 4258190,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_19",
+            "address": 4258195,
             "size": 5
         },
         {
@@ -7740,6 +8545,11 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_35",
+            "address": 4258405,
+            "size": 5
+        },
+        {
             "name": "j_WinRelationship_00696539",
             "address": 4258470,
             "size": 5
@@ -7767,6 +8577,16 @@
         {
             "name": "j_skeleton_007d3b23",
             "address": 4258710,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_11",
+            "address": 4258715,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_23",
+            "address": 4258755,
             "size": 5
         },
         {
@@ -7875,6 +8695,11 @@
             "size": 5
         },
         {
+            "name": "j_?eos@?$basic_string_ref@D@@CADXZ",
+            "address": 4259725,
+            "size": 5
+        },
+        {
             "name": "j_vector_007eefea",
             "address": 4259775,
             "size": 5
@@ -7882,6 +8707,11 @@
         {
             "name": "j_ObjModuleDialog_0072d019",
             "address": 4259800,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_71",
+            "address": 4259830,
             "size": 5
         },
         {
@@ -7912,6 +8742,11 @@
         {
             "name": "j_ptrlist_00428404",
             "address": 4259955,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_6",
+            "address": 4259985,
             "size": 5
         },
         {
@@ -7952,6 +8787,11 @@
         {
             "name": "j_rmemwrap_004ed552",
             "address": 4260230,
+            "size": 5
+        },
+        {
+            "name": "cWinCPanel_vtbl_func_53",
+            "address": 4260355,
             "size": 5
         },
         {
@@ -8045,6 +8885,11 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_13",
+            "address": 4260995,
+            "size": 5
+        },
+        {
             "name": "j_WinNeighborhood_0076abd2",
             "address": 4261040,
             "size": 5
@@ -8072,6 +8917,11 @@
         {
             "name": "j_isoview_0048bec1",
             "address": 4261375,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_5",
+            "address": 4261440,
             "size": 5
         },
         {
@@ -8145,6 +8995,11 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_16",
+            "address": 4262085,
+            "size": 5
+        },
+        {
             "name": "j_HouseViewer_005a904d",
             "address": 4262155,
             "size": 5
@@ -8157,6 +9012,11 @@
         {
             "name": "j_ObjectUndoable_00553ef7",
             "address": 4262185,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_33",
+            "address": 4262200,
             "size": 5
         },
         {
@@ -8185,7 +9045,7 @@
             "size": 5
         },
         {
-            "name": "j_ObjectManager__GetObjectFromID",
+            "name": "j_ObjectManager::GetObjectFromID",
             "address": 4262485,
             "size": 5
         },
@@ -8215,7 +9075,7 @@
             "size": 5
         },
         {
-            "name": "j_WorldImp__OutOfBounds",
+            "name": "j_WorldImp::OutOfBounds",
             "address": 4262680,
             "size": 5
         },
@@ -8235,8 +9095,23 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_14",
+            "address": 4262825,
+            "size": 5
+        },
+        {
+            "name": "j_AddCheat_655B20",
+            "address": 4262860,
+            "size": 5
+        },
+        {
             "name": "j_SAnimator_007be3c4",
             "address": 4262885,
+            "size": 5
+        },
+        {
+            "name": "j_?length@?$string_char_baggage@D@@SAIPBD@Z",
+            "address": 4262895,
             "size": 5
         },
         {
@@ -8295,6 +9170,11 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_31",
+            "address": 4263460,
+            "size": 5
+        },
+        {
             "name": "j_WinPeople_006873b8",
             "address": 4263520,
             "size": 5
@@ -8345,6 +9225,11 @@
             "size": 5
         },
         {
+            "name": "PalWrap_vtbl_func_0",
+            "address": 4263945,
+            "size": 5
+        },
+        {
             "name": "j_HouseViewer_0059a403",
             "address": 4263980,
             "size": 5
@@ -8385,8 +9270,18 @@
             "size": 5
         },
         {
+            "name": "cWinCPanel_vtbl_func_4",
+            "address": 4264245,
+            "size": 5
+        },
+        {
             "name": "j_ShearedLightMapAllocate",
             "address": 4264325,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_24",
+            "address": 4264380,
             "size": 5
         },
         {
@@ -8465,6 +9360,11 @@
             "size": 5
         },
         {
+            "name": "ObjectFolder_vtbl_func_1",
+            "address": 4264900,
+            "size": 5
+        },
+        {
             "name": "j_Patch_007a1c68",
             "address": 4264960,
             "size": 5
@@ -8477,6 +9377,11 @@
         {
             "name": "j_wallpatterns_00551fea",
             "address": 4265010,
+            "size": 5
+        },
+        {
+            "name": "cWinCPanel_vtbl_func_38",
+            "address": 4265025,
             "size": 5
         },
         {
@@ -8715,6 +9620,16 @@
             "size": 5
         },
         {
+            "name": "cSimsApp_vtbl_func_16",
+            "address": 4266720,
+            "size": 5
+        },
+        {
+            "name": "ObjectFolder_vtbl_func_0",
+            "address": 4266725,
+            "size": 5
+        },
+        {
             "name": "j_SAnimatorSetIdleState",
             "address": 4266740,
             "size": 5
@@ -8775,6 +9690,11 @@
             "size": 5
         },
         {
+            "name": "cGZSystemService_vtbl_func_1",
+            "address": 4267395,
+            "size": 5
+        },
+        {
             "name": "j_Patch_007ae949",
             "address": 4267480,
             "size": 5
@@ -8810,8 +9730,18 @@
             "size": 5
         },
         {
+            "name": "cXObject_vtbl_func_0",
+            "address": 4267820,
+            "size": 5
+        },
+        {
             "name": "j_EditBehaviorDialog_006cf65d",
             "address": 4267910,
+            "size": 5
+        },
+        {
+            "name": "Commander_vtbl_func_1",
+            "address": 4267925,
             "size": 5
         },
         {
@@ -8880,6 +9810,11 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_5",
+            "address": 4268415,
+            "size": 5
+        },
+        {
             "name": "j_queue_004d74ae",
             "address": 4268445,
             "size": 5
@@ -8887,6 +9822,11 @@
         {
             "name": "j_wallsprite_005e2656",
             "address": 4268460,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_30",
+            "address": 4268475,
             "size": 5
         },
         {
@@ -8905,8 +9845,13 @@
             "size": 5
         },
         {
-            "name": "j_cUndoManager__CanUndo",
+            "name": "j_cUndoManager::CanUndo",
             "address": 4268560,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_7",
+            "address": 4268570,
             "size": 5
         },
         {
@@ -8945,13 +9890,33 @@
             "size": 5
         },
         {
+            "name": "cSimsApp_vtbl_func_7",
+            "address": 4268815,
+            "size": 5
+        },
+        {
             "name": "j___ehhandler$?resize@?$basic_string@D@@QAEXID@Z",
             "address": 4268880,
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_4",
+            "address": 4269040,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_75",
+            "address": 4269065,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007d5178",
             "address": 4269110,
+            "size": 5
+        },
+        {
+            "name": "j_cGZWin::GetH",
+            "address": 4269130,
             "size": 5
         },
         {
@@ -9090,6 +10055,11 @@
             "size": 5
         },
         {
+            "name": "cWinPictureDialog_vtbl_func_61",
+            "address": 4269975,
+            "size": 5
+        },
+        {
             "name": "j_Spr2Decoder_005ceb30",
             "address": 4270025,
             "size": 5
@@ -9165,6 +10135,11 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_28",
+            "address": 4270625,
+            "size": 5
+        },
+        {
             "name": "j_MTObject_0046aee2",
             "address": 4270635,
             "size": 5
@@ -9220,6 +10195,11 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_21",
+            "address": 4270995,
+            "size": 5
+        },
+        {
             "name": "j_TerrainUndoable_00561761",
             "address": 4271000,
             "size": 5
@@ -9267,6 +10247,11 @@
         {
             "name": "j_tilewallsimp_007408cb",
             "address": 4271325,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_18",
+            "address": 4271365,
             "size": 5
         },
         {
@@ -9320,6 +10305,11 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_38",
+            "address": 4271730,
+            "size": 5
+        },
+        {
             "name": "j_RoofLayer_00770a4b",
             "address": 4271735,
             "size": 5
@@ -9370,6 +10360,11 @@
             "size": 5
         },
         {
+            "name": "cWinMemView_vtbl_func_40",
+            "address": 4272060,
+            "size": 5
+        },
+        {
             "name": "j_vector_004d760a",
             "address": 4272110,
             "size": 5
@@ -9390,8 +10385,18 @@
             "size": 5
         },
         {
+            "name": "j_?eos@?$string_char_baggage@D@@SADXZ",
+            "address": 4272415,
+            "size": 5
+        },
+        {
             "name": "j_vector_00804991",
             "address": 4272420,
+            "size": 5
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_4",
+            "address": 4272430,
             "size": 5
         },
         {
@@ -9470,6 +10475,11 @@
             "size": 5
         },
         {
+            "name": "j_?size@?$vector@D@@QBEIXZ",
+            "address": 4272945,
+            "size": 5
+        },
+        {
             "name": "j_bstring_004bc18f",
             "address": 4272980,
             "size": 5
@@ -9530,6 +10540,11 @@
             "size": 5
         },
         {
+            "name": "Commander_vtbl_func_0",
+            "address": 4273265,
+            "size": 5
+        },
+        {
             "name": "j_ObjectSim_004af772",
             "address": 4273280,
             "size": 5
@@ -9537,6 +10552,11 @@
         {
             "name": "j_Splash_00715f20",
             "address": 4273355,
+            "size": 5
+        },
+        {
+            "name": "cGZApp_vtbl_func_0",
+            "address": 4273360,
             "size": 5
         },
         {
@@ -9580,6 +10600,11 @@
             "size": 5
         },
         {
+            "name": "ChainResFile_vtbl_func_25",
+            "address": 4273680,
+            "size": 5
+        },
+        {
             "name": "j_AreYouSureDialog_006b94e7",
             "address": 4273695,
             "size": 5
@@ -9602,6 +10627,11 @@
         {
             "name": "j_?replace@?$basic_string@D@@QAEAAV1@IIPBD@Z",
             "address": 4273975,
+            "size": 5
+        },
+        {
+            "name": "cWinMemView_vtbl_func_35",
+            "address": 4274005,
             "size": 5
         },
         {
@@ -9660,6 +10690,11 @@
             "size": 5
         },
         {
+            "name": "cGZApp_vtbl_func_4",
+            "address": 4274515,
+            "size": 5
+        },
+        {
             "name": "j_vector_00639024",
             "address": 4274520,
             "size": 5
@@ -9680,8 +10715,18 @@
             "size": 5
         },
         {
+            "name": "j_?throwlength@?$basic_string_ref@D@@CAXXZ",
+            "address": 4274605,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007d9787",
             "address": 4274660,
+            "size": 5
+        },
+        {
+            "name": "iResFile_vtbl_func_30",
+            "address": 4274675,
             "size": 5
         },
         {
@@ -9697,6 +10742,11 @@
         {
             "name": "j_Neighborhood_0046e35e",
             "address": 4274720,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_20",
+            "address": 4274755,
             "size": 5
         },
         {
@@ -9727,6 +10777,11 @@
         {
             "name": "j_houseviewer_00592834",
             "address": 4275200,
+            "size": 5
+        },
+        {
+            "name": "cXObject_vtbl_func_19",
+            "address": 4275210,
             "size": 5
         },
         {
@@ -9850,7 +10905,7 @@
             "size": 5
         },
         {
-            "name": "j_EditPerson__HasBegun",
+            "name": "j_EditPerson::HasBegun",
             "address": 4275940,
             "size": 5
         },
@@ -9940,6 +10995,11 @@
             "size": 5
         },
         {
+            "name": "j_??1?$basic_string_ref@D@@AAE@XZ",
+            "address": 4276600,
+            "size": 5
+        },
+        {
             "name": "j_WinNeighborhood_00765e89",
             "address": 4276645,
             "size": 5
@@ -9965,6 +11025,16 @@
             "size": 5
         },
         {
+            "name": "j_?begin@?$vector@V?$basic_string@D@@@@QBEPBV?$basic_string@D@@XZ",
+            "address": 4276800,
+            "size": 5
+        },
+        {
+            "name": "j_?copy_backward@@YAPAV?$basic_string@D@@PAV1@00@Z",
+            "address": 4276875,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007e40b7",
             "address": 4276880,
             "size": 5
@@ -9985,6 +11055,11 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_13",
+            "address": 4276950,
+            "size": 5
+        },
+        {
             "name": "j_Boxx_0077b902",
             "address": 4277020,
             "size": 5
@@ -9995,6 +11070,16 @@
             "size": 5
         },
         {
+            "name": "j_??0?$basic_string@D@@QAE@ABV0@II@Z",
+            "address": 4277120,
+            "size": 5
+        },
+        {
+            "name": "j_?max@@YAABIABI0@Z",
+            "address": 4277150,
+            "size": 5
+        },
+        {
             "name": "j_person_004ce493",
             "address": 4277170,
             "size": 5
@@ -10002,6 +11087,11 @@
         {
             "name": "j_SimGlobalsDialog_007325b4",
             "address": 4277180,
+            "size": 5
+        },
+        {
+            "name": "j_?reserve@?$basic_string@D@@QBEIXZ",
+            "address": 4277200,
             "size": 5
         },
         {
@@ -10035,6 +11125,11 @@
             "size": 5
         },
         {
+            "name": "j_??0?$vector@V?$basic_string@D@@@@QAE@XZ",
+            "address": 4277405,
+            "size": 5
+        },
+        {
             "name": "j_WinNeighborhood_0076a495",
             "address": 4277410,
             "size": 5
@@ -10042,6 +11137,11 @@
         {
             "name": "j_ObjectModule_004a04cc",
             "address": 4277420,
+            "size": 5
+        },
+        {
+            "name": "FlatFile_vtbl_func_0",
+            "address": 4277490,
             "size": 5
         },
         {
@@ -10115,6 +11215,11 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_5",
+            "address": 4278270,
+            "size": 5
+        },
+        {
             "name": "j_worldimp_00483603",
             "address": 4278280,
             "size": 5
@@ -10137,6 +11242,11 @@
         {
             "name": "j_SimProfileDialog_00734195",
             "address": 4278375,
+            "size": 5
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_79",
+            "address": 4278395,
             "size": 5
         },
         {
@@ -10210,6 +11320,16 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_20",
+            "address": 4279005,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_14",
+            "address": 4279060,
+            "size": 5
+        },
+        {
             "name": "j_WinLivePopup_00673769",
             "address": 4279105,
             "size": 5
@@ -10222,6 +11342,21 @@
         {
             "name": "j_vector_00558f74",
             "address": 4279145,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_32",
+            "address": 4279230,
+            "size": 5
+        },
+        {
+            "name": "cSimsApp_vtbl_func_8",
+            "address": 4279255,
+            "size": 5
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_70",
+            "address": 4279305,
             "size": 5
         },
         {
@@ -10275,6 +11410,11 @@
             "size": 5
         },
         {
+            "name": "j_PalWrap::LoadPal",
+            "address": 4279700,
+            "size": 5
+        },
+        {
             "name": "j_Spr2Decoder_005ceeaa",
             "address": 4279710,
             "size": 5
@@ -10290,6 +11430,11 @@
             "size": 5
         },
         {
+            "name": "CTGString_vtbl_func_0",
+            "address": 4279765,
+            "size": 5
+        },
+        {
             "name": "j_skeleton_007d5c08",
             "address": 4279770,
             "size": 5
@@ -10297,6 +11442,11 @@
         {
             "name": "j_SAnimator_007c871f",
             "address": 4279815,
+            "size": 5
+        },
+        {
+            "name": "j_?size@?$vector@V?$basic_string@D@@@@QBEIXZ",
+            "address": 4279870,
             "size": 5
         },
         {
@@ -10430,6 +11580,11 @@
             "size": 5
         },
         {
+            "name": "IFFResFile_vtbl_func_14",
+            "address": 4280925,
+            "size": 5
+        },
+        {
             "name": "j_SAnimator_007cc78a",
             "address": 4280955,
             "size": 5
@@ -10442,6 +11597,11 @@
         {
             "name": "j_bstring_00428949",
             "address": 4280985,
+            "size": 5
+        },
+        {
+            "name": "cWinCPanel_vtbl_func_58",
+            "address": 4281005,
             "size": 5
         },
         {
@@ -10525,6 +11685,11 @@
             "size": 5
         },
         {
+            "name": "j_?push_back@?$vector@V?$basic_string@D@@@@QAEXABV?$basic_string@D@@@Z",
+            "address": 4281930,
+            "size": 5
+        },
+        {
             "name": "j_vector_0068cf3e",
             "address": 4281945,
             "size": 5
@@ -10565,6 +11730,11 @@
             "size": 5
         },
         {
+            "name": "cGZWinDlg_vtbl_func_2",
+            "address": 4282215,
+            "size": 5
+        },
+        {
             "name": "j_PersonFinder_00636c04",
             "address": 4282225,
             "size": 5
@@ -10590,8 +11760,18 @@
             "size": 5
         },
         {
+            "name": "j_?destroy@@YAXPAV?$basic_string@D@@0@Z",
+            "address": 4282340,
+            "size": 5
+        },
+        {
             "name": "j_WinMotive_0067a4ba",
             "address": 4282460,
+            "size": 5
+        },
+        {
+            "name": "cWinTextWrap_vtbl_func_5",
+            "address": 4282485,
             "size": 5
         },
         {
@@ -10607,6 +11787,11 @@
         {
             "name": "j_world_00525112",
             "address": 4282605,
+            "size": 5
+        },
+        {
+            "name": "ChainResFile_vtbl_func_19",
+            "address": 4282610,
             "size": 5
         },
         {
@@ -10672,6 +11857,11 @@
         {
             "name": "j_FindObjDialogs_00702d5c",
             "address": 4283150,
+            "size": 5
+        },
+        {
+            "name": "IFFResFile_vtbl_func_4",
+            "address": 4283170,
             "size": 5
         },
         {
@@ -10905,6 +12095,21 @@
             "size": 54
         },
         {
+            "name": "?begin@?$vector@V?$basic_string@D@@@@QAEPAV?$basic_string@D@@XZ",
+            "address": 4351152,
+            "size": 24
+        },
+        {
+            "name": "?begin@?$vector@D@@QBEPBDXZ",
+            "address": 4351184,
+            "size": 24
+        },
+        {
+            "name": "?end@?$vector@V?$basic_string@D@@@@QAEPAV?$basic_string@D@@XZ",
+            "address": 4351216,
+            "size": 25
+        },
+        {
             "name": "ptrlist_00426ceb",
             "address": 4353216,
             "size": 79
@@ -10960,9 +12165,19 @@
             "size": 155
         },
         {
-            "name": "bstring_004287a1",
+            "name": "??2@YAPAXIPAX@Z",
+            "address": 4359824,
+            "size": 19
+        },
+        {
+            "name": "?append@?$basic_string@D@@QAEAAV1@DI@Z",
             "address": 4359984,
             "size": 354
+        },
+        {
+            "name": "?assign@?$string_char_baggage@D@@SAXAADABD@Z",
+            "address": 4360432,
+            "size": 26
         },
         {
             "name": "?c_str@?$basic_string@D@@QBEPBDXZ",
@@ -10990,7 +12205,12 @@
             "size": 82
         },
         {
-            "name": "bstring_00428dac",
+            "name": "?eos@?$basic_string@D@@CADXZ",
+            "address": 4361376,
+            "size": 21
+        },
+        {
+            "name": "??0?$basic_string_ref@D@@AAE@PBDII@Z",
             "address": 4361600,
             "size": 136
         },
@@ -10998,6 +12218,11 @@
             "name": "??0?$basic_string_ref@D@@AAE@XZ_0",
             "address": 4361776,
             "size": 61
+        },
+        {
+            "name": "?end@?$vector@V?$basic_string@D@@@@QBEPBV?$basic_string@D@@XZ",
+            "address": 4363568,
+            "size": 25
         },
         {
             "name": "behavior_004296c5",
@@ -11038,6 +12263,11 @@
             "name": "behavior_0042bcda",
             "address": 4373344,
             "size": 592
+        },
+        {
+            "name": "??0?$vector@V?$basic_string@D@@@@QAE@XZ",
+            "address": 4374720,
+            "size": 51
         },
         {
             "name": "??A?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@QAEAA_WI@Z",
@@ -11085,9 +12315,19 @@
             "size": 49
         },
         {
+            "name": "?length@?$string_char_baggage@D@@SAIPBD@Z",
+            "address": 4392384,
+            "size": 28
+        },
+        {
             "name": "vector_00430763",
             "address": 4392432,
             "size": 628
+        },
+        {
+            "name": "?max@@YAABIABI0@Z",
+            "address": 4393232,
+            "size": 51
         },
         {
             "name": "vector_004309f1",
@@ -11095,12 +12335,12 @@
             "size": 368
         },
         {
-            "name": "bstring_00431225",
+            "name": "?assign_str@?$basic_string@D@@AAEXPBDI@Z",
             "address": 4395472,
             "size": 259
         },
         {
-            "name": "bstring_00431357",
+            "name": "??0?$basic_string_ref@D@@AAE@PBDI@Z",
             "address": 4395808,
             "size": 138
         },
@@ -11110,17 +12350,17 @@
             "size": 231
         },
         {
-            "name": "bstring_00431a0c",
+            "name": "??0?$basic_string_ref@D@@AAE@ABV?$basic_string@D@@II@Z",
             "address": 4397536,
             "size": 135
         },
         {
-            "name": "bstring_00431ee1",
+            "name": "??0?$basic_string@D@@QAE@ABV0@II@Z",
             "address": 4398656,
             "size": 292
         },
         {
-            "name": "bstring_00432515",
+            "name": "?remove@?$basic_string@D@@QAEAAV1@II@Z",
             "address": 4400288,
             "size": 434
         },
@@ -11128,6 +12368,11 @@
             "name": "ChainResFile_0043293e",
             "address": 4401296,
             "size": 212
+        },
+        {
+            "name": "ChainResFile::ValidFile",
+            "address": 4403104,
+            "size": 117
         },
         {
             "name": "ChainResFile_00434736",
@@ -11160,7 +12405,7 @@
             "size": 94
         },
         {
-            "name": "ObjectManager__GetObjectFromID",
+            "name": "ObjectManager::GetObjectFromID",
             "address": 4416128,
             "size": 67
         },
@@ -11190,7 +12435,7 @@
             "size": 587
         },
         {
-            "name": "DrawGroup__IsReading",
+            "name": "DrawGroup::IsReading",
             "address": 4426976,
             "size": 33
         },
@@ -11270,12 +12515,12 @@
             "size": 445
         },
         {
-            "name": "ObjectSelector__GetDefinition",
+            "name": "ObjectSelector::GetDefinition",
             "address": 4440192,
             "size": 25
         },
         {
-            "name": "EditPerson__HasBegun",
+            "name": "EditPerson::HasBegun",
             "address": 4440624,
             "size": 32
         },
@@ -11320,7 +12565,7 @@
             "size": 403
         },
         {
-            "name": "Family__LoadScrapbook",
+            "name": "Family::LoadScrapbook",
             "address": 4464464,
             "size": 360
         },
@@ -11355,7 +12600,12 @@
             "size": 64
         },
         {
-            "name": "bstring_00448276",
+            "name": "GetCTGFileManager",
+            "address": 4483760,
+            "size": 21
+        },
+        {
+            "name": "??0?$basic_string@D@@QAE@PBD@Z",
             "address": 4489808,
             "size": 161
         },
@@ -11365,12 +12615,12 @@
             "size": 486
         },
         {
-            "name": "bstring_00448b96",
+            "name": "??0?$basic_string@D@@IAE@PBDII@Z",
             "address": 4492128,
             "size": 188
         },
         {
-            "name": "bstring_00448c88",
+            "name": "??0?$basic_string_ref@D@@AAE@PBD@Z",
             "address": 4492368,
             "size": 139
         },
@@ -11400,7 +12650,7 @@
             "size": 628
         },
         {
-            "name": "Globs_0044ba50",
+            "name": "Globs::Init",
             "address": 4501296,
             "size": 3843
         },
@@ -11415,7 +12665,22 @@
             "size": 201
         },
         {
-            "name": "bstring_0044dac7",
+            "name": "PalWrap::GetPalette",
+            "address": 4509472,
+            "size": 25
+        },
+        {
+            "name": "GetGamePath",
+            "address": 4511216,
+            "size": 353
+        },
+        {
+            "name": "?eos@?$basic_string_ref@D@@CADXZ",
+            "address": 4511936,
+            "size": 21
+        },
+        {
+            "name": "?append_str@?$basic_string@D@@AAEXPBDI@Z",
             "address": 4512352,
             "size": 318
         },
@@ -11453,6 +12718,11 @@
             "name": "IFFResFile_00452d1e",
             "address": 4533360,
             "size": 225
+        },
+        {
+            "name": "IFFResFile::IFFResFile",
+            "address": 4533920,
+            "size": 162
         },
         {
             "name": "IFFResFile_004530bb",
@@ -11770,7 +13040,7 @@
             "size": 391
         },
         {
-            "name": "MotiveEffects__GetPersonalityAd",
+            "name": "MotiveEffects::GetPersonalityAd",
             "address": 4613392,
             "size": 25
         },
@@ -11785,7 +13055,7 @@
             "size": 188
         },
         {
-            "name": "MouseObject__GetContainedObject",
+            "name": "MouseObject::GetContainedObject",
             "address": 4616288,
             "size": 73
         },
@@ -11835,7 +13105,7 @@
             "size": 526
         },
         {
-            "name": "MTObject__IsDynamic",
+            "name": "MTObject::IsDynamic",
             "address": 4632128,
             "size": 38
         },
@@ -11875,7 +13145,7 @@
             "size": 151
         },
         {
-            "name": "Neighborhood__GetID",
+            "name": "Neighborhood::GetID",
             "address": 4645808,
             "size": 25
         },
@@ -12130,7 +13400,7 @@
             "size": 255
         },
         {
-            "name": "MouseObject__GetContainer",
+            "name": "MouseObject::GetContainer",
             "address": 4712544,
             "size": 34
         },
@@ -12235,7 +13505,7 @@
             "size": 106
         },
         {
-            "name": "WorldImp__OutOfBounds",
+            "name": "WorldImp::OutOfBounds",
             "address": 4732656,
             "size": 111
         },
@@ -12305,9 +13575,29 @@
             "size": 279
         },
         {
+            "name": "cRZString::cRZString",
+            "address": 4751424,
+            "size": 52
+        },
+        {
             "name": "ObjectDialog_00488282",
             "address": 4751936,
             "size": 1097
+        },
+        {
+            "name": "cRZString::cRZString_0",
+            "address": 4753936,
+            "size": 58
+        },
+        {
+            "name": "cGZWin::GetW",
+            "address": 4755040,
+            "size": 33
+        },
+        {
+            "name": "cGZWin::GetH",
+            "address": 4755088,
+            "size": 33
         },
         {
             "name": "ObjectDialog_0048959c",
@@ -12318,6 +13608,11 @@
             "name": "ObjectDialog_0048976d",
             "address": 4757280,
             "size": 113
+        },
+        {
+            "name": "??Y?$basic_string@D@@QAEAAV0@PBD@Z",
+            "address": 4757504,
+            "size": 49
         },
         {
             "name": "palwrap_00489f14",
@@ -12375,9 +13670,19 @@
             "size": 439
         },
         {
+            "name": "?destroy@@YAXPAV?$basic_string@D@@0@Z",
+            "address": 4776048,
+            "size": 47
+        },
+        {
             "name": "ctilept_0048e250",
             "address": 4776448,
             "size": 121
+        },
+        {
+            "name": "ObjectFolder::ObjectFolder",
+            "address": 4787088,
+            "size": 334
         },
         {
             "name": "ObjectFolder_00491194",
@@ -12400,7 +13705,7 @@
             "size": 312
         },
         {
-            "name": "ObjectFolder_00491b91",
+            "name": "ObjectFolder::Init",
             "address": 4789936,
             "size": 1560
         },
@@ -12765,7 +14070,7 @@
             "size": 51
         },
         {
-            "name": "bstring_004bc18f",
+            "name": "?replace_str@?$basic_string@D@@AAEXIIPBDI@Z",
             "address": 4964624,
             "size": 556
         },
@@ -12773,6 +14078,11 @@
             "name": "?find_str@?$basic_string@D@@ABEIPBDII@Z",
             "address": 4965328,
             "size": 245
+        },
+        {
+            "name": "?ne@?$string_char_baggage@D@@SA_NABD0@Z",
+            "address": 4965648,
+            "size": 37
         },
         {
             "name": "?find@?$basic_string@D@@QBEIDI@Z",
@@ -13405,7 +14715,7 @@
             "size": 131
         },
         {
-            "name": "ResFile__GetError",
+            "name": "ResFile::GetError",
             "address": 5155600,
             "size": 25
         },
@@ -13965,7 +15275,7 @@
             "size": 117
         },
         {
-            "name": "StringSet__StringSet",
+            "name": "StringSet::StringSet",
             "address": 5283856,
             "size": 154
         },
@@ -14040,7 +15350,7 @@
             "size": 909
         },
         {
-            "name": "bstring_0050f849",
+            "name": "??A?$basic_string@D@@QAEAADI@Z",
             "address": 5306368,
             "size": 232
         },
@@ -14160,6 +15470,11 @@
             "size": 333
         },
         {
+            "name": "TreeSim::TreeSim",
+            "address": 5342112,
+            "size": 88
+        },
+        {
             "name": "treesim_0051855b",
             "address": 5342496,
             "size": 143
@@ -14185,7 +15500,7 @@
             "size": 112
         },
         {
-            "name": "cTreeSim__GetCurElem",
+            "name": "cTreeSim::GetCurElem",
             "address": 5346768,
             "size": 45
         },
@@ -14200,12 +15515,12 @@
             "size": 831
         },
         {
-            "name": "cTreeSim__GetMemUsed",
+            "name": "GetMemUsed",
             "address": 5348784,
             "size": 76
         },
         {
-            "name": "cTreeSim__GetMemReserved",
+            "name": "GetMemReserved",
             "address": 5348880,
             "size": 30
         },
@@ -14215,7 +15530,7 @@
             "size": 179
         },
         {
-            "name": "cTSTreeStackElem__GetTreeID",
+            "name": "cTSTreeStackElem::GetTreeID",
             "address": 5349568,
             "size": 45
         },
@@ -14230,7 +15545,7 @@
             "size": 368
         },
         {
-            "name": "TreeTable__TreeTable",
+            "name": "TreeTable::TreeTable",
             "address": 5352288,
             "size": 206
         },
@@ -14290,7 +15605,7 @@
             "size": 85
         },
         {
-            "name": "WaterLayer__HasWater",
+            "name": "WaterLayer::HasWater",
             "address": 5375280,
             "size": 37
         },
@@ -14770,7 +16085,7 @@
             "size": 170
         },
         {
-            "name": "ObjectUndoable__SetAction",
+            "name": "ObjectUndoable::SetAction",
             "address": 5581264,
             "size": 143
         },
@@ -14920,7 +16235,7 @@
             "size": 163
         },
         {
-            "name": "cGameTools__GetUndoManager",
+            "name": "cGameTools::GetUndoManager",
             "address": 5633744,
             "size": 25
         },
@@ -14940,7 +16255,7 @@
             "size": 165
         },
         {
-            "name": "bstring_00561657",
+            "name": "??0?$basic_string_ref@D@@AAE@DI@Z",
             "address": 5641760,
             "size": 165
         },
@@ -15045,7 +16360,7 @@
             "size": 370
         },
         {
-            "name": "cUndoManager__CanUndo",
+            "name": "cUndoManager::CanUndo",
             "address": 5660784,
             "size": 36
         },
@@ -15250,7 +16565,7 @@
             "size": 944
         },
         {
-            "name": "GZBuffer__GetBufferArea",
+            "name": "GZBuffer::GetBufferArea",
             "address": 5722000,
             "size": 25
         },
@@ -15468,6 +16783,11 @@
             "name": "FloorGraphicsMgr_00584864",
             "address": 5784848,
             "size": 1202
+        },
+        {
+            "name": "?push_back@?$vector@V?$basic_string@D@@@@QAEXABV?$basic_string@D@@@Z",
+            "address": 5787824,
+            "size": 92
         },
         {
             "name": "vector_00585aa8",
@@ -16188,6 +17508,11 @@
             "name": "palwrap_005c1814",
             "address": 6035408,
             "size": 534
+        },
+        {
+            "name": "PalWrap::LoadPal",
+            "address": 6036080,
+            "size": 67
         },
         {
             "name": "palwrap_005c1d05",
@@ -16915,7 +18240,7 @@
             "size": 142
         },
         {
-            "name": "CPState__SetLevel",
+            "name": "CPState::SetLevel",
             "address": 6255840,
             "size": 170
         },
@@ -16930,7 +18255,7 @@
             "size": 91
         },
         {
-            "name": "CPState__ArchCanUndo",
+            "name": "CPState::ArchCanUndo",
             "address": 6257568,
             "size": 48
         },
@@ -16983,6 +18308,11 @@
             "name": "DDDSimsView_005fbd25",
             "address": 6274272,
             "size": 896
+        },
+        {
+            "name": "cGZWin::ResizeByRect",
+            "address": 6275392,
+            "size": 59
         },
         {
             "name": "SIMEnd",
@@ -17078,6 +18408,11 @@
             "name": "vector_0060a6d8",
             "address": 6333952,
             "size": 433
+        },
+        {
+            "name": "?copy_backward@@YAPAV?$basic_string@D@@PAV1@00@Z",
+            "address": 6334896,
+            "size": 59
         },
         {
             "name": "exporthtml_0060bcb3",
@@ -17375,12 +18710,12 @@
             "size": 563
         },
         {
-            "name": "PersonFinder__Init",
+            "name": "PersonFinder::Init",
             "address": 6502624,
             "size": 89
         },
         {
-            "name": "PersonFinder__Shutdown",
+            "name": "PersonFinder::Shutdown",
             "address": 6503424,
             "size": 148
         },
@@ -17510,7 +18845,7 @@
             "size": 614
         },
         {
-            "name": "bstring_00638bbf",
+            "name": "??Y?$basic_string@D@@QAEAAV0@D@Z",
             "address": 6523744,
             "size": 303
         },
@@ -17590,7 +18925,7 @@
             "size": 188
         },
         {
-            "name": "bstring_0063ca79",
+            "name": "?insert@?$basic_string@D@@QAEAAV1@IDI@Z",
             "address": 6539760,
             "size": 551
         },
@@ -17605,7 +18940,7 @@
             "size": 113
         },
         {
-            "name": "SimsApp_0063f99d",
+            "name": "cSimsApp::Init",
             "address": 6551216,
             "size": 2197
         },
@@ -17660,6 +18995,11 @@
             "size": 204
         },
         {
+            "name": "cSimsApp::ShowSimpleMessageBox",
+            "address": 6601216,
+            "size": 169
+        },
+        {
             "name": "SimsApp_0064be55",
             "address": 6602048,
             "size": 360
@@ -17668,6 +19008,11 @@
             "name": "SimsApp_0064c711",
             "address": 6604112,
             "size": 511
+        },
+        {
+            "name": "SetupCheatCode_64DDD0",
+            "address": 6610384,
+            "size": 68
         },
         {
             "name": "SimsApp_00650c7e",
@@ -17680,7 +19025,17 @@
             "size": 134
         },
         {
-            "name": "SimsApp_00653864",
+            "name": "MungeFPCW",
+            "address": 6629744,
+            "size": 129
+        },
+        {
+            "name": "cSimsApp::OpenMemView",
+            "address": 6631056,
+            "size": 335
+        },
+        {
+            "name": "cSimsApp::StartLoadMusic",
             "address": 6633184,
             "size": 543
         },
@@ -17700,9 +19055,19 @@
             "size": 196
         },
         {
+            "name": "AddCheat_655B20",
+            "address": 6642464,
+            "size": 92
+        },
+        {
             "name": "?append@?$basic_string@D@@QAEAAV1@ABV1@II@Z",
             "address": 6642800,
             "size": 104
+        },
+        {
+            "name": "?assign@?$basic_string@D@@QAEAAV1@PBD@Z",
+            "address": 6642944,
+            "size": 49
         },
         {
             "name": "vector_00655e0b",
@@ -17880,6 +19245,11 @@
             "size": 456
         },
         {
+            "name": "?construct@@YAXPAV?$basic_string@D@@ABV1@@Z",
+            "address": 6744544,
+            "size": 114
+        },
+        {
             "name": "WinDeltaMeter_0066f2f8",
             "address": 6746800,
             "size": 755
@@ -18035,6 +19405,11 @@
             "size": 5150
         },
         {
+            "name": "cGZWin::GetName",
+            "address": 6803280,
+            "size": 25
+        },
+        {
             "name": "WinOptions_0067d0b0",
             "address": 6803424,
             "size": 2330
@@ -18143,6 +19518,11 @@
             "name": "WinPersonality_0068fef5",
             "address": 6880832,
             "size": 311
+        },
+        {
+            "name": "cGZWinDlg::cGZWinDlg",
+            "address": 6882048,
+            "size": 111
         },
         {
             "name": "WinPictureDialog_00690c7b",
@@ -18573,6 +19953,11 @@
             "name": "vector_006cde96",
             "address": 7134832,
             "size": 160
+        },
+        {
+            "name": "?size@?$vector@D@@QBEIXZ",
+            "address": 7135456,
+            "size": 41
         },
         {
             "name": "vector_006ce2fd",
@@ -19365,7 +20750,7 @@
             "size": 332
         },
         {
-            "name": "cSimulator__GetProbe",
+            "name": "cSimulator::GetProbe",
             "address": 7548640,
             "size": 25
         },
@@ -19795,7 +21180,7 @@
             "size": 931
         },
         {
-            "name": "bstring_007602e6",
+            "name": "??0?$basic_string@D@@QAE@PBDI@Z",
             "address": 7733952,
             "size": 165
         },
@@ -20103,6 +21488,11 @@
             "name": "Boxx_00783bec",
             "address": 7879616,
             "size": 101
+        },
+        {
+            "name": "cRZString::CStr",
+            "address": 7879744,
+            "size": 30
         },
         {
             "name": "Boxx_00783dd3",
@@ -20445,7 +21835,7 @@
             "size": 1952
         },
         {
-            "name": "cHitIniFile__IniFileCallbackTrack",
+            "name": "cHitIniFile::IniFileCallbackTrack",
             "address": 7994912,
             "size": 1568
         },
@@ -21270,7 +22660,7 @@
             "size": 1189
         },
         {
-            "name": "SAnimator_007cf5d0",
+            "name": "SAnimator::ReloadPeople",
             "address": 8188800,
             "size": 759
         },
@@ -21720,6 +23110,11 @@
             "size": 255
         },
         {
+            "name": "?delete_ref@?$basic_string@D@@IAEXXZ",
+            "address": 8287872,
+            "size": 80
+        },
+        {
             "name": "skeleton_007e78eb",
             "address": 8288064,
             "size": 706
@@ -22110,6 +23505,11 @@
             "size": 457
         },
         {
+            "name": "?size@?$vector@V?$basic_string@D@@@@QBEIXZ",
+            "address": 8397728,
+            "size": 44
+        },
+        {
             "name": "vector_00804991",
             "address": 8407280,
             "size": 368
@@ -22135,7 +23535,7 @@
             "size": 97
         },
         {
-            "name": "?append@?$basic_string@D@@QAEAAV1@PBDI@Z",
+            "name": "?assign@?$basic_string@D@@QAEAAV1@PBDI@Z",
             "address": 8429936,
             "size": 40
         },
@@ -27175,7 +28575,7 @@
             "size": 453
         },
         {
-            "name": "bstring_00862e8c",
+            "name": "??4?$basic_string@D@@QAEAAV0@D@Z",
             "address": 8793632,
             "size": 224
         },
@@ -27270,12 +28670,17 @@
             "size": 351
         },
         {
-            "name": "CTGFile_00866a57",
+            "name": "CTGFile::Flush",
             "address": 8809008,
             "size": 96
         },
         {
-            "name": "CTGFile_00866dbc",
+            "name": "CTGFile::Seek",
+            "address": 8809200,
+            "size": 69
+        },
+        {
+            "name": "CTGFile::ReadBytes",
             "address": 8809280,
             "size": 708
         },
@@ -27283,6 +28688,11 @@
             "name": "CTGFile_00866e52",
             "address": 8810000,
             "size": 108
+        },
+        {
+            "name": "CTGFile::ReadInt",
+            "address": 8810208,
+            "size": 35
         },
         {
             "name": "CTGFile_008670b0",
@@ -27300,17 +28710,17 @@
             "size": 184
         },
         {
-            "name": "CTGFile_008679a4",
+            "name": "CTGFileManager::Extract",
             "address": 8812192,
             "size": 931
         },
         {
-            "name": "CTGFileManagerDumpMapping",
+            "name": "CTGFileManager::DumpMap",
             "address": 8813136,
             "size": 364
         },
         {
-            "name": "CTGFile_00868faa",
+            "name": "CTGFileManager::OpenFAR",
             "address": 8816816,
             "size": 2832
         },
@@ -27328,6 +28738,21 @@
             "name": "CTGFile_0086a11d",
             "address": 8822960,
             "size": 385
+        },
+        {
+            "name": "CTGString_vtbl_func_1",
+            "address": 8838544,
+            "size": 133
+        },
+        {
+            "name": "CTGString_vtbl_func_2",
+            "address": 8838688,
+            "size": 136
+        },
+        {
+            "name": "CTGString_vtbl_func_3",
+            "address": 8838832,
+            "size": 41
         },
         {
             "name": "CTGString_0086e472",
@@ -27360,9 +28785,114 @@
             "size": 414
         },
         {
+            "name": "cGZFrameWork::cGZFrameWork",
+            "address": 8848816,
+            "size": 313
+        },
+        {
+            "name": "cRZUnknown_vtbl_func_0",
+            "address": 8849136,
+            "size": 30
+        },
+        {
+            "name": "cRZUnknown_vtbl_func_1",
+            "address": 8849168,
+            "size": 30
+        },
+        {
+            "name": "cRZRefCount_vtbl_func_1",
+            "address": 8849200,
+            "size": 84
+        },
+        {
+            "name": "cRZUnknown::cRZUnknown",
+            "address": 8849296,
+            "size": 60
+        },
+        {
+            "name": "cRZRefCount_vtbl_func_0",
+            "address": 8849408,
+            "size": 54
+        },
+        {
+            "name": "cGZApp_vtbl_func_3",
+            "address": 8850272,
+            "size": 23
+        },
+        {
+            "name": "cGZSystemService_vtbl_func_0",
+            "address": 8850304,
+            "size": 60
+        },
+        {
+            "name": "cGZMessageQueueManager_vtbl_func_0",
+            "address": 8850544,
+            "size": 40
+        },
+        {
+            "name": "cGZMessageQueueManager_vtbl_func_1",
+            "address": 8850592,
+            "size": 102
+        },
+        {
+            "name": "cGZFrameWork_vtbl_func_1",
+            "address": 8850848,
+            "size": 55
+        },
+        {
+            "name": "cGZFrameWork_vtbl_func_2",
+            "address": 8850912,
+            "size": 50
+        },
+        {
+            "name": "cGZFrameWork_vtbl_func_3",
+            "address": 8850976,
+            "size": 27
+        },
+        {
+            "name": "cGZFrameWork_vtbl_func_14",
+            "address": 8851008,
+            "size": 25
+        },
+        {
+            "name": "cGZFrameWork_vtbl_func_10",
+            "address": 8851040,
+            "size": 36
+        },
+        {
+            "name": "cGZMessageServer_vtbl_func_5",
+            "address": 8851648,
+            "size": 21
+        },
+        {
+            "name": "cGZMessageServer_vtbl_func_6",
+            "address": 8851680,
+            "size": 21
+        },
+        {
+            "name": "cGZMessageServer_vtbl_func_4",
+            "address": 8851712,
+            "size": 54
+        },
+        {
             "name": "cGZFrameWorkInit",
             "address": 8851856,
             "size": 438
+        },
+        {
+            "name": "cGZFrameWork_vtbl_func_15",
+            "address": 8852304,
+            "size": 208
+        },
+        {
+            "name": "cGZFrameWork_vtbl_func_0",
+            "address": 8852512,
+            "size": 52
+        },
+        {
+            "name": "cGZFrameWork::GetCommandLine",
+            "address": 8852576,
+            "size": 27
         },
         {
             "name": "gzframe_008714c6",
@@ -27370,7 +28900,12 @@
             "size": 263
         },
         {
-            "name": "?gzframe_00871830@@YAXPAVcRZCmdLine@@@Z",
+            "name": "cGZFrameWork_vtbl_func_5",
+            "address": 8853520,
+            "size": 28
+        },
+        {
+            "name": "cGZFramework::CreateAndRun",
             "address": 8853552,
             "size": 612
         },
@@ -27380,7 +28915,7 @@
             "size": 221
         },
         {
-            "name": "Gonzo__Main",
+            "name": "Gonzo::Main",
             "address": 8854656,
             "size": 68
         },
@@ -27388,6 +28923,16 @@
             "name": "vector_008721a4",
             "address": 8855888,
             "size": 406
+        },
+        {
+            "name": "cGZFrameWorkW95_vtbl_func_1",
+            "address": 8856784,
+            "size": 8
+        },
+        {
+            "name": "cRZUnknown_vtbl_func_2",
+            "address": 8856800,
+            "size": 8
         },
         {
             "name": "RsrcSite_00872894",
@@ -27560,9 +29105,24 @@
             "size": 53
         },
         {
+            "name": "cGZWin::cGZWin",
+            "address": 8951856,
+            "size": 501
+        },
+        {
+            "name": "cGZWin_vtbl_func_5",
+            "address": 8952368,
+            "size": 54
+        },
+        {
             "name": "GZWin_00889b1c",
             "address": 8952464,
             "size": 265
+        },
+        {
+            "name": "cWinMemView_vtbl_func_1",
+            "address": 8952736,
+            "size": 40
         },
         {
             "name": "GZWin_00889c06",
@@ -27570,9 +29130,39 @@
             "size": 180
         },
         {
+            "name": "cGZWin_vtbl_func_3",
+            "address": 8952976,
+            "size": 51
+        },
+        {
+            "name": "cGZWin_vtbl_func_4",
+            "address": 8953040,
+            "size": 128
+        },
+        {
+            "name": "cWinMemView_vtbl_func_36",
+            "address": 8953168,
+            "size": 341
+        },
+        {
+            "name": "cWinMemView_vtbl_func_34",
+            "address": 8953520,
+            "size": 226
+        },
+        {
             "name": "GZWin_0088a005",
             "address": 8953760,
             "size": 287
+        },
+        {
+            "name": "cWinMemView_vtbl_func_25",
+            "address": 8954048,
+            "size": 143
+        },
+        {
+            "name": "cWinMemView_vtbl_func_7",
+            "address": 8954192,
+            "size": 64
         },
         {
             "name": "GZWin_0088a1f5",
@@ -27590,6 +29180,11 @@
             "size": 152
         },
         {
+            "name": "cWinMemView_vtbl_func_12",
+            "address": 8954768,
+            "size": 124
+        },
+        {
             "name": "GZWin_0088a479",
             "address": 8954896,
             "size": 689
@@ -27598,6 +29193,16 @@
             "name": "GZWin_0088a8ef",
             "address": 8955600,
             "size": 637
+        },
+        {
+            "name": "cWinMemView_vtbl_func_11",
+            "address": 8956272,
+            "size": 148
+        },
+        {
+            "name": "cWinMemView_vtbl_func_19",
+            "address": 8956608,
+            "size": 349
         },
         {
             "name": "GZWin_0088ad71",
@@ -27610,9 +29215,54 @@
             "size": 189
         },
         {
+            "name": "cWinMemView_vtbl_func_14",
+            "address": 8957856,
+            "size": 163
+        },
+        {
+            "name": "cWinMemView_vtbl_func_13",
+            "address": 8958032,
+            "size": 143
+        },
+        {
+            "name": "cWinMemView_vtbl_func_15",
+            "address": 8958800,
+            "size": 71
+        },
+        {
+            "name": "cWinMemView_vtbl_func_16",
+            "address": 8958880,
+            "size": 180
+        },
+        {
+            "name": "cWinMemView_vtbl_func_27",
+            "address": 8959072,
+            "size": 377
+        },
+        {
+            "name": "cWinMemView_vtbl_func_0",
+            "address": 8959568,
+            "size": 1132
+        },
+        {
+            "name": "cWinMemView_vtbl_func_76",
+            "address": 8961136,
+            "size": 23
+        },
+        {
+            "name": "cWinMemView_vtbl_func_77",
+            "address": 8961168,
+            "size": 23
+        },
+        {
             "name": "GZWin_0088c42b",
             "address": 8961712,
             "size": 1566
+        },
+        {
+            "name": "cWinMemView_vtbl_func_95",
+            "address": 8963280,
+            "size": 23
         },
         {
             "name": "GZWin_0088c5f5",
@@ -27620,9 +29270,129 @@
             "size": 917
         },
         {
+            "name": "cWinMemView_vtbl_func_22",
+            "address": 8964240,
+            "size": 138
+        },
+        {
+            "name": "cWinMemView_vtbl_func_23",
+            "address": 8964384,
+            "size": 68
+        },
+        {
+            "name": "cWinMemView_vtbl_func_99",
+            "address": 8964464,
+            "size": 132
+        },
+        {
+            "name": "cWinMemView_vtbl_func_100",
+            "address": 8964608,
+            "size": 124
+        },
+        {
+            "name": "cWinMemView_vtbl_func_101",
+            "address": 8964736,
+            "size": 228
+        },
+        {
+            "name": "cWinMemView_vtbl_func_102",
+            "address": 8964976,
+            "size": 124
+        },
+        {
             "name": "GZWin_0088ccd8",
             "address": 8965168,
             "size": 292
+        },
+        {
+            "name": "cWinMemView_vtbl_func_93",
+            "address": 8965760,
+            "size": 609
+        },
+        {
+            "name": "cWinMemView_vtbl_func_54",
+            "address": 8966832,
+            "size": 58
+        },
+        {
+            "name": "cGZWin_vtbl_func_55",
+            "address": 8966896,
+            "size": 62
+        },
+        {
+            "name": "cWinMemView_vtbl_func_56",
+            "address": 8966960,
+            "size": 62
+        },
+        {
+            "name": "cGZWin_vtbl_func_57",
+            "address": 8967024,
+            "size": 107
+        },
+        {
+            "name": "cWinMemView_vtbl_func_58",
+            "address": 8967200,
+            "size": 82
+        },
+        {
+            "name": "cWinMemView_vtbl_func_59",
+            "address": 8967296,
+            "size": 47
+        },
+        {
+            "name": "cWinMemView_vtbl_func_60",
+            "address": 8967344,
+            "size": 47
+        },
+        {
+            "name": "cGZWin_vtbl_func_61",
+            "address": 8967392,
+            "size": 82
+        },
+        {
+            "name": "cWinMemView_vtbl_func_62",
+            "address": 8967488,
+            "size": 82
+        },
+        {
+            "name": "cGZWin_vtbl_func_63",
+            "address": 8967584,
+            "size": 107
+        },
+        {
+            "name": "cWinMemView_vtbl_func_64",
+            "address": 8967696,
+            "size": 82
+        },
+        {
+            "name": "cWinMemView_vtbl_func_65",
+            "address": 8967792,
+            "size": 82
+        },
+        {
+            "name": "cWinMemView_vtbl_func_66",
+            "address": 8967888,
+            "size": 68
+        },
+        {
+            "name": "cWinMemView_vtbl_func_68",
+            "address": 8967968,
+            "size": 66
+        },
+        {
+            "name": "cWinMemView_vtbl_func_67",
+            "address": 8968048,
+            "size": 68
+        },
+        {
+            "name": "cWinMemView_vtbl_func_69",
+            "address": 8968128,
+            "size": 66
+        },
+        {
+            "name": "cGZWin_vtbl_func_75",
+            "address": 8968208,
+            "size": 62
         },
         {
             "name": "GZWin_0088d91b",
@@ -27635,9 +29405,19 @@
             "size": 209
         },
         {
-            "name": "GZWin_0088dafc",
+            "name": "cGZWin::Resize",
             "address": 8968816,
             "size": 492
+        },
+        {
+            "name": "cWinMemView_vtbl_func_47",
+            "address": 8969312,
+            "size": 354
+        },
+        {
+            "name": "cWinMemView_vtbl_func_48",
+            "address": 8969680,
+            "size": 33
         },
         {
             "name": "GZWin_0088df2a",
@@ -27650,9 +29430,79 @@
             "size": 288
         },
         {
+            "name": "cWinMemView_vtbl_func_78",
+            "address": 8970912,
+            "size": 37
+        },
+        {
+            "name": "cWinMemView_vtbl_func_79",
+            "address": 8970960,
+            "size": 37
+        },
+        {
+            "name": "cWinMemView_vtbl_func_41",
+            "address": 8971008,
+            "size": 19
+        },
+        {
+            "name": "cWinMemView_vtbl_func_91",
+            "address": 8971136,
+            "size": 126
+        },
+        {
+            "name": "cWinMemView_vtbl_func_80",
+            "address": 8971264,
+            "size": 66
+        },
+        {
+            "name": "cWinMemView_vtbl_func_81",
+            "address": 8971344,
+            "size": 66
+        },
+        {
+            "name": "cWinMemView_vtbl_func_82",
+            "address": 8971424,
+            "size": 66
+        },
+        {
+            "name": "cWinMemView_vtbl_func_83",
+            "address": 8971504,
+            "size": 66
+        },
+        {
+            "name": "cWinMemView_vtbl_func_84",
+            "address": 8971584,
+            "size": 66
+        },
+        {
+            "name": "cWinMemView_vtbl_func_85",
+            "address": 8971664,
+            "size": 66
+        },
+        {
+            "name": "cWinMemView_vtbl_func_86",
+            "address": 8971744,
+            "size": 66
+        },
+        {
+            "name": "cWinMemView_vtbl_func_87",
+            "address": 8971824,
+            "size": 66
+        },
+        {
+            "name": "cWinMemView_vtbl_func_88",
+            "address": 8972144,
+            "size": 233
+        },
+        {
             "name": "GZWin_0088e8e3",
             "address": 8972384,
             "size": 198
+        },
+        {
+            "name": "cWinMemView_vtbl_func_92",
+            "address": 8972592,
+            "size": 212
         },
         {
             "name": "GZWin_0088eac7",
@@ -27665,6 +29515,41 @@
             "size": 1169
         },
         {
+            "name": "cGZWin_vtbl_func_71",
+            "address": 8974448,
+            "size": 145
+        },
+        {
+            "name": "cWinMemView_vtbl_func_72",
+            "address": 8974608,
+            "size": 103
+        },
+        {
+            "name": "cWinMemView_vtbl_func_73",
+            "address": 8974720,
+            "size": 89
+        },
+        {
+            "name": "cWinMemView_vtbl_func_74",
+            "address": 8974864,
+            "size": 90
+        },
+        {
+            "name": "cWinMemView_vtbl_func_90",
+            "address": 8974960,
+            "size": 26
+        },
+        {
+            "name": "cGZWin_vtbl_func_37",
+            "address": 8974992,
+            "size": 37
+        },
+        {
+            "name": "cGZWin_vtbl_func_38",
+            "address": 8975040,
+            "size": 107
+        },
+        {
             "name": "GZWin_0088f41b",
             "address": 8975152,
             "size": 291
@@ -27673,6 +29558,21 @@
             "name": "GZWin_0088f4ae",
             "address": 8975456,
             "size": 404
+        },
+        {
+            "name": "cGZWin_vtbl_func_70",
+            "address": 8975872,
+            "size": 19
+        },
+        {
+            "name": "cWinMemView_vtbl_func_45",
+            "address": 8975904,
+            "size": 21
+        },
+        {
+            "name": "cGZWinMgrW95_vtbl_func_0",
+            "address": 8978112,
+            "size": 54
         },
         {
             "name": "GZWinMgrW95_00890288",
@@ -27705,6 +29605,11 @@
             "size": 1724
         },
         {
+            "name": "cGZWinMgrW95::IsWindowValid",
+            "address": 8985408,
+            "size": 130
+        },
+        {
             "name": "GZWinMgrW95_00891d5c",
             "address": 8985616,
             "size": 397
@@ -27720,12 +29625,17 @@
             "size": 230
         },
         {
+            "name": "cGZWinMgrW95::GetParent",
+            "address": 8987216,
+            "size": 25
+        },
+        {
             "name": "GZWinMgrW95_00892882",
             "address": 8988592,
             "size": 862
         },
         {
-            "name": "cGZWinMgrW95__DoModalWin",
+            "name": "cGZWinMgrW95::DoModalWin",
             "address": 8989552,
             "size": 1170
         },
@@ -27753,6 +29663,16 @@
             "name": "vector_00894f05",
             "address": 8998464,
             "size": 414
+        },
+        {
+            "name": "cGZWinDlg_vtbl_func_55",
+            "address": 9005344,
+            "size": 95
+        },
+        {
+            "name": "cWinPictureDialog_vtbl_func_2",
+            "address": 9005536,
+            "size": 48
         },
         {
             "name": "cGZWinDlgFullScreenInit",
@@ -28455,9 +30375,54 @@
             "size": 122
         },
         {
+            "name": "cGZFrameWorkW95_vtbl_func_6",
+            "address": 9239824,
+            "size": 24
+        },
+        {
+            "name": "cGZFrameWorkW95_vtbl_func_0",
+            "address": 9239856,
+            "size": 60
+        },
+        {
+            "name": "cGZFrameWorkW95_vtbl_func_11",
+            "address": 9240064,
+            "size": 112
+        },
+        {
+            "name": "cGZFrameWorkW95_vtbl_func_12",
+            "address": 9240176,
+            "size": 55
+        },
+        {
+            "name": "cGZFrameWorkW95_vtbl_func_4",
+            "address": 9240240,
+            "size": 53
+        },
+        {
+            "name": "cGZFrameWorkW95_vtbl_func_7",
+            "address": 9240304,
+            "size": 82
+        },
+        {
             "name": "FWDispatchMessage",
             "address": 9240448,
             "size": 260
+        },
+        {
+            "name": "cGZFrameWorkW95_vtbl_func_9",
+            "address": 9240720,
+            "size": 31
+        },
+        {
+            "name": "cGZFrameWorkW95_vtbl_func_10",
+            "address": 9240752,
+            "size": 37
+        },
+        {
+            "name": "cGZFrameWorkW95_vtbl_func_8",
+            "address": 9240800,
+            "size": 106
         },
         {
             "name": "dddcamera_008d0291",
@@ -28910,6 +30875,16 @@
             "size": 139
         },
         {
+            "name": "cDefaultTTWindow_vtbl_func_5",
+            "address": 9330976,
+            "size": 54
+        },
+        {
+            "name": "cDefaultTTWindow_vtbl_func_103",
+            "address": 9331312,
+            "size": 306
+        },
+        {
             "name": "DefaultTTWindow_008e6603",
             "address": 9331680,
             "size": 1224
@@ -28923,6 +30898,11 @@
             "name": "DefaultTTWindow_008e69f6",
             "address": 9333184,
             "size": 502
+        },
+        {
+            "name": "cDefaultTTWindow_vtbl_func_48",
+            "address": 9333696,
+            "size": 169
         },
         {
             "name": "GZWinGenDlg_008e71a8",
@@ -28980,17 +30960,17 @@
             "size": 767
         },
         {
-            "name": "cGZWinText__FitWindowToText",
+            "name": "cGZWinText::FitWindowToText",
             "address": 9343056,
             "size": 175
         },
         {
-            "name": "cGZWinText__SetAlignment",
+            "name": "cGZWinText::SetAlignment",
             "address": 9343392,
             "size": 182
         },
         {
-            "name": "cGZWinText__calc_text_pos",
+            "name": "cGZWinText::calc_text_pos",
             "address": 9343600,
             "size": 310
         },
@@ -29035,9 +31015,14 @@
             "size": 456
         },
         {
-            "name": "RZCmdLine_008ed5be",
+            "name": "cRZCmdLine::cRZCmdLine",
             "address": 9360704,
             "size": 896
+        },
+        {
+            "name": "cRZCmdLine::GetSwitch",
+            "address": 9361728,
+            "size": 788
         },
         {
             "name": "cGZScreenBufferInit",
@@ -29160,6 +31145,11 @@
             "size": 19
         },
         {
+            "name": "j_?__distance@@YAXPBD0AAIUrandom_access_iterator_tag@@@Z",
+            "address": 9378912,
+            "size": 49
+        },
+        {
             "name": "RZThread_008f1d5a",
             "address": 9379104,
             "size": 137
@@ -29220,6 +31210,46 @@
             "size": 117
         },
         {
+            "name": "cRZCriticalSection_vtbl_func_0",
+            "address": 9382432,
+            "size": 64
+        },
+        {
+            "name": "cRZCriticalSection_vtbl_func_7",
+            "address": 9382496,
+            "size": 42
+        },
+        {
+            "name": "cRZCriticalSection_vtbl_func_4",
+            "address": 9382544,
+            "size": 25
+        },
+        {
+            "name": "cRZCriticalSection_vtbl_func_5",
+            "address": 9382576,
+            "size": 25
+        },
+        {
+            "name": "cRZCriticalSection_vtbl_func_6",
+            "address": 9382608,
+            "size": 54
+        },
+        {
+            "name": "cRZCriticalSection_vtbl_func_1",
+            "address": 9382752,
+            "size": 49
+        },
+        {
+            "name": "cRZCriticalSection_vtbl_func_3",
+            "address": 9383200,
+            "size": 117
+        },
+        {
+            "name": "cRZCriticalSection_vtbl_func_2",
+            "address": 9383328,
+            "size": 52
+        },
+        {
             "name": "RZThread_008f35f3",
             "address": 9385408,
             "size": 239
@@ -29238,6 +31268,21 @@
             "name": "RZThread_008f387d",
             "address": 9385968,
             "size": 213
+        },
+        {
+            "name": "cRZThreadSignal_vtbl_func_0",
+            "address": 9386320,
+            "size": 67
+        },
+        {
+            "name": "cRZThreadSignal_vtbl_func_5",
+            "address": 9386400,
+            "size": 37
+        },
+        {
+            "name": "cRZThreadSignal_vtbl_func_4",
+            "address": 9386448,
+            "size": 25
         },
         {
             "name": "RZThread_008f3ad2",
@@ -29325,7 +31370,32 @@
             "size": 368
         },
         {
-            "name": "RZFile_008f73d3",
+            "name": "cRZFile::cRZFile",
+            "address": 9400208,
+            "size": 97
+        },
+        {
+            "name": "cRZFile::virtualdestructor",
+            "address": 9400320,
+            "size": 54
+        },
+        {
+            "name": "cRZFile::cRZFile_0",
+            "address": 9400512,
+            "size": 193
+        },
+        {
+            "name": "cRZFile::AddRef",
+            "address": 9400896,
+            "size": 40
+        },
+        {
+            "name": "cRZFile::Release",
+            "address": 9400944,
+            "size": 98
+        },
+        {
+            "name": "cRZFile::Open",
             "address": 9401056,
             "size": 362
         },
@@ -29350,9 +31420,109 @@
             "size": 83
         },
         {
-            "name": "cRZFile__Seek",
+            "name": "cRZFile::Seek",
             "address": 9401760,
             "size": 194
+        },
+        {
+            "name": "cRZFile::SeekToBegin",
+            "address": 9401968,
+            "size": 34
+        },
+        {
+            "name": "cRZFile::SeekToEnd",
+            "address": 9402016,
+            "size": 34
+        },
+        {
+            "name": "cRZFile::SeekToRelativePosition",
+            "address": 9402064,
+            "size": 38
+        },
+        {
+            "name": "cRZFile::SeekToExactPosition",
+            "address": 9402112,
+            "size": 38
+        },
+        {
+            "name": "cRZFile::Read",
+            "address": 9402160,
+            "size": 79
+        },
+        {
+            "name": "cRZFile::ReadWithCount",
+            "address": 9402240,
+            "size": 56
+        },
+        {
+            "name": "cRZFile::Write",
+            "address": 9402304,
+            "size": 79
+        },
+        {
+            "name": "cRZFile::WriteWithCount",
+            "address": 9402384,
+            "size": 56
+        },
+        {
+            "name": "cRZFile::Flush",
+            "address": 9402448,
+            "size": 38
+        },
+        {
+            "name": "cRZFile::Delete",
+            "address": 9402496,
+            "size": 74
+        },
+        {
+            "name": "cRZFile::Rename",
+            "address": 9402576,
+            "size": 106
+        },
+        {
+            "name": "cRZFile::Exists",
+            "address": 9402688,
+            "size": 34
+        },
+        {
+            "name": "cRZFile::GetPathToStr",
+            "address": 9402736,
+            "size": 53
+        },
+        {
+            "name": "cRZFile::GetFilePath",
+            "address": 9402800,
+            "size": 25
+        },
+        {
+            "name": "cRZFile::GetPathCStr",
+            "address": 9402832,
+            "size": 30
+        },
+        {
+            "name": "cRZFile::SetPathFromRZStr",
+            "address": 9402864,
+            "size": 50
+        },
+        {
+            "name": "cRZFile::SetFilePath",
+            "address": 9402928,
+            "size": 101
+        },
+        {
+            "name": "cRZFile::IsFileOpen",
+            "address": 9403040,
+            "size": 25
+        },
+        {
+            "name": "cRZFile::CopyByString",
+            "address": 9403072,
+            "size": 44
+        },
+        {
+            "name": "cRZFile::Copy",
+            "address": 9403120,
+            "size": 167
         },
         {
             "name": "RZColor_008f8a8a",
@@ -29370,9 +31540,84 @@
             "size": 409
         },
         {
+            "name": "cGZApp_vtbl_func_2",
+            "address": 9408176,
+            "size": 21
+        },
+        {
+            "name": "cGZApp_vtbl_func_5",
+            "address": 9408272,
+            "size": 21
+        },
+        {
+            "name": "cGZApp_vtbl_func_10",
+            "address": 9408560,
+            "size": 19
+        },
+        {
+            "name": "cGZApp_vtbl_func_6",
+            "address": 9408592,
+            "size": 24
+        },
+        {
+            "name": "cGZApp_vtbl_func_9",
+            "address": 9408624,
+            "size": 23
+        },
+        {
             "name": "gzapp_008f90c6",
             "address": 9408656,
             "size": 105
+        },
+        {
+            "name": "cRZRefCount_vtbl_func_2",
+            "address": 9408784,
+            "size": 40
+        },
+        {
+            "name": "cGZSystemService_vtbl_func_3",
+            "address": 9408832,
+            "size": 49
+        },
+        {
+            "name": "cGZWinSplashScreen_vtbl_func_5",
+            "address": 9409344,
+            "size": 54
+        },
+        {
+            "name": "cGZWinSplashScreen_vtbl_func_3",
+            "address": 9409600,
+            "size": 249
+        },
+        {
+            "name": "cGZWinSplashScreen_vtbl_func_4",
+            "address": 9409856,
+            "size": 152
+        },
+        {
+            "name": "cGZWinSplashScreen_vtbl_func_70",
+            "address": 9410016,
+            "size": 252
+        },
+        {
+            "name": "cGZWinSplashScreen_vtbl_func_55",
+            "address": 9410272,
+            "size": 127
+        },
+        {
+            "name": "cGZWinSplashScreen_vtbl_func_57",
+            "address": 9410400,
+            "size": 119
+        },
+        {
+            "name": "cGZWinSplashScreen_vtbl_func_94",
+            "address": 9410528,
+            "size": 68
+        },
+        {
+            "name": "cGZWinSplashScreen_vtbl_func_89",
+            "address": 9410608,
+            "size": 794
         },
         {
             "name": "GZWinSplashScreen_008fa155",
@@ -29383,6 +31628,11 @@
             "name": "GZWinSplashScreen_008fa2ee",
             "address": 9413280,
             "size": 322
+        },
+        {
+            "name": "cGZWinSplashScreen_vtbl_func_37",
+            "address": 9414080,
+            "size": 54
         },
         {
             "name": "GZGraphicSystemW95_008fae81",
@@ -29565,6 +31815,11 @@
             "size": 44
         },
         {
+            "name": "?substr@?$basic_string@D@@QBE?AV1@II@Z",
+            "address": 9465696,
+            "size": 273
+        },
+        {
             "name": "vector_00907121",
             "address": 9465984,
             "size": 368
@@ -29575,7 +31830,7 @@
             "size": 368
         },
         {
-            "name": "bstring_009075c9",
+            "name": "?insert_str@?$basic_string@D@@AAEXIPBDI@Z",
             "address": 9467216,
             "size": 464
         },
@@ -30105,6 +32360,11 @@
             "size": 99
         },
         {
+            "name": "?point@?$basic_string@D@@AAEPADXZ",
+            "address": 9575808,
+            "size": 30
+        },
+        {
             "name": "GZSnd_0092202c",
             "address": 9576320,
             "size": 308
@@ -30285,7 +32545,7 @@
             "size": 179
         },
         {
-            "name": "bstring_0092c302",
+            "name": "?reserve@?$basic_string@D@@QAEXI@Z",
             "address": 9618112,
             "size": 209
         },
@@ -30415,6 +32675,36 @@
             "size": 866
         },
         {
+            "name": "cRZLanguageManager_vtbl_func_30",
+            "address": 9652656,
+            "size": 44
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_31",
+            "address": 9652704,
+            "size": 48
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_0",
+            "address": 9653056,
+            "size": 27
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_1",
+            "address": 9653088,
+            "size": 27
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_2",
+            "address": 9653120,
+            "size": 21
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_4",
+            "address": 9653152,
+            "size": 21
+        },
+        {
             "name": "RZLanguage_00934bf3",
             "address": 9653184,
             "size": 133
@@ -30425,14 +32715,54 @@
             "size": 123
         },
         {
+            "name": "cRZLanguageManager_vtbl_func_7",
+            "address": 9653456,
+            "size": 25
+        },
+        {
             "name": "RZLanguage_00934d38",
             "address": 9653488,
             "size": 364
         },
         {
+            "name": "cRZLanguageManager_vtbl_func_10",
+            "address": 9653856,
+            "size": 57
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_6",
+            "address": 9653920,
+            "size": 526
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_9",
+            "address": 9654608,
+            "size": 71
+        },
+        {
             "name": "RZLanguage_0093559c",
             "address": 9655088,
             "size": 674
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_19",
+            "address": 9655856,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_20",
+            "address": 9655904,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_12",
+            "address": 9655952,
+            "size": 130
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_13",
+            "address": 9656096,
+            "size": 40
         },
         {
             "name": "RZLanguage_009359a5",
@@ -30445,9 +32775,119 @@
             "size": 668
         },
         {
+            "name": "cRZLanguageManager_vtbl_func_16",
+            "address": 9657648,
+            "size": 334
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_17",
+            "address": 9657984,
+            "size": 315
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_21",
+            "address": 9658304,
+            "size": 52
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_22",
+            "address": 9658368,
+            "size": 27
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_23",
+            "address": 9658400,
+            "size": 148
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_24",
+            "address": 9658560,
+            "size": 42
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_25",
+            "address": 9658608,
+            "size": 36
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_27",
+            "address": 9658656,
+            "size": 38
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_26",
+            "address": 9658704,
+            "size": 38
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_29",
+            "address": 9658752,
+            "size": 23
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_28",
+            "address": 9658784,
+            "size": 23
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_18",
+            "address": 9658816,
+            "size": 150
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_32",
+            "address": 9658976,
+            "size": 337
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_36",
+            "address": 9659408,
+            "size": 30
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_35",
+            "address": 9659440,
+            "size": 54
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_2",
+            "address": 9659584,
+            "size": 21
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_3",
+            "address": 9659616,
+            "size": 21
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_30",
+            "address": 9659648,
+            "size": 171
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_31",
+            "address": 9659856,
+            "size": 112
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_32",
+            "address": 9659968,
+            "size": 52
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_34",
+            "address": 9660032,
+            "size": 36
+        },
+        {
             "name": "RZLanguage_009366fb",
             "address": 9660080,
             "size": 2822
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_5",
+            "address": 9663488,
+            "size": 2279
         },
         {
             "name": "RZLanguage_00937f2b",
@@ -30460,9 +32900,139 @@
             "size": 3465
         },
         {
+            "name": "cRZLanguageUtility_vtbl_func_9",
+            "address": 9675568,
+            "size": 471
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_10",
+            "address": 9676128,
+            "size": 21
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_11",
+            "address": 9676160,
+            "size": 21
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_12",
+            "address": 9676192,
+            "size": 146
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_14",
+            "address": 9676384,
+            "size": 42
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_13",
+            "address": 9676432,
+            "size": 1513
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_16",
+            "address": 9677984,
+            "size": 1216
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_15",
+            "address": 9679232,
+            "size": 1180
+        },
+        {
             "name": "RZLanguage_0093c11a",
             "address": 9680448,
             "size": 2950
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_17",
+            "address": 9683616,
+            "size": 41
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_19",
+            "address": 9683664,
+            "size": 41
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_21",
+            "address": 9683712,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_22",
+            "address": 9683760,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_23",
+            "address": 9683808,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_24",
+            "address": 9683856,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_25",
+            "address": 9683904,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_26",
+            "address": 9683952,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_27",
+            "address": 9684000,
+            "size": 23
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_28",
+            "address": 9684032,
+            "size": 23
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_29",
+            "address": 9684064,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_18",
+            "address": 9684112,
+            "size": 170
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_20",
+            "address": 9684288,
+            "size": 170
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_33",
+            "address": 9684464,
+            "size": 39
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_0",
+            "address": 9684512,
+            "size": 40
+        },
+        {
+            "name": "cRZLanguageUtility_vtbl_func_1",
+            "address": 9684560,
+            "size": 99
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_33",
+            "address": 9684672,
+            "size": 78
+        },
+        {
+            "name": "cRZLanguageManager_vtbl_func_34",
+            "address": 9684784,
+            "size": 67
         },
         {
             "name": "?len@?$basic_string@D@@AAEAAIXZ",
@@ -30470,9 +33040,164 @@
             "size": 27
         },
         {
+            "name": "cRZLanguageManager_vtbl_func_3",
+            "address": 9689536,
+            "size": 8
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_0",
+            "address": 9689696,
+            "size": 62
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_26",
+            "address": 9689760,
+            "size": 54
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_1",
+            "address": 9689984,
+            "size": 135
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_2",
+            "address": 9690128,
+            "size": 135
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_4",
+            "address": 9690272,
+            "size": 229
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_6",
+            "address": 9690608,
+            "size": 287
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_8",
+            "address": 9690896,
+            "size": 238
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_3",
+            "address": 9691136,
+            "size": 219
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_5",
+            "address": 9691360,
+            "size": 277
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_7",
+            "address": 9691648,
+            "size": 228
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_9",
+            "address": 9691888,
+            "size": 157
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_10",
+            "address": 9692048,
+            "size": 153
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_11",
+            "address": 9692208,
+            "size": 153
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_12",
+            "address": 9692368,
+            "size": 204
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_13",
+            "address": 9692576,
+            "size": 146
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_14",
+            "address": 9692736,
+            "size": 146
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_15",
+            "address": 9692896,
+            "size": 214
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_18",
+            "address": 9693120,
+            "size": 36
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_16",
+            "address": 9693168,
+            "size": 170
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_17",
+            "address": 9693344,
+            "size": 170
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_19",
+            "address": 9693520,
+            "size": 166
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_20",
+            "address": 9693696,
+            "size": 166
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_21",
+            "address": 9693872,
+            "size": 229
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_22",
+            "address": 9694112,
+            "size": 78
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_23",
+            "address": 9694192,
+            "size": 78
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_24",
+            "address": 9694272,
+            "size": 69
+        },
+        {
+            "name": "cGZMessageQueue_vtbl_func_25",
+            "address": 9694352,
+            "size": 69
+        },
+        {
+            "name": "cGZMessageQueueManager_vtbl_func_2",
+            "address": 9694432,
+            "size": 21
+        },
+        {
+            "name": "cGZMessageQueueManager_vtbl_func_4",
+            "address": 9694464,
+            "size": 70
+        },
+        {
             "name": "GZMessage_0093efc7",
             "address": 9695056,
             "size": 324
+        },
+        {
+            "name": "cGZMessageQueueManager_vtbl_func_6",
+            "address": 9695392,
+            "size": 253
         },
         {
             "name": "GZMessage_0093f217",
@@ -30480,9 +33205,144 @@
             "size": 364
         },
         {
+            "name": "cGZMessageQueueManager_vtbl_func_7",
+            "address": 9696016,
+            "size": 239
+        },
+        {
+            "name": "cGZMessageQueueManager_vtbl_func_8",
+            "address": 9696256,
+            "size": 30
+        },
+        {
+            "name": "cGZMessageServer_vtbl_func_0",
+            "address": 9696624,
+            "size": 318
+        },
+        {
+            "name": "cGZMessageServer_vtbl_func_1",
+            "address": 9696944,
+            "size": 149
+        },
+        {
+            "name": "cGZMessageServer_vtbl_func_2",
+            "address": 9697104,
+            "size": 370
+        },
+        {
+            "name": "cGZMessageServer_vtbl_func_3",
+            "address": 9697488,
+            "size": 254
+        },
+        {
+            "name": "cGZMessageServer_vtbl_func_7",
+            "address": 9697744,
+            "size": 148
+        },
+        {
+            "name": "cGZSystemServiceList_vtbl_func_0",
+            "address": 9706384,
+            "size": 54
+        },
+        {
+            "name": "cGZSystemServiceList_vtbl_func_1",
+            "address": 9706960,
+            "size": 71
+        },
+        {
+            "name": "cGZSystemServiceList_vtbl_func_3",
+            "address": 9707040,
+            "size": 158
+        },
+        {
+            "name": "cGZSystemServiceList_vtbl_func_4",
+            "address": 9707200,
+            "size": 120
+        },
+        {
+            "name": "cGZSystemServiceList_vtbl_func_5",
+            "address": 9707328,
+            "size": 169
+        },
+        {
+            "name": "cGZSystemServiceList_vtbl_func_2",
+            "address": 9707504,
+            "size": 130
+        },
+        {
             "name": "??0?$basic_string_ref@D@@AAE@XZ",
             "address": 9708144,
             "size": 45
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_0",
+            "address": 9710960,
+            "size": 21
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_1",
+            "address": 9710992,
+            "size": 21
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_2",
+            "address": 9711024,
+            "size": 25
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_51",
+            "address": 9711056,
+            "size": 30
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_3",
+            "address": 9711088,
+            "size": 25
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_4",
+            "address": 9711120,
+            "size": 30
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_5",
+            "address": 9711152,
+            "size": 25
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_10",
+            "address": 9711184,
+            "size": 28
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_18",
+            "address": 9711216,
+            "size": 36
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_36",
+            "address": 9711264,
+            "size": 28
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_34",
+            "address": 9711296,
+            "size": 28
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_39",
+            "address": 9711328,
+            "size": 33
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_46",
+            "address": 9711376,
+            "size": 25
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_49",
+            "address": 9711408,
+            "size": 25
         },
         {
             "name": "GZSndSys_009432eb",
@@ -30510,9 +33370,19 @@
             "size": 426
         },
         {
+            "name": "cGZSndSys_vtbl_func_9",
+            "address": 9714848,
+            "size": 35
+        },
+        {
             "name": "GZSndSys_00943dd4",
             "address": 9714896,
             "size": 408
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_13",
+            "address": 9715312,
+            "size": 240
         },
         {
             "name": "GZSndSys_00943fa8",
@@ -30520,14 +33390,159 @@
             "size": 351
         },
         {
+            "name": "cGZSndSys_vtbl_func_14",
+            "address": 9715904,
+            "size": 227
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_16",
+            "address": 9716144,
+            "size": 147
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_15",
+            "address": 9716304,
+            "size": 212
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_17",
+            "address": 9716528,
+            "size": 197
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_19",
+            "address": 9716736,
+            "size": 33
+        },
+        {
             "name": "GZSndSys_00944484",
             "address": 9716784,
             "size": 177
         },
         {
+            "name": "cGZSndSys_vtbl_func_20",
+            "address": 9716976,
+            "size": 63
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_21",
+            "address": 9717040,
+            "size": 46
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_22",
+            "address": 9717088,
+            "size": 462
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_24",
+            "address": 9717552,
+            "size": 142
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_23",
+            "address": 9717696,
+            "size": 163
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_27",
+            "address": 9717872,
+            "size": 142
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_26",
+            "address": 9718016,
+            "size": 163
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_25",
+            "address": 9718192,
+            "size": 70
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_29",
+            "address": 9718272,
+            "size": 169
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_28",
+            "address": 9718448,
+            "size": 201
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_30",
+            "address": 9718656,
+            "size": 186
+        },
+        {
             "name": "GZSndSys_00944c73",
             "address": 9718848,
             "size": 127
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_32",
+            "address": 9718976,
+            "size": 61
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_35",
+            "address": 9719040,
+            "size": 25
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_33",
+            "address": 9719072,
+            "size": 85
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_37",
+            "address": 9719168,
+            "size": 25
+        },
+        {
+            "name": "basic_string_t_char_t_::reserve_void",
+            "address": 9719200,
+            "size": 30
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_40",
+            "address": 9719232,
+            "size": 208
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_41",
+            "address": 9719440,
+            "size": 405
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_44",
+            "address": 9719856,
+            "size": 62
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_45",
+            "address": 9719920,
+            "size": 62
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_47",
+            "address": 9719984,
+            "size": 48
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_48",
+            "address": 9720032,
+            "size": 48
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_53",
+            "address": 9720080,
+            "size": 53
+        },
+        {
+            "name": "cGZSndSys_vtbl_func_50",
+            "address": 9720704,
+            "size": 340
         },
         {
             "name": "GZSndSys_00945658",
@@ -30620,6 +33635,11 @@
             "size": 114
         },
         {
+            "name": "cRZKeyboard_vtbl_func_3",
+            "address": 9749568,
+            "size": 45
+        },
+        {
             "name": "RZKeyboard_0094c4d6",
             "address": 9749664,
             "size": 160
@@ -30635,9 +33655,24 @@
             "size": 145
         },
         {
+            "name": "cRZKeyboard_vtbl_func_0",
+            "address": 9750144,
+            "size": 105
+        },
+        {
             "name": "RZKeyboard_0094c726",
             "address": 9750256,
             "size": 129
+        },
+        {
+            "name": "cRZKeyboard_vtbl_func_5",
+            "address": 9750400,
+            "size": 119
+        },
+        {
+            "name": "cRZKeyboard_vtbl_func_6",
+            "address": 9750896,
+            "size": 37
         },
         {
             "name": "DDDPrivExBuf_0094cf0d",
@@ -30645,9 +33680,49 @@
             "size": 1183
         },
         {
+            "name": "cGZFontSys_vtbl_func_9",
+            "address": 9754992,
+            "size": 54
+        },
+        {
+            "name": "cGZFontSys_vtbl_func_2",
+            "address": 9755360,
+            "size": 398
+        },
+        {
             "name": "cGZFontSysShutdown",
             "address": 9755760,
             "size": 341
+        },
+        {
+            "name": "cGZFontSys_vtbl_func_0",
+            "address": 9756112,
+            "size": 40
+        },
+        {
+            "name": "cGZFontSys_vtbl_func_1",
+            "address": 9756160,
+            "size": 96
+        },
+        {
+            "name": "cGZFontSys_vtbl_func_3",
+            "address": 9756256,
+            "size": 23
+        },
+        {
+            "name": "cGZFontSys_vtbl_func_4",
+            "address": 9756800,
+            "size": 1342
+        },
+        {
+            "name": "cGZFontSys_vtbl_func_5",
+            "address": 9758176,
+            "size": 141
+        },
+        {
+            "name": "cGZFontSys_vtbl_func_6",
+            "address": 9758320,
+            "size": 98
         },
         {
             "name": "GZFontSys_0094e76d",
@@ -30863,6 +33938,11 @@
             "name": "gzdbfontkorean_0095af56",
             "address": 9809696,
             "size": 180
+        },
+        {
+            "name": "?begin@?$vector@V?$basic_string@D@@@@QBEPBV?$basic_string@D@@XZ",
+            "address": 9810384,
+            "size": 25
         },
         {
             "name": "gzdbfontkorean_0095c909",
@@ -84180,7 +87260,7 @@
             "size": 9
         },
         {
-            "name": "aEdithCannotBeI",
+            "name": "msg",
             "address": 15747516,
             "size": 79
         },
@@ -89035,7 +92115,7 @@
             "size": 12
         },
         {
-            "name": "aInterests",
+            "name": "name",
             "address": 15777440,
             "size": 10
         },
@@ -109682,7 +112762,7 @@
         {
             "name": "??_7cGZWin@@6B@",
             "address": 16011640,
-            "size": 4
+            "size": 412
         },
         {
             "name": "??_7cIGZMessageTarget@@6B@",
@@ -135002,7 +138082,7 @@
         {
             "name": "??_R0?AViResFile@@@8",
             "address": 16464160,
-            "size": 8
+            "size": 4
         },
         {
             "name": "aAviresfile",
@@ -135042,7 +138122,7 @@
         {
             "name": "??_R0?AVChainResFile@@@8",
             "address": 16464336,
-            "size": 8
+            "size": 4
         },
         {
             "name": "aAvchainresfile",
@@ -135072,7 +138152,7 @@
         {
             "name": "??_R0?AVCommander@@@8",
             "address": 16464448,
-            "size": 8
+            "size": 4
         },
         {
             "name": "aAvcommander",
@@ -135445,6 +138525,11 @@
             "size": 64
         },
         {
+            "name": "bDebugObjects",
+            "address": 16467219,
+            "size": 1
+        },
+        {
             "name": "??_R0?AVcXPerson@@@8",
             "address": 16467312,
             "size": 8
@@ -135507,7 +138592,7 @@
         {
             "name": "??_R0?AVcGZWin@@@8",
             "address": 16467568,
-            "size": 8
+            "size": 4
         },
         {
             "name": "aAvcgzwin",
@@ -135640,6 +138725,11 @@
             "size": 11
         },
         {
+            "name": "bObjComp",
+            "address": 16468440,
+            "size": 4
+        },
+        {
             "name": "??_R0?AV?$SimpleReconObject@VObjFnTable@@@@@8",
             "address": 16468464,
             "size": 4
@@ -135652,7 +138742,7 @@
         {
             "name": "??_R0?AVSeqResFile@@@8",
             "address": 16468528,
-            "size": 8
+            "size": 4
         },
         {
             "name": "aAvseqresfile",
@@ -136270,6 +139360,11 @@
             "size": 56
         },
         {
+            "name": "bDrawFloorable",
+            "address": 16474804,
+            "size": 2
+        },
+        {
             "name": "??_R0?AVHouseViewer@@@8",
             "address": 16474840,
             "size": 4
@@ -136710,6 +139805,16 @@
             "size": 17
         },
         {
+            "name": "bThreadInit",
+            "address": 16478848,
+            "size": 1
+        },
+        {
+            "name": "gbEnableSound",
+            "address": 16478899,
+            "size": 1
+        },
+        {
             "name": "??_R0?AVcRZCmdLine@@@8",
             "address": 16479000,
             "size": 4
@@ -136722,7 +139827,7 @@
         {
             "name": "??_R0?AVcIGZApp@@@8",
             "address": 16479040,
-            "size": 8
+            "size": 4
         },
         {
             "name": "aAvcigzapp",
@@ -136782,7 +139887,7 @@
         {
             "name": "??_R0?AVcGZApp@@@8",
             "address": 16479256,
-            "size": 8
+            "size": 4
         },
         {
             "name": "aAvcgzapp",
@@ -151845,6 +154950,11 @@
             "size": 30
         },
         {
+            "name": "knFARVersion",
+            "address": 16569032,
+            "size": 4
+        },
+        {
             "name": "??_R0?AVcRZVersion@@@8",
             "address": 16569120,
             "size": 4
@@ -153185,6 +156295,11 @@
             "size": 4
         },
         {
+            "name": "globs",
+            "address": 16638168,
+            "size": 4
+        },
+        {
             "name": "h",
             "address": 16638184,
             "size": 4
@@ -153195,7 +156310,7 @@
             "size": 4
         },
         {
-            "name": "IFFResFile__sCreatingNewFile",
+            "name": "IFFResFile::sCreatingNewFile",
             "address": 16638240,
             "size": 2
         },
@@ -153210,18 +156325,68 @@
             "size": 4
         },
         {
+            "name": "bTutorialOver",
+            "address": 16638476,
+            "size": 4
+        },
+        {
+            "name": "bAllMenus",
+            "address": 16640088,
+            "size": 1
+        },
+        {
+            "name": "bDrawRoutes",
+            "address": 16640444,
+            "size": 2
+        },
+        {
+            "name": "bDrawOrigins",
+            "address": 16640446,
+            "size": 2
+        },
+        {
+            "name": "bWriteRoutes",
+            "address": 16641326,
+            "size": 2
+        },
+        {
+            "name": "bWriteDestlist",
+            "address": 16641328,
+            "size": 2
+        },
+        {
+            "name": "gFloorGraphicsMgr",
+            "address": 16692184,
+            "size": 4
+        },
+        {
             "name": "dy",
             "address": 16693620,
             "size": 4
         },
         {
-            "name": "Logo__sLogo",
+            "name": "Logo::sLogo",
             "address": 16695328,
             "size": 4
         },
         {
-            "name": "Logo__sLogoAlpha",
+            "name": "Logo::sLogoAlpha",
             "address": 16695332,
+            "size": 4
+        },
+        {
+            "name": "bDoMapEdit",
+            "address": 16695444,
+            "size": 4
+        },
+        {
+            "name": "gWallGraphicsMgr",
+            "address": 16695860,
+            "size": 4
+        },
+        {
+            "name": "gRender",
+            "address": 16695880,
             "size": 4
         },
         {
@@ -153233,6 +156398,21 @@
             "name": "Stream",
             "address": 16702224,
             "size": 4
+        },
+        {
+            "name": "gbMemlogVerbose",
+            "address": 16702240,
+            "size": 1
+        },
+        {
+            "name": "gbMemdiffNT",
+            "address": 16702242,
+            "size": 1
+        },
+        {
+            "name": "gbMemdiffNTVerbose",
+            "address": 16702243,
+            "size": 1
         },
         {
             "name": "hModule",
@@ -153310,9 +156490,59 @@
             "size": 680
         },
         {
-            "name": "PersonFinder__sInited",
+            "name": "PersonFinder::sInited",
             "address": 16703686,
             "size": 1
+        },
+        {
+            "name": "gCheats",
+            "address": 16703832,
+            "size": 16
+        },
+        {
+            "name": "bRebuildCatalog",
+            "address": 16704456,
+            "size": 1
+        },
+        {
+            "name": "bDumpAssets",
+            "address": 16704464,
+            "size": 1
+        },
+        {
+            "name": "bReportAssets",
+            "address": 16704465,
+            "size": 1
+        },
+        {
+            "name": "bDemo",
+            "address": 16704466,
+            "size": 1
+        },
+        {
+            "name": "bSkipIntro",
+            "address": 16704468,
+            "size": 1
+        },
+        {
+            "name": "bSoftwareInfo",
+            "address": 16704469,
+            "size": 1
+        },
+        {
+            "name": "gpApp",
+            "address": 16704480,
+            "size": 4
+        },
+        {
+            "name": "gFonts",
+            "address": 16704700,
+            "size": 4
+        },
+        {
+            "name": "mModal",
+            "address": 16708720,
+            "size": 4
         },
         {
             "name": "Rect",
@@ -153327,6 +156557,16 @@
         {
             "name": "g_HitMan",
             "address": 16729720,
+            "size": 4
+        },
+        {
+            "name": "GIMEXabout",
+            "address": 16730156,
+            "size": 4
+        },
+        {
+            "name": "SAnimator::fIndexedSite",
+            "address": 16730640,
             "size": 4
         },
         {
@@ -153425,8 +156665,43 @@
             "size": 4
         },
         {
+            "name": "gCTGFileManager",
+            "address": 16767256,
+            "size": 48
+        },
+        {
+            "name": "cGZFrameWork::mpFrameWork",
+            "address": 16767396,
+            "size": 4
+        },
+        {
+            "name": "gpWinMgr",
+            "address": 17250992,
+            "size": 4
+        },
+        {
+            "name": "gpKeyboard",
+            "address": 17250996,
+            "size": 4
+        },
+        {
+            "name": "hModule_0",
+            "address": 17251920,
+            "size": 4
+        },
+        {
+            "name": "TryEnterCriticalSection",
+            "address": 17252292,
+            "size": 4
+        },
+        {
             "name": "hLibModule",
             "address": 17252296,
+            "size": 4
+        },
+        {
+            "name": "mpSyndSys",
+            "address": 17252816,
             "size": 4
         },
         {
@@ -157748,11 +161023,6 @@
             "name": "Addend",
             "address": 17362944,
             "size": 4
-        },
-        {
-            "name": "jpt_979955",
-            "address": 17386156,
-            "size": 32
         }
     ]
 }

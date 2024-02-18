@@ -3,7 +3,7 @@ import idc
 import json
 import os
 
-def is_default_name(symbol_name):
+def is_default_name(symbol_name :str):
     # Define the patterns for default names
     default_patterns = ["sub_", "dword_", "byte_", "word_", "qword_", "loc_", "unk_", "asc_", "stru_", "off_", "seg_"]
     return any(symbol_name.startswith(pattern) for pattern in default_patterns)
@@ -14,6 +14,8 @@ def dump_symbols_to_json():
     for ea in idautils.Segments():
         for function_ea in idautils.Functions(ea, idc.get_segm_end(ea)):
             symbol_name = idc.get_func_name(function_ea)
+            if symbol_name is None:
+                continue
             if is_default_name(symbol_name):
                 continue
             functions.append(function_ea)
@@ -24,6 +26,8 @@ def dump_symbols_to_json():
                 "size": symbol_size
             })
     for data_ea, data_name in idautils.Names():
+        if data_name is None:
+            continue
         if is_default_name(data_name):
             continue
         if data_ea not in functions:
