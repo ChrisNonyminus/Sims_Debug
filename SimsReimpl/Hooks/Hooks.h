@@ -92,22 +92,23 @@ inline ReturnType(__cdecl *Make_VA_Function_Ptr(const unsigned int address))(
   typedef returntype(__stdcall *name##StdCallFunc) stdargs;                    \
   name##StdCallFunc name##StdCallPtr = (name##StdCallFunc)((void *)address);
 
-/* #define MAKE_METHOD_PTR(name, address, returntype, thistype, methodargs) \
-  typedef returntype(__thiscall *name##MethodFunc)(thistype *, methodargs);    \
-  name##MethodFunc name##MethodPtr = (name##MethodFunc)((void *)address); */
+#define MAKE_METHOD_PTR(clasname, name, address, returntype, methodargs)       \
+  typedef returntype(__thiscall *classname##name##MethodFunc) methodargs;      \
+  classname##name##MethodFunc clasname::name##MethodPtr =                      \
+      (classname##name##MethodFunc)((void *)address);
 
 #define DECLARE_FUNCTION_PTR(name, returntype, args)                           \
   extern returntype(__cdecl *name##Ptr) args;
 
 #define DECLARE_STDCALL_PTR(name, returntype, stdargs)                         \
   extern returntype(__stdcall *name##StdCallPtr) stdargs;
-/*
-#define DECLARE_METHOD_PTR(name, returntype, thistype, methodargs)             \
-  extern returntype(__thiscall *name##MethodPtr)(thistype *, methodargs); */
+
+#define DECLARE_METHOD_PTR(name, returntype, methodargs)                       \
+  static returntype(__thiscall *name##MethodPtr) methodargs;
 
 #define FUNCTION_PTR_VAR(name) name##Ptr
 #define STDCALL_PTR_VAR(name) name##StdCallPtr
-/* #define METHOD_PTR_VAR(name) name##MethodPtr */
+#define METHOD_PTR_VAR(name) name##MethodPtr
 
 // A nice struct to pack the assembly in for jumping into replacement code.
 // So long as the calling conventions and arguments for the replaced and

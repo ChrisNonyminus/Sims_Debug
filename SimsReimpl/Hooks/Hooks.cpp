@@ -12,6 +12,8 @@
 
 #include "Framework/RZFile.h"
 
+#include "Sims/SimsApp.h"
+
 void *crt_new(size_t n) { return ::operator new(n); }
 
 void crt_del(void *p) { ::operator delete(p); }
@@ -21,6 +23,16 @@ void *crt_placement_new(size_t n, void *p) { return ::operator new(n, p); }
 void crt_placement_del(void *p, void *p1) { ::operator delete(p, p1); }
 
 namespace Reimpl {
+
+void __thiscall TestOpenMemViewOverride(cSimsApp *app) {
+  cSimsApp::METHOD_PTR_VAR(ShowSimpleMessageBox)(
+      app, "Kilroy was here", "cSimsApp::OpenMemView OVERRIDDEN", 0, 0);
+}
+
+void InstallHookTests() {
+  Hook_Function(0x00652E90 /* cSimsApp::OpenMemView */,
+                TestOpenMemViewOverride);
+}
 
 void SetupFrameworkHooks() {
   Hook_Function(0x00871C80, Gonzo::Main);
@@ -50,5 +62,9 @@ void SetupMSVCRTHooks() {
 void SetupHooks() {
   SetupMSVCRTHooks();
   SetupFrameworkHooks();
+
+#ifndef NO_FUNNY_BUSINESS
+  InstallHookTests();
+#endif
 }
 } // namespace Reimpl
