@@ -36,3 +36,4 @@ ctx.cpp
 *.pdb
 *.sqlite
 *.ilk
+compile_commands.json

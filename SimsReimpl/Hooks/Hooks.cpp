@@ -6,7 +6,7 @@
 
 #include <string.h>
 
-#include <CRTDBG.H>
+#include <crtdbg.h>
 
 #include "Framework/GZFrame.h"
 
@@ -30,8 +30,8 @@ void __thiscall TestOpenMemViewOverride(cSimsApp *app) {
 }
 
 void InstallHookTests() {
-  Hook_Function(0x00652E90 /* cSimsApp::OpenMemView */,
-                TestOpenMemViewOverride);
+  /*Hook_Function(0x00652E90, //cSimsApp::OpenMemView
+                TestOpenMemViewOverride);*/
 }
 
 void SetupFrameworkHooks() {

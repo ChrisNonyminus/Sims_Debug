@@ -92,10 +92,10 @@ inline ReturnType(__cdecl *Make_VA_Function_Ptr(const unsigned int address))(
   typedef returntype(__stdcall *name##StdCallFunc) stdargs;                    \
   name##StdCallFunc name##StdCallPtr = (name##StdCallFunc)((void *)address);
 
-#define MAKE_METHOD_PTR(clasname, name, address, returntype, methodargs)       \
-  typedef returntype(__thiscall *classname##name##MethodFunc) methodargs;      \
-  classname##name##MethodFunc clasname::name##MethodPtr =                      \
-      (classname##name##MethodFunc)((void *)address);
+#define MAKE_METHOD_PTR(classname, name, address, returntype, methodargs)      \
+  typedef returntype(__thiscall *classname##_##name##MethodFunc) methodargs;   \
+  classname##_##name##MethodFunc classname::name##MethodPtr =                  \
+      (classname##_##name##MethodFunc)((void *)address);
 
 #define DECLARE_FUNCTION_PTR(name, returntype, args)                           \
   extern returntype(__cdecl *name##Ptr) args;
