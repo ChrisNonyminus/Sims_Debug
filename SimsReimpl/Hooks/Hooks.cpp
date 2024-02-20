@@ -16,6 +16,8 @@
 
 #include "msrc/Util/SRand.h"
 
+#include "Modding/Plugin.h"
+
 void *crt_new(size_t n) { return ::operator new(n); }
 
 void crt_del(void *p) { ::operator delete(p); }
@@ -25,11 +27,11 @@ void *crt_placement_new(size_t n, void *p) { return ::operator new(n, p); }
 void crt_placement_del(void *p, void *p1) { ::operator delete(p, p1); }
 
 namespace Reimpl {
-
+/*
 void __thiscall TestOpenMemViewOverride(cSimsApp *app) {
   cSimsApp::METHOD_PTR_VAR(ShowSimpleMessageBox)(
       app, "Kilroy was here", "cSimsApp::OpenMemView OVERRIDDEN", 0, 0);
-}
+} */
 
 void InstallHookTests() {
   /*Hook_Function(0x00652E90, //cSimsApp::OpenMemView
@@ -62,6 +64,10 @@ void SetupMSVCRTHooks() {
   Hook_Function(0x008293D0, atexit); */
 }
 void SetupHooks() {
+#ifndef MODDING_DISABLED
+  Modding::LoadPlugins();
+#endif
+
   SetupMSVCRTHooks();
   SetupFrameworkHooks();
 
@@ -70,6 +76,9 @@ void SetupHooks() {
 
 #ifndef NO_FUNNY_BUSINESS
   InstallHookTests();
+#endif
+#ifndef MODDING_DISABLED
+  Modding::InstallHooks();
 #endif
 }
 } // namespace Reimpl

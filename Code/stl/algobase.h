@@ -36,7 +36,8 @@ template <class T> inline void swap(T &a, T &b) {
   a = b;
   b = tmp;
 }
-
+#undef min
+#undef max
 template <class T> inline const T &min(const T &a, const T &b) {
   return b < a ? b : a;
 }

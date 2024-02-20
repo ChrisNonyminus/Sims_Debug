@@ -44,6 +44,7 @@ RSC=rc.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /YX /FD /c
 # ADD CPP /nologo /MT /W3 /GR /GX /ZI /O2 /X /I "Z:\SimsDecomp\Code" /I "Z:\SimsDecomp\SimsReimpl" /I "Z:\SimsDecomp\Tools\compilers\msvc6.0\Include" /I "Z:\SimsDecomp\Code\stl" /I "C:\mssdk\include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /FAs /YX /FD /d1Binl /c
+# SUBTRACT CPP /WX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "NDEBUG"
@@ -70,7 +71,8 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /WX /Gm /GR /GX /ZI /Od /X /I "Z:\SimsDecomp\Code" /I "Z:\SimsDecomp\SimsReimpl" /I "Z:\SimsDecomp\Tools\compilers\msvc6.0\Include" /I "Z:\SimsDecomp\Code\stl" /I "C:\mssdk\include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /FAs /YX /FD /d1Binl /c
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /ZI /Od /X /I "Z:\SimsDecomp\Code" /I "Z:\SimsDecomp\SimsReimpl" /I "Z:\SimsDecomp\Tools\compilers\msvc6.0\Include" /I "Z:\SimsDecomp\Code\stl" /I "C:\mssdk\include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "SIMSREIMPL_EXPORTS" /FAs /YX /FD /d1Binl /c
+# SUBTRACT CPP /WX
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG"
@@ -135,6 +137,30 @@ SOURCE=..\Code\msrc\Util\SRand.cpp
 SOURCE=..\Code\msrc\Util\SRand.h
 # End Source File
 # End Group
+# Begin Group "Behavior"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=..\Code\msrc\Behavior\Object.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=..\Code\msrc\Behavior\Object.h
+# End Source File
+# End Group
+# End Group
+# Begin Group "Modding"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\Modding\Plugin.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Modding\Plugin.h
+# End Source File
 # End Group
 # Begin Source File
 

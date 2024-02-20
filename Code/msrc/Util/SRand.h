@@ -1,3 +1,4 @@
+#pragma once
 #ifndef STANDALONE
 #include "Hooks/Hooks.h"
 #endif
