@@ -4,17 +4,10 @@
    the type library 'Sims_Debug.exe'
 */
 
-/*
-Do not include this file in any source file. It is not usable.
-This file is simply for reference regarding what structs are what.
- */
-
 #define __int8 char
 #define __int16 short
 #define __int32 int
 #define __int64 long long
-
-#include <windows.h>
 
 struct tagRECT;
 struct HWND__;
@@ -78,6 +71,7 @@ struct ostream;
 struct tagSCROLLINFO;
 struct ios_vtbl;
 struct streambuf_vtbl;
+struct basic_string_ref<char>;
 struct tagMODULEENTRY32;
 struct _CRT_CRITICAL_SECTION_DEBUG;
 struct cRZCmdLine;
@@ -89,16 +83,27 @@ struct cWinMemView;
 struct cGZFrameWorkW95_vtbl;
 struct cGZWin_vtbl;
 struct cGZWin;
+struct cRZKeyboard_vtbl;
+struct cGZWinMgrW95_vtbl;
 struct cGZWinMgrW95;
 struct cRZFile;
 struct cWinCPanel;
+struct CPState_vtbl;
 struct CPState;
 struct cGZWinSplashScreen;
+struct PalWrap_vtbl;
 struct PalWrap;
+struct BehaviorFinder_vtbl;
 struct ObjectFolder;
 struct StdResFile;
 struct ObjResFile;
 struct House;
+struct cSimulator;
+struct stru_73EA40;
+struct WallManager_vtbl;
+struct WallManager;
+struct cRZCursorManager_vtbl;
+struct cRZCursorManager;
 
 /* 1 */
 enum __TI_flags {
@@ -344,6 +349,61 @@ struct _MEMORY_BASIC_INFORMATION {
 
 /* 41 */
 typedef struct _devicemodeA DEVMODEA;
+
+/* 44 */
+struct _devicemodeA::$CB1E1A2E30D5738ACA9AADF670A603C7::
+    $A4EE175A7532F35C00DA5CAD042934DF {
+  __int16 dmOrientation;
+  __int16 dmPaperSize;
+  __int16 dmPaperLength;
+  __int16 dmPaperWidth;
+  __int16 dmScale;
+  __int16 dmCopies;
+  __int16 dmDefaultSource;
+  __int16 dmPrintQuality;
+};
+
+/* 47 */
+struct _POINTL {
+  LONG x;
+  LONG y;
+};
+
+/* 46 */
+typedef struct _POINTL POINTL;
+
+/* 45 */
+struct _devicemodeA::$CB1E1A2E30D5738ACA9AADF670A603C7::
+    $604F2BC6924E02F5722A52FC79BC44F9 {
+  POINTL dmPosition;
+  DWORD dmDisplayOrientation;
+  DWORD dmDisplayFixedOutput;
+};
+
+/* 43 */
+union _devicemodeA::$CB1E1A2E30D5738ACA9AADF670A603C7 {
+  struct {
+    __int16 dmOrientation;
+    __int16 dmPaperSize;
+    __int16 dmPaperLength;
+    __int16 dmPaperWidth;
+    __int16 dmScale;
+    __int16 dmCopies;
+    __int16 dmDefaultSource;
+    __int16 dmPrintQuality;
+  };
+  struct {
+    POINTL dmPosition;
+    DWORD dmDisplayOrientation;
+    DWORD dmDisplayFixedOutput;
+  };
+};
+
+/* 48 */
+union _devicemodeA::$4FBEBCCE69364E072421C9DF045BB77C {
+  DWORD dmDisplayFlags;
+  DWORD dmNup;
+};
 
 /* 42 */
 struct _devicemodeA {
@@ -801,6 +861,19 @@ typedef struct HENHMETAFILE__ *HENHMETAFILE;
 /* 120 */
 typedef HANDLE HGLOBAL;
 
+/* 114 */
+#pragma pack(push, 8)
+union tagSTGMEDIUM::$7B772CC839E5463FC51219F893F364BB {
+  HBITMAP hBitmap;
+  HMETAFILEPICT hMetaFilePict;
+  HENHMETAFILE hEnhMetaFile;
+  HGLOBAL hGlobal;
+  LPOLESTR lpszFileName;
+  IStream *pstm;
+  IStorage *pstg;
+};
+#pragma pack(pop)
+
 /* 113 */
 #pragma pack(push, 8)
 struct tagSTGMEDIUM {
@@ -837,14 +910,44 @@ struct IStream {
 };
 #pragma pack(pop)
 
+/* 130 */
+#pragma pack(push, 8)
+struct IStorage {
+  struct IStorageVtbl *lpVtbl;
+};
+#pragma pack(pop)
+
+/* 135 */
+#pragma pack(push, 8)
+struct IUnknown {
+  struct IUnknownVtbl *lpVtbl;
+};
+#pragma pack(pop)
+
 /* 123 */
 typedef int HRESULT;
 
 /* 124 */
 typedef union _ULARGE_INTEGER ULARGE_INTEGER;
 
+/* 126 */
+struct _ULARGE_INTEGER::$0354AA9C204208F00D0965D07BBE7FAC {
+  DWORD LowPart;
+  DWORD HighPart;
+};
+
 /* 127 */
 typedef unsigned __int64 ULONGLONG;
+
+/* 125 */
+union _ULARGE_INTEGER {
+  struct {
+    DWORD LowPart;
+    DWORD HighPart;
+  };
+  struct _ULARGE_INTEGER::$0354AA9C204208F00D0965D07BBE7FAC u;
+  ULONGLONG QuadPart;
+};
 
 /* 128 */
 typedef struct tagSTATSTG STATSTG;
@@ -876,30 +979,6 @@ struct IStreamVtbl {
    DWORD dwLockType);
   HRESULT(__stdcall *Stat)(IStream *This, STATSTG *pstatstg, DWORD grfStatFlag);
   HRESULT(__stdcall *Clone)(IStream *This, IStream **ppstm);
-};
-#pragma pack(pop)
-
-/* 129 */
-#pragma pack(push, 8)
-struct tagSTATSTG {
-  LPOLESTR pwcsName;
-  DWORD type;
-  ULARGE_INTEGER cbSize;
-  FILETIME mtime;
-  FILETIME ctime;
-  FILETIME atime;
-  DWORD grfMode;
-  DWORD grfLocksSupported;
-  CLSID clsid;
-  DWORD grfStateBits;
-  DWORD reserved;
-};
-#pragma pack(pop)
-
-/* 130 */
-#pragma pack(push, 8)
-struct IStorage {
-  struct IStorageVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
@@ -950,6 +1029,33 @@ struct IStorageVtbl {
 };
 #pragma pack(pop)
 
+/* 136 */
+#pragma pack(push, 8)
+struct IUnknownVtbl {
+  HRESULT(__stdcall *QueryInterface)
+  (IUnknown *This, const IID *const riid, void **ppvObject);
+  ULONG(__stdcall *AddRef)(IUnknown *This);
+  ULONG(__stdcall *Release)(IUnknown *This);
+};
+#pragma pack(pop)
+
+/* 129 */
+#pragma pack(push, 8)
+struct tagSTATSTG {
+  LPOLESTR pwcsName;
+  DWORD type;
+  ULARGE_INTEGER cbSize;
+  FILETIME mtime;
+  FILETIME ctime;
+  FILETIME atime;
+  DWORD grfMode;
+  DWORD grfLocksSupported;
+  CLSID clsid;
+  DWORD grfStateBits;
+  DWORD reserved;
+};
+#pragma pack(pop)
+
 /* 133 */
 #pragma pack(push, 8)
 struct IEnumSTATSTG {
@@ -969,23 +1075,6 @@ struct IEnumSTATSTGVtbl {
   HRESULT(__stdcall *Skip)(IEnumSTATSTG *This, ULONG celt);
   HRESULT(__stdcall *Reset)(IEnumSTATSTG *This);
   HRESULT(__stdcall *Clone)(IEnumSTATSTG *This, IEnumSTATSTG **ppenum);
-};
-#pragma pack(pop)
-
-/* 135 */
-#pragma pack(push, 8)
-struct IUnknown {
-  struct IUnknownVtbl *lpVtbl;
-};
-#pragma pack(pop)
-
-/* 136 */
-#pragma pack(push, 8)
-struct IUnknownVtbl {
-  HRESULT(__stdcall *QueryInterface)
-  (IUnknown *This, const IID *const riid, void **ppvObject);
-  ULONG(__stdcall *AddRef)(IUnknown *This);
-  ULONG(__stdcall *Release)(IUnknown *This);
 };
 #pragma pack(pop)
 
@@ -1028,6 +1117,167 @@ typedef int INT;
 /* 208 */
 typedef struct tagDEC DECIMAL;
 
+/* 214 */
+#pragma pack(push, 8)
+struct tagVARIANT::$::$::$E09503A454170B491AC1C4312CE36FE6::
+    $0FDBD249F1AECD6A49409B6B82281578 {
+  PVOID pvRecord;
+  IRecordInfo *pRecInfo;
+};
+#pragma pack(pop)
+
+/* 143 */
+#pragma pack(push, 8)
+union tagVARIANT::$::$65D68C826D16CA47CF95571D7BFCD657::
+    $E09503A454170B491AC1C4312CE36FE6 {
+  LONGLONG llVal;
+  LONG lVal;
+  BYTE bVal;
+  SHORT iVal;
+  FLOAT fltVal;
+  DOUBLE dblVal;
+  VARIANT_BOOL boolVal;
+  SCODE scode;
+  CY cyVal;
+  DATE date;
+  BSTR bstrVal;
+  IUnknown *punkVal;
+  IDispatch *pdispVal;
+  SAFEARRAY *parray;
+  BYTE *pbVal;
+  SHORT *piVal;
+  LONG *plVal;
+  LONGLONG *pllVal;
+  FLOAT *pfltVal;
+  DOUBLE *pdblVal;
+  VARIANT_BOOL *pboolVal;
+  SCODE *pscode;
+  CY *pcyVal;
+  DATE *pdate;
+  BSTR *pbstrVal;
+  IUnknown **ppunkVal;
+  IDispatch **ppdispVal;
+  SAFEARRAY **pparray;
+  VARIANT *pvarVal;
+  PVOID byref;
+  CHAR cVal;
+  USHORT uiVal;
+  ULONG ulVal;
+  ULONGLONG ullVal;
+  INT intVal;
+  UINT uintVal;
+  DECIMAL *pdecVal;
+  CHAR *pcVal;
+  USHORT *puiVal;
+  ULONG *pulVal;
+  ULONGLONG *pullVal;
+  INT *pintVal;
+  UINT *puintVal;
+#pragma pack(push, 8)
+  struct {
+    PVOID pvRecord;
+    IRecordInfo *pRecInfo;
+  };
+#pragma pack(pop)
+};
+#pragma pack(pop)
+
+/* 141 */
+#pragma pack(push, 8)
+struct tagVARIANT::$E93DC971A089CC95F6C875332324C1E7::
+    $65D68C826D16CA47CF95571D7BFCD657 {
+  VARTYPE vt;
+  WORD wReserved1;
+  WORD wReserved2;
+  WORD wReserved3;
+#pragma pack(push, 8)
+  union {
+    LONGLONG llVal;
+    LONG lVal;
+    BYTE bVal;
+    SHORT iVal;
+    FLOAT fltVal;
+    DOUBLE dblVal;
+    VARIANT_BOOL boolVal;
+    SCODE scode;
+    CY cyVal;
+    DATE date;
+    BSTR bstrVal;
+    IUnknown *punkVal;
+    IDispatch *pdispVal;
+    SAFEARRAY *parray;
+    BYTE *pbVal;
+    SHORT *piVal;
+    LONG *plVal;
+    LONGLONG *pllVal;
+    FLOAT *pfltVal;
+    DOUBLE *pdblVal;
+    VARIANT_BOOL *pboolVal;
+    SCODE *pscode;
+    CY *pcyVal;
+    DATE *pdate;
+    BSTR *pbstrVal;
+    IUnknown **ppunkVal;
+    IDispatch **ppdispVal;
+    SAFEARRAY **pparray;
+    VARIANT *pvarVal;
+    PVOID byref;
+    CHAR cVal;
+    USHORT uiVal;
+    ULONG ulVal;
+    ULONGLONG ullVal;
+    INT intVal;
+    UINT uintVal;
+    DECIMAL *pdecVal;
+    CHAR *pcVal;
+    USHORT *puiVal;
+    ULONG *pulVal;
+    ULONGLONG *pullVal;
+    INT *pintVal;
+    UINT *puintVal;
+#pragma pack(push, 8)
+    struct {
+      PVOID pvRecord;
+      IRecordInfo *pRecInfo;
+    };
+#pragma pack(pop)
+  };
+#pragma pack(pop)
+};
+#pragma pack(pop)
+
+/* 211 */
+struct tagDEC::$64EC678C49E7BE49873AFBFB7A849D34::
+    $7F8459940C2B08BD5D82B0F27239141B {
+  BYTE scale;
+  BYTE sign;
+};
+
+/* 210 */
+union tagDEC::$64EC678C49E7BE49873AFBFB7A849D34 {
+  struct {
+    BYTE scale;
+    BYTE sign;
+  };
+  USHORT signscale;
+};
+
+/* 213 */
+struct tagDEC::$D28E26DEC3EC762C06C2AA9D0F7AC301::
+    $674876891A86A76F12C10005982BCA56 {
+  ULONG Lo32;
+  ULONG Mid32;
+};
+
+/* 212 */
+union tagDEC::$D28E26DEC3EC762C06C2AA9D0F7AC301 {
+  struct {
+    ULONG Lo32;
+    ULONG Mid32;
+  };
+  ULONGLONG Lo64;
+};
+
 /* 209 */
 struct tagDEC {
   USHORT wReserved;
@@ -1047,6 +1297,74 @@ struct tagDEC {
     ULONGLONG Lo64;
   };
 };
+
+/* 140 */
+#pragma pack(push, 8)
+union tagVARIANT::$E93DC971A089CC95F6C875332324C1E7 {
+#pragma pack(push, 8)
+  struct {
+    VARTYPE vt;
+    WORD wReserved1;
+    WORD wReserved2;
+    WORD wReserved3;
+#pragma pack(push, 8)
+    union {
+      LONGLONG llVal;
+      LONG lVal;
+      BYTE bVal;
+      SHORT iVal;
+      FLOAT fltVal;
+      DOUBLE dblVal;
+      VARIANT_BOOL boolVal;
+      SCODE scode;
+      CY cyVal;
+      DATE date;
+      BSTR bstrVal;
+      IUnknown *punkVal;
+      IDispatch *pdispVal;
+      SAFEARRAY *parray;
+      BYTE *pbVal;
+      SHORT *piVal;
+      LONG *plVal;
+      LONGLONG *pllVal;
+      FLOAT *pfltVal;
+      DOUBLE *pdblVal;
+      VARIANT_BOOL *pboolVal;
+      SCODE *pscode;
+      CY *pcyVal;
+      DATE *pdate;
+      BSTR *pbstrVal;
+      IUnknown **ppunkVal;
+      IDispatch **ppdispVal;
+      SAFEARRAY **pparray;
+      VARIANT *pvarVal;
+      PVOID byref;
+      CHAR cVal;
+      USHORT uiVal;
+      ULONG ulVal;
+      ULONGLONG ullVal;
+      INT intVal;
+      UINT uintVal;
+      DECIMAL *pdecVal;
+      CHAR *pcVal;
+      USHORT *puiVal;
+      ULONG *pulVal;
+      ULONGLONG *pullVal;
+      INT *pintVal;
+      UINT *puintVal;
+#pragma pack(push, 8)
+      struct {
+        PVOID pvRecord;
+        IRecordInfo *pRecInfo;
+      };
+#pragma pack(pop)
+    };
+#pragma pack(pop)
+  };
+#pragma pack(pop)
+  DECIMAL decVal;
+};
+#pragma pack(pop)
 
 /* 139 */
 #pragma pack(push, 8)
@@ -1127,6 +1445,25 @@ struct IDispatch {
 };
 #pragma pack(pop)
 
+/* 207 */
+#pragma pack(push, 8)
+struct tagSAFEARRAY {
+  USHORT cDims;
+  USHORT fFeatures;
+  ULONG cbElements;
+  ULONG cLocks;
+  PVOID pvData;
+  SAFEARRAYBOUND rgsabound[1];
+};
+#pragma pack(pop)
+
+/* 215 */
+#pragma pack(push, 8)
+struct IRecordInfo {
+  struct IRecordInfoVtbl *lpVtbl;
+};
+#pragma pack(pop)
+
 /* 152 */
 typedef DWORD LCID;
 
@@ -1159,10 +1496,74 @@ struct IDispatchVtbl {
 };
 #pragma pack(pop)
 
+/* 217 */
+typedef const OLECHAR *LPCOLESTR;
+
+/* 216 */
+#pragma pack(push, 8)
+struct IRecordInfoVtbl {
+  HRESULT(__stdcall *QueryInterface)
+  (IRecordInfo *This, const IID *const riid, void **ppvObject);
+  ULONG(__stdcall *AddRef)(IRecordInfo *This);
+  ULONG(__stdcall *Release)(IRecordInfo *This);
+  HRESULT(__stdcall *RecordInit)(IRecordInfo *This, PVOID pvNew);
+  HRESULT(__stdcall *RecordClear)(IRecordInfo *This, PVOID pvExisting);
+  HRESULT(__stdcall *RecordCopy)
+  (IRecordInfo *This, PVOID pvExisting, PVOID pvNew);
+  HRESULT(__stdcall *GetGuid)(IRecordInfo *This, GUID *pguid);
+  HRESULT(__stdcall *GetName)(IRecordInfo *This, BSTR *pbstrName);
+  HRESULT(__stdcall *GetSize)(IRecordInfo *This, ULONG *pcbSize);
+  HRESULT(__stdcall *GetTypeInfo)(IRecordInfo *This, ITypeInfo **ppTypeInfo);
+  HRESULT(__stdcall *GetField)
+  (IRecordInfo *This, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField);
+  HRESULT(__stdcall *GetFieldNoCopy)
+  (IRecordInfo *This, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField,
+   PVOID *ppvDataCArray);
+  HRESULT(__stdcall *PutField)
+  (IRecordInfo *This, ULONG wFlags, PVOID pvData, LPCOLESTR szFieldName,
+   VARIANT *pvarField);
+  HRESULT(__stdcall *PutFieldNoCopy)
+  (IRecordInfo *This, ULONG wFlags, PVOID pvData, LPCOLESTR szFieldName,
+   VARIANT *pvarField);
+  HRESULT(__stdcall *GetFieldNames)
+  (IRecordInfo *This, ULONG *pcNames, BSTR *rgBstrNames);
+  BOOL(__stdcall *IsMatchingType)(IRecordInfo *This, IRecordInfo *pRecordInfo);
+  PVOID(__stdcall *RecordCreate)(IRecordInfo *This);
+  HRESULT(__stdcall *RecordCreateCopy)
+  (IRecordInfo *This, PVOID pvSource, PVOID *ppvDest);
+  HRESULT(__stdcall *RecordDestroy)(IRecordInfo *This, PVOID pvRecord);
+};
+#pragma pack(pop)
+
 /* 153 */
 #pragma pack(push, 8)
 struct ITypeInfo {
   struct ITypeInfoVtbl *lpVtbl;
+};
+#pragma pack(pop)
+
+/* 197 */
+#pragma pack(push, 8)
+struct tagDISPPARAMS {
+  VARIANTARG *rgvarg;
+  DISPID *rgdispidNamedArgs;
+  UINT cArgs;
+  UINT cNamedArgs;
+};
+#pragma pack(pop)
+
+/* 199 */
+#pragma pack(push, 8)
+struct tagEXCEPINFO {
+  WORD wCode;
+  WORD wReserved;
+  BSTR bstrSource;
+  BSTR bstrDescription;
+  BSTR bstrHelpFile;
+  DWORD dwHelpContext;
+  PVOID pvReserved;
+  HRESULT(__stdcall *pfnDeferredFillIn)(struct tagEXCEPINFO *);
+  SCODE scode;
 };
 #pragma pack(pop)
 
@@ -1255,6 +1656,15 @@ enum tagTYPEKIND {
 /* 159 */
 typedef enum tagTYPEKIND TYPEKIND;
 
+/* 163 */
+#pragma pack(push, 8)
+union tagTYPEDESC::$AC700B6542D8071E244CADABF8A32897 {
+  struct tagTYPEDESC *lptdesc;
+  struct tagARRAYDESC *lpadesc;
+  HREFTYPE hreftype;
+};
+#pragma pack(pop)
+
 /* 162 */
 #pragma pack(push, 8)
 struct tagTYPEDESC {
@@ -1307,60 +1717,10 @@ struct tagTYPEATTR {
 };
 #pragma pack(pop)
 
-/* 164 */
-#pragma pack(push, 8)
-struct tagARRAYDESC {
-  TYPEDESC tdescElem;
-  USHORT cDims;
-  SAFEARRAYBOUND rgbounds[1];
-};
-#pragma pack(pop)
-
 /* 169 */
 #pragma pack(push, 8)
 struct ITypeComp {
   struct ITypeCompVtbl *lpVtbl;
-};
-#pragma pack(pop)
-
-/* 172 */
-enum tagDESCKIND {
-  DESCKIND_NONE = 0x0,
-  DESCKIND_FUNCDESC = 0x1,
-  DESCKIND_VARDESC = 0x2,
-  DESCKIND_TYPECOMP = 0x3,
-  DESCKIND_IMPLICITAPPOBJ = 0x4,
-  DESCKIND_MAX = 0x5,
-};
-
-/* 171 */
-typedef enum tagDESCKIND DESCKIND;
-
-/* 173 */
-typedef union tagBINDPTR BINDPTR;
-
-/* 170 */
-#pragma pack(push, 8)
-struct ITypeCompVtbl {
-  HRESULT(__stdcall *QueryInterface)
-  (ITypeComp *This, const IID *const riid, void **ppvObject);
-  ULONG(__stdcall *AddRef)(ITypeComp *This);
-  ULONG(__stdcall *Release)(ITypeComp *This);
-  HRESULT(__stdcall *Bind)
-  (ITypeComp *This, LPOLESTR szName, ULONG lHashVal, WORD wFlags,
-   ITypeInfo **ppTInfo, DESCKIND *pDescKind, BINDPTR *pBindPtr);
-  HRESULT(__stdcall *BindType)
-  (ITypeComp *This, LPOLESTR szName, ULONG lHashVal, ITypeInfo **ppTInfo,
-   ITypeComp **ppTComp);
-};
-#pragma pack(pop)
-
-/* 174 */
-#pragma pack(push, 8)
-union tagBINDPTR {
-  FUNCDESC *lpfuncdesc;
-  VARDESC *lpvardesc;
-  ITypeComp *lptcomp;
 };
 #pragma pack(pop)
 
@@ -1411,6 +1771,14 @@ struct tagPARAMDESC {
 /* 180 */
 typedef struct tagPARAMDESC PARAMDESC;
 
+/* 179 */
+#pragma pack(push, 8)
+union tagELEMDESC::$7C8F4CED1424251743D09680A1A0B07D {
+  IDLDESC idldesc;
+  PARAMDESC paramdesc;
+};
+#pragma pack(pop)
+
 /* 178 */
 #pragma pack(push, 8)
 struct tagELEMDESC {
@@ -1442,11 +1810,11 @@ struct tagFUNCDESC {
 };
 #pragma pack(pop)
 
-/* 183 */
+/* 192 */
 #pragma pack(push, 8)
-struct tagPARAMDESCEX {
-  ULONG cBytes;
-  VARIANTARG varDefaultValue;
+union tagVARDESC::$E6274BD6A7149C9CC2413444FF769F0B {
+  ULONG oInst;
+  VARIANT *lpvarValue;
 };
 #pragma pack(pop)
 
@@ -1478,35 +1846,59 @@ struct tagVARDESC {
 };
 #pragma pack(pop)
 
-/* 197 */
-#pragma pack(push, 8)
-struct tagDISPPARAMS {
-  VARIANTARG *rgvarg;
-  DISPID *rgdispidNamedArgs;
-  UINT cArgs;
-  UINT cNamedArgs;
-};
-#pragma pack(pop)
-
-/* 199 */
-#pragma pack(push, 8)
-struct tagEXCEPINFO {
-  WORD wCode;
-  WORD wReserved;
-  BSTR bstrSource;
-  BSTR bstrDescription;
-  BSTR bstrHelpFile;
-  DWORD dwHelpContext;
-  PVOID pvReserved;
-  HRESULT(__stdcall *pfnDeferredFillIn)(struct tagEXCEPINFO *);
-  SCODE scode;
-};
-#pragma pack(pop)
-
 /* 200 */
 #pragma pack(push, 8)
 struct ITypeLib {
   struct ITypeLibVtbl *lpVtbl;
+};
+#pragma pack(pop)
+
+/* 164 */
+#pragma pack(push, 8)
+struct tagARRAYDESC {
+  TYPEDESC tdescElem;
+  USHORT cDims;
+  SAFEARRAYBOUND rgbounds[1];
+};
+#pragma pack(pop)
+
+/* 172 */
+enum tagDESCKIND {
+  DESCKIND_NONE = 0x0,
+  DESCKIND_FUNCDESC = 0x1,
+  DESCKIND_VARDESC = 0x2,
+  DESCKIND_TYPECOMP = 0x3,
+  DESCKIND_IMPLICITAPPOBJ = 0x4,
+  DESCKIND_MAX = 0x5,
+};
+
+/* 171 */
+typedef enum tagDESCKIND DESCKIND;
+
+/* 173 */
+typedef union tagBINDPTR BINDPTR;
+
+/* 170 */
+#pragma pack(push, 8)
+struct ITypeCompVtbl {
+  HRESULT(__stdcall *QueryInterface)
+  (ITypeComp *This, const IID *const riid, void **ppvObject);
+  ULONG(__stdcall *AddRef)(ITypeComp *This);
+  ULONG(__stdcall *Release)(ITypeComp *This);
+  HRESULT(__stdcall *Bind)
+  (ITypeComp *This, LPOLESTR szName, ULONG lHashVal, WORD wFlags,
+   ITypeInfo **ppTInfo, DESCKIND *pDescKind, BINDPTR *pBindPtr);
+  HRESULT(__stdcall *BindType)
+  (ITypeComp *This, LPOLESTR szName, ULONG lHashVal, ITypeInfo **ppTInfo,
+   ITypeComp **ppTComp);
+};
+#pragma pack(pop)
+
+/* 183 */
+#pragma pack(push, 8)
+struct tagPARAMDESCEX {
+  ULONG cBytes;
+  VARIANTARG varDefaultValue;
 };
 #pragma pack(pop)
 
@@ -1541,6 +1933,15 @@ struct ITypeLibVtbl {
 };
 #pragma pack(pop)
 
+/* 174 */
+#pragma pack(push, 8)
+union tagBINDPTR {
+  FUNCDESC *lpfuncdesc;
+  VARDESC *lpvardesc;
+  ITypeComp *lptcomp;
+};
+#pragma pack(pop)
+
 /* 205 */
 enum tagSYSKIND {
   SYS_WIN16 = 0x0,
@@ -1561,64 +1962,6 @@ struct tagTLIBATTR {
   WORD wMajorVerNum;
   WORD wMinorVerNum;
   WORD wLibFlags;
-};
-#pragma pack(pop)
-
-/* 207 */
-#pragma pack(push, 8)
-struct tagSAFEARRAY {
-  USHORT cDims;
-  USHORT fFeatures;
-  ULONG cbElements;
-  ULONG cLocks;
-  PVOID pvData;
-  SAFEARRAYBOUND rgsabound[1];
-};
-#pragma pack(pop)
-
-/* 215 */
-#pragma pack(push, 8)
-struct IRecordInfo {
-  struct IRecordInfoVtbl *lpVtbl;
-};
-#pragma pack(pop)
-
-/* 217 */
-typedef const OLECHAR *LPCOLESTR;
-
-/* 216 */
-#pragma pack(push, 8)
-struct IRecordInfoVtbl {
-  HRESULT(__stdcall *QueryInterface)
-  (IRecordInfo *This, const IID *const riid, void **ppvObject);
-  ULONG(__stdcall *AddRef)(IRecordInfo *This);
-  ULONG(__stdcall *Release)(IRecordInfo *This);
-  HRESULT(__stdcall *RecordInit)(IRecordInfo *This, PVOID pvNew);
-  HRESULT(__stdcall *RecordClear)(IRecordInfo *This, PVOID pvExisting);
-  HRESULT(__stdcall *RecordCopy)
-  (IRecordInfo *This, PVOID pvExisting, PVOID pvNew);
-  HRESULT(__stdcall *GetGuid)(IRecordInfo *This, GUID *pguid);
-  HRESULT(__stdcall *GetName)(IRecordInfo *This, BSTR *pbstrName);
-  HRESULT(__stdcall *GetSize)(IRecordInfo *This, ULONG *pcbSize);
-  HRESULT(__stdcall *GetTypeInfo)(IRecordInfo *This, ITypeInfo **ppTypeInfo);
-  HRESULT(__stdcall *GetField)
-  (IRecordInfo *This, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField);
-  HRESULT(__stdcall *GetFieldNoCopy)
-  (IRecordInfo *This, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField,
-   PVOID *ppvDataCArray);
-  HRESULT(__stdcall *PutField)
-  (IRecordInfo *This, ULONG wFlags, PVOID pvData, LPCOLESTR szFieldName,
-   VARIANT *pvarField);
-  HRESULT(__stdcall *PutFieldNoCopy)
-  (IRecordInfo *This, ULONG wFlags, PVOID pvData, LPCOLESTR szFieldName,
-   VARIANT *pvarField);
-  HRESULT(__stdcall *GetFieldNames)
-  (IRecordInfo *This, ULONG *pcNames, BSTR *rgBstrNames);
-  BOOL(__stdcall *IsMatchingType)(IRecordInfo *This, IRecordInfo *pRecordInfo);
-  PVOID(__stdcall *RecordCreate)(IRecordInfo *This);
-  HRESULT(__stdcall *RecordCreateCopy)
-  (IRecordInfo *This, PVOID pvSource, PVOID *ppvDest);
-  HRESULT(__stdcall *RecordDestroy)(IRecordInfo *This, PVOID pvRecord);
 };
 #pragma pack(pop)
 
@@ -1815,6 +2158,46 @@ struct __cppobj streambuf {
   _CRT_CRITICAL_SECTION x_lock;
 };
 
+/* 370 */
+enum ios::seek_dir : __int32 {
+  beg = 0x0,
+  cur = 0x1,
+  end = 0x2,
+};
+
+/* 371 */
+struct /*VFT*/ streambuf_vtbl {
+  void(__thiscall * ~streambuf)(streambuf *this);
+  int(__thiscall *sync)(streambuf *this);
+  streambuf *(__thiscall *setbuf)(streambuf *this, char *, int);
+  int(__thiscall *seekoff)(streambuf *this, int, ios::seek_dir, int);
+  int(__thiscall *seekpos)(streambuf *this, int, int);
+  int(__thiscall *xsputn)(streambuf *this, const char *, int);
+  int(__thiscall *xsgetn)(streambuf *this, char *, int);
+  int(__thiscall *overflow)(streambuf *this, int);
+  int(__thiscall *underflow)(streambuf *this);
+  int(__thiscall *pbackfail)(streambuf *this, int);
+  int(__thiscall *doallocate)(streambuf *this);
+};
+
+/* 420 */
+struct __CRT_LIST_ENTRY {
+  __CRT_LIST_ENTRY *Flink;
+  __CRT_LIST_ENTRY *Blink;
+};
+
+/* 421 */
+struct _CRT_CRITICAL_SECTION_DEBUG {
+  unsigned __int16 Type;
+  unsigned __int16 CreatorBackTraceIndex;
+  _CRT_CRITICAL_SECTION *CriticalSection;
+  __CRT_LIST_ENTRY ProcessLocksList;
+  unsigned int EntryCount;
+  unsigned int ContentionCount;
+  unsigned int Depth;
+  void *OwnerBackTrace[5];
+};
+
 /* 244 */
 struct ATL::CManualAccessor;
 
@@ -1852,6 +2235,18 @@ struct __cppobj ios {
   int x_precision;
   char x_fill;
   int x_width;
+};
+#pragma pack(pop)
+
+/* 369 */
+struct /*VFT*/ ios_vtbl {
+  void(__thiscall * ~ios)(ios *this);
+};
+
+/* 289 */
+#pragma pack(push, 8)
+struct __cppobj ostream : virtual ios {
+  int x_floatused;
 };
 #pragma pack(pop)
 
@@ -1970,13 +2365,6 @@ struct CPreviewView::PAGE_INFO;
 
 /* 288 */
 struct CMetaFileDC;
-
-/* 289 */
-#pragma pack(push, 8)
-struct __cppobj ostream : virtual ios {
-  int x_floatused;
-};
-#pragma pack(pop)
 
 /* 290 */
 struct filebuf;
@@ -2172,7 +2560,9 @@ struct ObjectDefinition {
   _DWORD field_0;
   _BYTE gap_4[14];
   _WORD type;
-  _BYTE gap_14[62];
+  _BYTE gap_14[2];
+  _WORD field_16;
+  _BYTE gap_18[58];
   __int16 field_52;
   _BYTE gap_54[54];
   _WORD buildModeType;
@@ -2259,6 +2649,17 @@ struct bstring {
 };
 #pragma pack(pop)
 
+/* 427 */
+typedef unsigned int size_t;
+
+/* 404 */
+struct __cppobj basic_string_ref<char> {
+  char *ptr;
+  size_t len;
+  size_t res;
+  size_t count;
+};
+
 /* 358 */
 #pragma pack(push, 1)
 struct basic_string_ref {
@@ -2309,33 +2710,6 @@ typedef int streamoff;
 /* 368 */
 typedef int streampos;
 
-/* 369 */
-struct /*VFT*/ ios_vtbl {
-  void(__thiscall * ~ios)(ios *this);
-};
-
-/* 370 */
-enum ios::seek_dir : __int32 {
-  beg = 0x0,
-  cur = 0x1,
-  end = 0x2,
-};
-
-/* 371 */
-struct /*VFT*/ streambuf_vtbl {
-  void(__thiscall * ~streambuf)(streambuf *this);
-  int(__thiscall *sync)(streambuf *this);
-  streambuf *(__thiscall *setbuf)(streambuf *this, char *, int);
-  int(__thiscall *seekoff)(streambuf *this, int, ios::seek_dir, int);
-  int(__thiscall *seekpos)(streambuf *this, int, int);
-  int(__thiscall *xsputn)(streambuf *this, const char *, int);
-  int(__thiscall *xsgetn)(streambuf *this, char *, int);
-  int(__thiscall *overflow)(streambuf *this, int);
-  int(__thiscall *underflow)(streambuf *this);
-  int(__thiscall *pbackfail)(streambuf *this, int);
-  int(__thiscall *doallocate)(streambuf *this);
-};
-
 /* 372 */
 #pragma pack(push, 8)
 struct __cppobj Iostream_init {};
@@ -2361,9 +2735,6 @@ struct output_iterator {};
 
 /* 379 */
 typedef void (*new_handler)(void);
-
-/* 427 */
-typedef unsigned int size_t;
 
 /* 380 */
 typedef int(__cdecl *_PNH)(size_t);
@@ -2460,14 +2831,6 @@ typedef char *allocator<char>::const_reference;
 /* 403 */
 typedef allocator<char>::const_reference vector<char>::const_reference;
 
-/* 404 */
-struct __cppobj basic_string_ref<char> {
-  char *ptr;
-  size_t len;
-  size_t res;
-  size_t count;
-};
-
 /* 406 */
 typedef basic_string<char> cstring;
 
@@ -2533,24 +2896,6 @@ struct __cppobj std::ios_base::Init {};
 
 /* 418 */
 struct __cppobj std::_Winit {};
-
-/* 420 */
-struct __CRT_LIST_ENTRY {
-  __CRT_LIST_ENTRY *Flink;
-  __CRT_LIST_ENTRY *Blink;
-};
-
-/* 421 */
-struct _CRT_CRITICAL_SECTION_DEBUG {
-  unsigned __int16 Type;
-  unsigned __int16 CreatorBackTraceIndex;
-  _CRT_CRITICAL_SECTION *CriticalSection;
-  __CRT_LIST_ENTRY ProcessLocksList;
-  unsigned int EntryCount;
-  unsigned int ContentionCount;
-  unsigned int Depth;
-  void *OwnerBackTrace[5];
-};
 
 /* 422 */
 typedef unsigned __int8 _Bool;
@@ -2697,14 +3042,14 @@ struct /*VFT*/ cGZApp_vtbl {
 struct /*VFT*/ cSimsApp_vtbl {
   int(__thiscall *cSimsApp_vtbl_func_0)(_DWORD *this);
   int(__stdcall *cSimsApp_vtbl_func_1)(char a1);
-  char(__thiscall *j_SimsApp_0063f99d)(cSimsApp *this);
+  char(__thiscall *PreFrameWorkInit)(cSimsApp *this);
   int(__stdcall *cSimsApp_vtbl_func_3)(int a1);
   int(__stdcall *cSimsApp_vtbl_func_4)();
   int(__stdcall *cSimsApp_vtbl_func_5)();
   int(__stdcall *cSimsApp_vtbl_func_6)();
   int(__stdcall *cSimsApp_vtbl_func_7)();
   int(__stdcall *cSimsApp_vtbl_func_8)();
-  int(__stdcall *cSimsApp_vtbl_func_9)(int a1);
+  int(__thiscall *cSimsApp_vtbl_func_9)(cSimsApp *, MSG *);
   int(__stdcall *cSimsApp_vtbl_func_10)();
   int(__stdcall *j_SimsApp_006493b2)();
   int(__stdcall *cSimsApp_vtbl_func_12)();
@@ -2727,7 +3072,7 @@ struct cSimsApp {
   cSimsApp_vtbl *__vftable_6C;
   _BYTE gap_70[12];
   cGZWin *mpMainWindow;
-  int dword_80;
+  int mpSimsView;
   cWinCPanel *mpWinCPanel;
   int dword_88;
   cGZWin *mNghWin;
@@ -2760,6 +3105,316 @@ struct cSimsApp {
   int dword_110;
   int mpLoadLoopSnd;
   int dword_118;
+};
+
+/* 485 */
+struct cGZWin {
+  cGZWin_vtbl *__vftable /*VFT*/;
+  int dword_4;
+  int dword_8;
+  _DWORD dword_c;
+  _BYTE gap_10[12];
+  _DWORD dword_1c;
+  _BYTE gap_20[12];
+  int dword_2c;
+  _DWORD dword_30;
+  _BYTE gap_34[4];
+  char byte_38;
+  _BYTE gap_39[7];
+  char byte_40;
+  _BYTE gap_41[3];
+  int dword_44;
+  int dword_48;
+  int dword_4c;
+  cRZString name;
+  int dword_60;
+  int dword_64;
+  char byte_68;
+  char byte_69;
+  _BYTE gap_6A[2];
+  int dword_6c;
+  int mCursor;
+  char byte_74;
+  _BYTE gap_75[3];
+  cRZString field_78;
+  RECT mrBounds;
+  _DWORD dword_98;
+  _BYTE gap_9C[12];
+  int dword_a8;
+  int dword_ac;
+  int dword_b0;
+  int dword_b4;
+  int dword_b8;
+  char byte_bc;
+  _BYTE gap_BD[3];
+  int dword_c0;
+  _BYTE gap_C4[4];
+  _DWORD dword_c8;
+  _BYTE gap_CC[16];
+  int dword_dc;
+};
+
+/* 574 */
+#pragma pack(push, 1)
+struct __cppobj cWinCPanel : cGZWin {
+  char byte_e0;
+  char byte_e1;
+  _BYTE gap_E2[2];
+  int dword_e4;
+  int dword_e8;
+  int dword_ec;
+  int dword_f0;
+  int dword_f4;
+  int dword_f8;
+  int dword_fc;
+  int dword_100;
+  int dword_104;
+  _DWORD dword_108;
+  int dword_10c;
+  int dword_110;
+  int dword_114;
+  int dword_118;
+};
+#pragma pack(pop)
+
+/* 576 */
+struct CPState {
+  CPState_vtbl *__vftable /*VFT*/;
+  int mGameMode;
+  int dword_8;
+  int dword_c;
+  int dword_10;
+  cRZString field_14;
+  char byte_24;
+  _BYTE gap_25[3];
+  cRZString field_28;
+  int dword_38;
+  int dword_3c;
+  int dword_40;
+  char byte_44;
+  _BYTE gap_45[3];
+  int fGameSpeed;
+  int dword_4c;
+  int mpXViewer;
+  int dword_54;
+  int dword_58;
+  int dword_5c;
+  int dword_60;
+  int dword_64;
+  char byte_68;
+  _BYTE gap_69[3];
+  int dword_6c;
+  _BYTE gap_70[48];
+  int dword_a0;
+  int dword_a4;
+  int dword_a8;
+  int dword_ac;
+  int dword_b0;
+  int dword_b4;
+  int dword_b8;
+  _BYTE gap_BC[192];
+  int mSelected;
+  int mpHouseViewer;
+  int dword_184;
+  char byte_188;
+  char byte_189;
+  _BYTE gap_18A[2];
+  float dword_18c;
+  _DWORD dword_190;
+  _BYTE gap_194[12];
+  _DWORD dword_1a0;
+  _BYTE gap_1A4[12];
+  int dword_1b0;
+  int dword_1b4;
+  int dword_1b8;
+  int dword_1bc;
+  int dword_1c0;
+  _DWORD dword_1c4;
+  _BYTE gap_1C8[260];
+  _DWORD dword_2cc;
+};
+
+/* 482 */
+struct __cppobj cWinMemView : cGZWin {
+  float dword_e0;
+  int dword_e4;
+  int dword_e8;
+  _DWORD dword_ec;
+  _BYTE gap_F0[12];
+  _DWORD dword_fc;
+  _BYTE gap_100[12];
+  _DWORD dword_10c;
+  _BYTE gap_110[12];
+  int mCursorPos;
+  int dword_120;
+  char byte_124;
+  char byte_125;
+  char byte_126;
+  _BYTE gap_127;
+  int dword_128;
+  int dword_12c;
+  int dword_130;
+  _BYTE gap_134[24];
+  _DWORD mBytes;
+};
+
+/* 577 */
+struct __cppobj cGZWinSplashScreen : cGZWin {
+  int dword_e0;
+  _BYTE byte_e4[16];
+  _BYTE byte_f4[16];
+  _BYTE byte_104[64];
+  int dword_144;
+  cRZString field_148;
+  _BYTE gap_158[24];
+  _DWORD dword_170;
+  _BYTE gap_174[12];
+  _DWORD dword_180;
+  _BYTE gap_184[12];
+  char byte_190;
+  _BYTE gap_191[3];
+  _BYTE byte_194[16];
+  _BYTE byte_1a4[16];
+  _BYTE byte_1b4[16];
+  _BYTE byte_1c4[12];
+  char mbPlayIntro;
+  char byte_1d1;
+  _BYTE gap_1D2[2];
+  int dword_1d4;
+};
+
+/* 484 */
+struct /*VFT*/ cGZWin_vtbl {
+  char(__stdcall *cGZWin_vtbl_func_0)(cGZWin *__hidden this, _DWORD *a2);
+  int(__stdcall *cGZWin_vtbl_func_1)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_2)(cGZWin *__hidden this);
+  char(__stdcall *cGZWin_vtbl_func_3)(cGZWin *__hidden this);
+  char(__stdcall *cGZWin_vtbl_func_4)(cGZWin *__hidden this);
+  void *(__stdcall *cGZWin_vtbl_func_5)(cGZWin *__hidden this, char a2);
+  int(__stdcall *cGZWin_vtbl_func_6)(cGZWin *__hidden this);
+  char(__stdcall *cGZWin_vtbl_func_7)(cGZWin *__hidden this, int a2);
+  int(__stdcall *ChildAdd)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_9)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_10)(cGZWin *__hidden this, int a2);
+  bool(__stdcall *cGZWin_vtbl_func_11)(cGZWin *__hidden this, int a2);
+  BOOL(__stdcall *cGZWin_vtbl_func_12)(cGZWin *__hidden this);
+  char(__stdcall *cGZWin_vtbl_func_13)(cGZWin *__hidden this, int a2);
+  char(__stdcall *cGZWin_vtbl_func_14)(cGZWin *__hidden this, int a2);
+  char(__stdcall *cGZWin_vtbl_func_15)(cGZWin *__hidden this, int a2);
+  char(__stdcall *cGZWin_vtbl_func_16)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_17)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_18)(cGZWin *__hidden this);
+  char(__stdcall *cGZWin_vtbl_func_19)(cGZWin *__hidden this, int a2);
+  char(__stdcall *cGZWin_vtbl_func_20)(cGZWin *__hidden this, int a2);
+  char(__stdcall *cGZWin_vtbl_func_21)(cGZWin *__hidden this, int a2, int a3);
+  char(__stdcall *cGZWin_vtbl_func_22)(cGZWin *__hidden this, char a2, char a3);
+  int(__stdcall *cGZWin_vtbl_func_23)(cGZWin *__hidden this, unsigned __int8 a2,
+                                      char a3);
+  int(__stdcall *Resize)(cGZWin *__hidden this, int a2, int a3, int a4, int a5);
+  int(__stdcall *cGZWin_vtbl_func_25)(cGZWin *__hidden this, _DWORD *a2);
+  void(__stdcall *cGZWin_vtbl_func_26)(cGZWin *__hidden this, _DWORD *a2);
+  bool(__stdcall *cGZWin_vtbl_func_27)(cGZWin *__hidden this, _DWORD *a2,
+                                       int a3);
+  int(__stdcall *cGZWin_vtbl_func_28)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_29)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_30)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_31)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_32)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_33)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_34)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_35)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_36)(cGZWin *__hidden this, int a2, char a3);
+  int(__stdcall *cGZWin_vtbl_func_37)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_38)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_39)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_40)(cGZWin *__hidden this);
+  void(__stdcall *cGZWin_vtbl_func_41)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_42)(cGZWin *__hidden this, unsigned __int8 a2,
+                                      char a3, int a4);
+  int(__stdcall *cGZWin_vtbl_func_43)(cGZWin *__hidden this);
+  char(__stdcall *cGZWin_vtbl_func_44)(cGZWin *__hidden this);
+  char(__stdcall *cGZWin_vtbl_func_45)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_46)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_47)(cGZWin *__hidden this, int a2, int a3,
+                                      char a4);
+  int(__stdcall *cGZWin_vtbl_func_48)(cGZWin *__hidden this, int a2);
+  int(__stdcall *cGZWin_vtbl_func_49)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_50)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_51)(cGZWin *__hidden this);
+  char(__fastcall *cGZWin_vtbl_func_52)(cGZWin *__hidden this, int a2, int a3,
+                                        int a4);
+  int(__stdcall *cGZWin_vtbl_func_53)(cGZWin *__hidden this, int a2,
+                                      unsigned __int8 a3);
+  char(__stdcall *cGZWin_vtbl_func_54)(cGZWin *__hidden this, char a2);
+  char(__stdcall *cGZWin_vtbl_func_55)(cGZWin *__hidden this, int a2, int a3);
+  char(__stdcall *cGZWin_vtbl_func_56)(cGZWin *__hidden this, int a2, int a3);
+  char(__stdcall *cGZWin_vtbl_func_57)(cGZWin *__hidden this, int a2, int a3,
+                                       int a4);
+  char(__stdcall *cGZWin_vtbl_func_58)(cGZWin *__hidden this, int a2, int a3,
+                                       int a4);
+  int(__stdcall *cGZWin_vtbl_func_59)(cGZWin *__hidden this, int a2, int a3,
+                                      int a4);
+  int(__stdcall *cGZWin_vtbl_func_60)(cGZWin *__hidden this, int a2, int a3,
+                                      int a4);
+  char(__stdcall *cGZWin_vtbl_func_61)(cGZWin *__hidden this, int a2, int a3,
+                                       int a4);
+  char(__stdcall *cGZWin_vtbl_func_62)(cGZWin *__hidden this, int a2, int a3,
+                                       int a4);
+  char(__stdcall *cGZWin_vtbl_func_63)(cGZWin *__hidden this, int a2, int a3,
+                                       int a4);
+  char(__stdcall *cGZWin_vtbl_func_64)(cGZWin *__hidden this, int a2, int a3,
+                                       int a4);
+  char(__stdcall *cGZWin_vtbl_func_65)(cGZWin *__hidden this, int a2, int a3,
+                                       int a4);
+  char(__stdcall *cGZWin_vtbl_func_66)(cGZWin *__hidden this, int a2, int a3,
+                                       int a4);
+  char(__stdcall *cGZWin_vtbl_func_67)(cGZWin *__hidden this, int a2, int a3,
+                                       int a4);
+  int(__stdcall *cGZWin_vtbl_func_68)(cGZWin *__hidden this, int a2, int a3,
+                                      int a4, int a5);
+  int(__stdcall *cGZWin_vtbl_func_69)(cGZWin *__hidden this, int a2, int a3,
+                                      int a4, int a5);
+  void(__stdcall *cGZWin_vtbl_func_70)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_71)(cGZWin *__hidden this, int a2, int a3,
+                                      int a4);
+  int(__stdcall *cGZWin_vtbl_func_72)(cGZWin *__hidden this, int a2, int a3,
+                                      int a4);
+  int(__stdcall *cGZWin_vtbl_func_73)(cGZWin *__hidden this, int a2, int a3,
+                                      int a4);
+  bool(__stdcall *cGZWin_vtbl_func_74)(cGZWin *__hidden this, int a2, int a3);
+  char(__stdcall *cGZWin_vtbl_func_75)(cGZWin *__hidden this, int a2, int a3);
+  char(__stdcall *cGZWin_vtbl_func_76)(cGZWin *__hidden this);
+  char(__stdcall *cGZWin_vtbl_func_77)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_78)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_79)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_80)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_81)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_82)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_83)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_84)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_85)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_86)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_87)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_88)(cGZWin *__hidden this, char a2);
+  int(__stdcall *cGZWin_vtbl_func_89)(cGZWin *__hidden this);
+  _BYTE *(__stdcall *cGZWin_vtbl_func_90)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_91)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_92)(cGZWin *__hidden this, int a2);
+  char(__stdcall *cGZWin_vtbl_func_93)(cGZWin *__hidden this, char a2);
+  bool(__stdcall *cGZWin_vtbl_func_94)(cGZWin *__hidden this, char a2);
+  char(__stdcall *cGZWin_vtbl_func_95)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_96)(cGZWin *__hidden this);
+  int(__stdcall *GetPrivateBuffer)(cGZWin *__hidden this);
+  int(__fastcall *cGZWin_vtbl_func_98)(cGZWin *__hidden this, int a2, int a3);
+  int(__stdcall *cGZWin_vtbl_func_99)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_100)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_101)(cGZWin *__hidden this);
+  int(__stdcall *cGZWin_vtbl_func_102)(cGZWin *__hidden this);
+};
+
+/* 575 */
+struct /*VFT*/ CPState_vtbl {
+  void *(__thiscall *CPState_vtbl_func_0)(void *this, char a2);
 };
 
 /* 450 */
@@ -3164,7 +3819,7 @@ struct /*VFT*/ cGZFrameWork_vtbl {
 struct cGZFrameWork {
   cGZFrameWorkW95_vtbl *__vftable /*VFT*/;
   cRZUnknown field_4;
-  int dword_10;
+  cSimsApp *mpApp;
   cGZSystemServiceList mSystemServiceList;
   _BYTE gap_1C[8];
   cGZMessageQueueManager mMessageQueueMgr;
@@ -3198,6 +3853,27 @@ struct __unaligned __declspec(align(1)) cGZFrameWorkW95 {
   __declspec(align(1)) cGZFontSys mFontSys;
 };
 
+/* 483 */
+struct /*VFT*/ cGZFrameWorkW95_vtbl {
+  void *(__thiscall *cGZFrameWork_vtbl_func_0)(_DWORD *this);
+  cRZLanguageManager *(__thiscall *GetLanguageManager)(char *this);
+  char *(__thiscall *cGZFrameWork_vtbl_func_2)(char *this);
+  char *(__thiscall *cGZFrameWork_vtbl_func_3)(char *this);
+  int(__thiscall *cGZFrameWorkW95_vtbl_func_4)(void *this);
+  int(__thiscall *GetSoundSys)(_DWORD *this);
+  cGZWinMgrW95 *(__thiscall *cGZFrameWorkW95_vtbl_func_6)(cGZFrameWorkW95 *);
+  int(__thiscall *cGZFrameWorkW95_vtbl_func_7)(void *this);
+  void(__thiscall __noreturn *cGZFrameWorkW95_vtbl_func_8)(_DWORD *this);
+  void(__stdcall *cGZFrameWorkW95_vtbl_func_9)(int nExitCode);
+  void(__cdecl __noreturn *cGZFrameWorkW95_vtbl_func_10)(int Code);
+  int(__thiscall *Init)(void *this);
+  int(__thiscall *cGZFrameWorkW95_vtbl_func_12)(_DWORD *this);
+  cRZCmdLine *(__thiscall *cGZFrameWork::GetCommandLine)(cGZFrameWork *this);
+  cGZSystemServiceList *(__thiscall *GetSystemServiceList)(char *this);
+  int(__thiscall *cGZFrameWork_vtbl_func_15)(_DWORD *this);
+  int(__thiscall *Run)(int *this);
+};
+
 /* 479 */
 struct /*VFT*/ cGZFontSys_vtbl {
   int(__thiscall *cGZFontSys_vtbl_func_0)(_DWORD *this);
@@ -3211,6 +3887,105 @@ struct /*VFT*/ cGZFontSys_vtbl {
   char(__thiscall *GZFontSys_0094e76d)(void *this, int a2, void *a3);
   int(__thiscall *GZFontSys_0094e85e)(void *this, int a2);
   void *(__thiscall *cGZFontSys_vtbl_func_9)(void *this, char a2);
+};
+
+/* 489 */
+#pragma pack(push, 1)
+struct cRZKeyboard {
+  cRZKeyboard_vtbl *__vftable /*VFT*/;
+  _DWORD dword_4;
+};
+#pragma pack(pop)
+
+/* 491 */
+struct cGZWinMgrW95 {
+  cGZWinMgrW95_vtbl *__vftable /*VFT*/;
+  _BYTE gap_4[28];
+  int dword_20;
+  int dword_24;
+  int dword_28;
+  cGZWin *mpParent;
+  int dword_30;
+  _BYTE byte_34[12];
+  int dword_40;
+  _DWORD dword_44;
+  _BYTE gap_48[4];
+  cGZFrameWork *mpFrameWork;
+  cRZKeyboard mKeyboard;
+  _BYTE gap_58[260];
+  _DWORD dword_15c;
+  _BYTE gap_160[8];
+  _DWORD dword_168;
+  _BYTE gap_16C[12];
+  cRZCursorManager *mCursorManager;
+  cGZWin *mpCurrentMouseWin;
+  int dword_180;
+  int dword_184;
+  int dword_188;
+  _BYTE byte_18c[8];
+  int dword_194;
+  _BYTE byte_198[16];
+  char byte_1a8;
+  char byte_1a9;
+  _BYTE gap_1AA[2];
+  _BYTE byte_1ac[16];
+  char byte_1bc;
+  _BYTE gap_1BD[3];
+  int dword_1c0;
+  char mbInitialized;
+  _BYTE gap_1C5[3];
+  int dword_1c8;
+  int dword_1cc;
+  char byte_1d0;
+  _BYTE gap_1D1[3];
+  _DWORD dword_1d4;
+  _BYTE gap_1D8[8];
+  int dword_1e0;
+  int dword_1e4;
+  char byte_1e8;
+  char mbMouseMoved;
+  _BYTE gap_1EA[2];
+  cRZString field_1ec;
+  char byte_1fc;
+  _BYTE gap_1FD[3];
+  cGZWin *dword_200;
+  char byte_204;
+  _BYTE gap_205[3];
+  int dword_208;
+  struct _RTL_CRITICAL_SECTION field_20c;
+};
+
+/* 490 */
+struct /*VFT*/ cGZWinMgrW95_vtbl {
+  void *(__thiscall *cGZWinMgrW95_vtbl_func_0)(void *this, char a2);
+};
+
+/* 488 */
+struct /*VFT*/ cRZKeyboard_vtbl {
+  int(__thiscall *cRZKeyboard_vtbl_func_0)(_BYTE *this);
+  bool(__fastcall *RZKeyboard_0094c4d6)(int a1, int a2, unsigned int a3,
+                                        int a4);
+  char(__fastcall *RZKeyboard_0094c3f6)(int a1, int a2, unsigned int a3);
+  BOOL(__stdcall *cRZKeyboard_vtbl_func_3)(int vKey);
+  bool(__fastcall *RZKeyboard_0094c726)(int a1, int a2, unsigned int a3);
+  BOOL(__thiscall *cRZKeyboard_vtbl_func_5)(void *this);
+  int(__stdcall *cRZKeyboard_vtbl_func_6)(int nVirtKey);
+  int(__fastcall *RZKeyboard_0094c576)(int a1, int a2, unsigned int a3);
+  int(__fastcall *RZKeyboard_0094c616)(int a1, int a2, unsigned int a3);
+};
+
+/* 685 */
+#pragma pack(push, 1)
+struct cRZCursorManager {
+  cRZCursorManager_vtbl *__vftable /*VFT*/;
+  _BYTE byte_4[12];
+  char byte_10;
+};
+#pragma pack(pop)
+
+/* 684 */
+struct /*VFT*/ cRZCursorManager_vtbl {
+  void *(__thiscall *cRZCursorManager_vtbl_func_0)(void *this, char a2);
 };
 
 /* 481 */
@@ -3331,227 +4106,6 @@ struct /*VFT*/ cWinMemView_vtbl {
   int(__thiscall *cWinMemView_vtbl_func_100)(void *this);
   _DWORD *(__thiscall *cWinMemView_vtbl_func_101)(_DWORD *this);
   int(__thiscall *cWinMemView_vtbl_func_102)(void *this);
-};
-
-/* 485 */
-struct cGZWin {
-  cGZWin_vtbl *__vftable /*VFT*/;
-  int dword_4;
-  int dword_8;
-  _DWORD dword_c;
-  _BYTE gap_10[12];
-  _DWORD dword_1c;
-  _BYTE gap_20[12];
-  int dword_2c;
-  _DWORD dword_30;
-  _BYTE gap_34[4];
-  char byte_38;
-  _BYTE gap_39[7];
-  char byte_40;
-  _BYTE gap_41[3];
-  int dword_44;
-  int dword_48;
-  int dword_4c;
-  cRZString name;
-  int dword_60;
-  int dword_64;
-  char byte_68;
-  char byte_69;
-  _BYTE gap_6A[2];
-  int dword_6c;
-  int dword_70;
-  char byte_74;
-  _BYTE gap_75[3];
-  cRZString field_78;
-  RECT mrBounds;
-  _DWORD dword_98;
-  _BYTE gap_9C[12];
-  int dword_a8;
-  int dword_ac;
-  int dword_b0;
-  int dword_b4;
-  int dword_b8;
-  char byte_bc;
-  _BYTE gap_BD[3];
-  int dword_c0;
-  _BYTE gap_C4[4];
-  _DWORD dword_c8;
-  _BYTE gap_CC[16];
-  int dword_dc;
-};
-
-/* 482 */
-struct __cppobj cWinMemView : cGZWin {
-  float dword_e0;
-  int dword_e4;
-  int dword_e8;
-  _DWORD dword_ec;
-  _BYTE gap_F0[12];
-  _DWORD dword_fc;
-  _BYTE gap_100[12];
-  _DWORD dword_10c;
-  _BYTE gap_110[12];
-  int mCursorPos;
-  int dword_120;
-  char byte_124;
-  char byte_125;
-  char byte_126;
-  _BYTE gap_127;
-  int dword_128;
-  int dword_12c;
-  int dword_130;
-  _BYTE gap_134[24];
-  _DWORD mBytes;
-};
-
-/* 483 */
-struct /*VFT*/ cGZFrameWorkW95_vtbl {
-  int(__thiscall *cGZFrameWork_vtbl_func_0)(_DWORD *this);
-  char *(__thiscall *cGZFrameWork_vtbl_func_1)(char *this);
-  char *(__thiscall *cGZFrameWork_vtbl_func_2)(char *this);
-  char *(__thiscall *cGZFrameWork_vtbl_func_3)(char *this);
-  int(__thiscall *cGZFrameWorkW95_vtbl_func_4)(void *this);
-  int(__thiscall *cGZFrameWork_vtbl_func_5)(_DWORD *this);
-  cGZWinMgrW95 *(__thiscall *cGZFrameWorkW95_vtbl_func_6)(cGZFrameWorkW95 *);
-  int(__thiscall *cGZFrameWorkW95_vtbl_func_7)(void *this);
-  void(__thiscall __noreturn *cGZFrameWorkW95_vtbl_func_8)(_DWORD *this);
-  void(__stdcall *cGZFrameWorkW95_vtbl_func_9)(int nExitCode);
-  void(__cdecl __noreturn *cGZFrameWorkW95_vtbl_func_10)(int Code);
-  int(__thiscall *cGZFrameWorkW95_vtbl_func_11)(void *this);
-  int(__thiscall *cGZFrameWorkW95_vtbl_func_12)(_DWORD *this);
-  cRZCmdLine *(__thiscall *cGZFrameWork::GetCommandLine)(cGZFrameWork *this);
-  char *(__thiscall *cGZFrameWork_vtbl_func_14)(char *this);
-  int(__thiscall *cGZFrameWork_vtbl_func_15)(_DWORD *this);
-  int(__thiscall *FWDispatchMessage)(int *this);
-};
-
-/* 484 */
-struct /*VFT*/ cGZWin_vtbl {
-  char(__stdcall *cGZWin_vtbl_func_0)(cGZWin *__hidden this, _DWORD *a2);
-  int(__stdcall *cGZWin_vtbl_func_1)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_2)(cGZWin *__hidden this);
-  char(__stdcall *cGZWin_vtbl_func_3)(cGZWin *__hidden this);
-  char(__stdcall *cGZWin_vtbl_func_4)(cGZWin *__hidden this);
-  void *(__stdcall *cGZWin_vtbl_func_5)(cGZWin *__hidden this, char a2);
-  int(__stdcall *cGZWin_vtbl_func_6)(cGZWin *__hidden this);
-  char(__stdcall *cGZWin_vtbl_func_7)(cGZWin *__hidden this, int a2);
-  int(__stdcall *ChildAdd)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_9)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_10)(cGZWin *__hidden this, int a2);
-  bool(__stdcall *cGZWin_vtbl_func_11)(cGZWin *__hidden this, int a2);
-  BOOL(__stdcall *cGZWin_vtbl_func_12)(cGZWin *__hidden this);
-  char(__stdcall *cGZWin_vtbl_func_13)(cGZWin *__hidden this, int a2);
-  char(__stdcall *cGZWin_vtbl_func_14)(cGZWin *__hidden this, int a2);
-  char(__stdcall *cGZWin_vtbl_func_15)(cGZWin *__hidden this, int a2);
-  char(__stdcall *cGZWin_vtbl_func_16)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_17)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_18)(cGZWin *__hidden this);
-  char(__stdcall *cGZWin_vtbl_func_19)(cGZWin *__hidden this, int a2);
-  char(__stdcall *cGZWin_vtbl_func_20)(cGZWin *__hidden this, int a2);
-  char(__stdcall *cGZWin_vtbl_func_21)(cGZWin *__hidden this, int a2, int a3);
-  char(__stdcall *cGZWin_vtbl_func_22)(cGZWin *__hidden this, char a2, char a3);
-  int(__stdcall *cGZWin_vtbl_func_23)(cGZWin *__hidden this, unsigned __int8 a2,
-                                      char a3);
-  int(__stdcall *Resize)(cGZWin *__hidden this, int a2, int a3, int a4, int a5);
-  int(__stdcall *cGZWin_vtbl_func_25)(cGZWin *__hidden this, _DWORD *a2);
-  void(__stdcall *cGZWin_vtbl_func_26)(cGZWin *__hidden this, _DWORD *a2);
-  bool(__stdcall *cGZWin_vtbl_func_27)(cGZWin *__hidden this, _DWORD *a2,
-                                       int a3);
-  int(__stdcall *cGZWin_vtbl_func_28)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_29)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_30)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_31)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_32)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_33)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_34)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_35)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_36)(cGZWin *__hidden this, int a2, char a3);
-  int(__stdcall *cGZWin_vtbl_func_37)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_38)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_39)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_40)(cGZWin *__hidden this);
-  void(__stdcall *cGZWin_vtbl_func_41)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_42)(cGZWin *__hidden this, unsigned __int8 a2,
-                                      char a3, int a4);
-  int(__stdcall *cGZWin_vtbl_func_43)(cGZWin *__hidden this);
-  char(__stdcall *cGZWin_vtbl_func_44)(cGZWin *__hidden this);
-  char(__stdcall *cGZWin_vtbl_func_45)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_46)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_47)(cGZWin *__hidden this, int a2, int a3,
-                                      char a4);
-  int(__stdcall *cGZWin_vtbl_func_48)(cGZWin *__hidden this, int a2);
-  int(__stdcall *cGZWin_vtbl_func_49)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_50)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_51)(cGZWin *__hidden this);
-  char(__fastcall *cGZWin_vtbl_func_52)(cGZWin *__hidden this, int a2, int a3,
-                                        int a4);
-  int(__stdcall *cGZWin_vtbl_func_53)(cGZWin *__hidden this, int a2,
-                                      unsigned __int8 a3);
-  char(__stdcall *cGZWin_vtbl_func_54)(cGZWin *__hidden this, char a2);
-  char(__stdcall *cGZWin_vtbl_func_55)(cGZWin *__hidden this, int a2, int a3);
-  char(__stdcall *cGZWin_vtbl_func_56)(cGZWin *__hidden this, int a2, int a3);
-  char(__stdcall *cGZWin_vtbl_func_57)(cGZWin *__hidden this, int a2, int a3,
-                                       int a4);
-  char(__stdcall *cGZWin_vtbl_func_58)(cGZWin *__hidden this, int a2, int a3,
-                                       int a4);
-  int(__stdcall *cGZWin_vtbl_func_59)(cGZWin *__hidden this, int a2, int a3,
-                                      int a4);
-  int(__stdcall *cGZWin_vtbl_func_60)(cGZWin *__hidden this, int a2, int a3,
-                                      int a4);
-  char(__stdcall *cGZWin_vtbl_func_61)(cGZWin *__hidden this, int a2, int a3,
-                                       int a4);
-  char(__stdcall *cGZWin_vtbl_func_62)(cGZWin *__hidden this, int a2, int a3,
-                                       int a4);
-  char(__stdcall *cGZWin_vtbl_func_63)(cGZWin *__hidden this, int a2, int a3,
-                                       int a4);
-  char(__stdcall *cGZWin_vtbl_func_64)(cGZWin *__hidden this, int a2, int a3,
-                                       int a4);
-  char(__stdcall *cGZWin_vtbl_func_65)(cGZWin *__hidden this, int a2, int a3,
-                                       int a4);
-  char(__stdcall *cGZWin_vtbl_func_66)(cGZWin *__hidden this, int a2, int a3,
-                                       int a4);
-  char(__stdcall *cGZWin_vtbl_func_67)(cGZWin *__hidden this, int a2, int a3,
-                                       int a4);
-  int(__stdcall *cGZWin_vtbl_func_68)(cGZWin *__hidden this, int a2, int a3,
-                                      int a4, int a5);
-  int(__stdcall *cGZWin_vtbl_func_69)(cGZWin *__hidden this, int a2, int a3,
-                                      int a4, int a5);
-  void(__stdcall *cGZWin_vtbl_func_70)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_71)(cGZWin *__hidden this, int a2, int a3,
-                                      int a4);
-  int(__stdcall *cGZWin_vtbl_func_72)(cGZWin *__hidden this, int a2, int a3,
-                                      int a4);
-  int(__stdcall *cGZWin_vtbl_func_73)(cGZWin *__hidden this, int a2, int a3,
-                                      int a4);
-  bool(__stdcall *cGZWin_vtbl_func_74)(cGZWin *__hidden this, int a2, int a3);
-  char(__stdcall *cGZWin_vtbl_func_75)(cGZWin *__hidden this, int a2, int a3);
-  char(__stdcall *cGZWin_vtbl_func_76)(cGZWin *__hidden this);
-  char(__stdcall *cGZWin_vtbl_func_77)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_78)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_79)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_80)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_81)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_82)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_83)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_84)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_85)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_86)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_87)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_88)(cGZWin *__hidden this, char a2);
-  int(__stdcall *cGZWin_vtbl_func_89)(cGZWin *__hidden this);
-  _BYTE *(__stdcall *cGZWin_vtbl_func_90)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_91)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_92)(cGZWin *__hidden this, int a2);
-  char(__stdcall *cGZWin_vtbl_func_93)(cGZWin *__hidden this, char a2);
-  bool(__stdcall *cGZWin_vtbl_func_94)(cGZWin *__hidden this, char a2);
-  char(__stdcall *cGZWin_vtbl_func_95)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_96)(cGZWin *__hidden this);
-  int(__stdcall *GetPrivateBuffer)(cGZWin *__hidden this);
-  int(__fastcall *cGZWin_vtbl_func_98)(cGZWin *__hidden this, int a2, int a3);
-  int(__stdcall *cGZWin_vtbl_func_99)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_100)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_101)(cGZWin *__hidden this);
-  int(__stdcall *cGZWin_vtbl_func_102)(cGZWin *__hidden this);
 };
 
 /* 486 */
@@ -3689,90 +4243,6 @@ struct __cppobj __unaligned __declspec(align(1)) cDefaultTTWindow : cGZWin {
   int dword_f4;
   int dword_f8;
   char byte_fc;
-};
-
-/* 488 */
-struct /*VFT*/ cRZKeyboard_vtbl {
-  int(__thiscall *cRZKeyboard_vtbl_func_0)(_BYTE *this);
-  bool(__fastcall *RZKeyboard_0094c4d6)(int a1, int a2, unsigned int a3,
-                                        int a4);
-  char(__fastcall *RZKeyboard_0094c3f6)(int a1, int a2, unsigned int a3);
-  BOOL(__stdcall *cRZKeyboard_vtbl_func_3)(int vKey);
-  bool(__fastcall *RZKeyboard_0094c726)(int a1, int a2, unsigned int a3);
-  BOOL(__thiscall *cRZKeyboard_vtbl_func_5)(void *this);
-  int(__stdcall *cRZKeyboard_vtbl_func_6)(int nVirtKey);
-  int(__fastcall *RZKeyboard_0094c576)(int a1, int a2, unsigned int a3);
-  int(__fastcall *RZKeyboard_0094c616)(int a1, int a2, unsigned int a3);
-};
-
-/* 489 */
-#pragma pack(push, 1)
-struct cRZKeyboard {
-  cRZKeyboard_vtbl *__vftable /*VFT*/;
-  _DWORD dword_4;
-};
-#pragma pack(pop)
-
-/* 490 */
-struct /*VFT*/ cGZWinMgrW95_vtbl {
-  void *(__thiscall *cGZWinMgrW95_vtbl_func_0)(void *this, char a2);
-};
-
-/* 491 */
-struct cGZWinMgrW95 {
-  cGZWinMgrW95_vtbl *__vftable /*VFT*/;
-  _BYTE gap_4[28];
-  int dword_20;
-  int dword_24;
-  int dword_28;
-  cGZWin *mpParent;
-  int dword_30;
-  _BYTE byte_34[12];
-  int dword_40;
-  _DWORD dword_44;
-  _BYTE gap_48[8];
-  cRZKeyboard mKeyboard;
-  _BYTE gap_58[260];
-  _DWORD dword_15c;
-  _BYTE gap_160[8];
-  _DWORD dword_168;
-  _BYTE gap_16C[12];
-  int dword_178;
-  cGZWin *mpCurrentMouseWin;
-  int dword_180;
-  int dword_184;
-  int dword_188;
-  _BYTE byte_18c[8];
-  int dword_194;
-  _BYTE byte_198[16];
-  char byte_1a8;
-  char byte_1a9;
-  _BYTE gap_1AA[2];
-  _BYTE byte_1ac[16];
-  char byte_1bc;
-  _BYTE gap_1BD[3];
-  int dword_1c0;
-  char byte_1c4;
-  _BYTE gap_1C5[3];
-  int dword_1c8;
-  int dword_1cc;
-  char byte_1d0;
-  _BYTE gap_1D1[3];
-  _DWORD dword_1d4;
-  _BYTE gap_1D8[8];
-  int dword_1e0;
-  int dword_1e4;
-  char byte_1e8;
-  char byte_1e9;
-  _BYTE gap_1EA[2];
-  cRZString field_1ec;
-  char byte_1fc;
-  _BYTE gap_1FD[3];
-  cGZWin *dword_200;
-  char byte_204;
-  _BYTE gap_205[3];
-  int dword_208;
-  struct _RTL_CRITICAL_SECTION field_20c;
 };
 
 /* 492 */
@@ -3913,7 +4383,7 @@ struct TreeStack {
 };
 
 /* 500 */
-struct __cppobj TreeSim {
+struct __declspec(align(4)) TreeSim {
   TreeSim_vtbl *__vftable /*VFT*/;
   int dword_4;
   TreeStack mTreeStack;
@@ -3921,7 +4391,8 @@ struct __cppobj TreeSim {
   char byte_20;
   _BYTE gap_21[3];
   int dword_24;
-  __int16 word_28;
+  __int16 error;
+  int field_2C;
 };
 
 /* 503 */
@@ -4093,7 +4564,7 @@ struct __cppobj ObjectModule : Commander {
   _BYTE gap_12[2];
   int dword_14;
   struc_4A3310 field_18;
-  struc_475410 field_24;
+  struc_475410 fIdleMap;
   int dword_30;
   int dword_34;
   struc_4A3310 field_38;
@@ -4123,11 +4594,12 @@ struct __cppobj cXObject : TreeSim {
   int int30;
   _DWORD dword34;
   _WORD word38;
-  _BYTE gap3A[162];
+  _WORD field_3A;
+  __int16 fData[80];
   _DWORD dwordDC;
   _DWORD dwordE0;
   struc_46BFB0 struc_46bfb0E4;
-  _WORD wordF0;
+  _WORD fID;
   __declspec(align(4)) struc_435C90 struc_435c90F4;
   __declspec(align(4)) struc_47BE60 struc_47be60FC;
   _DWORD dword10C;
@@ -4341,38 +4813,6 @@ enum IFFChunkTypes {
   kSTR_ = 0x53545223,
 };
 
-/* 568 */
-struct RTTICompleteObjectLocator {
-  int signature;
-  int offset;
-  int cdOffset;
-  void *pTypeDescriptor;
-  void *pClassDescriptor;
-};
-
-/* 569 */
-struct RTTITypeDescriptor {
-  void *pVFTable;
-  int spare;
-  char name[];
-};
-
-/* 570 */
-struct RTTIClassHierarchyDescriptor {
-  int signature;
-  int attribute;
-  int numBaseClasses;
-  void *pBaseClassArray;
-};
-
-/* 571 */
-struct RTTIBaseClassDescriptor {
-  void *pTypeDescriptor;
-  int numContainerBases;
-  void *PMD;
-  int attributes;
-};
-
 /* 572 */
 struct CheatCode {
   _DWORD id;
@@ -4390,116 +4830,6 @@ struct stru_FEE158 {
   int field_C;
 };
 
-/* 574 */
-#pragma pack(push, 1)
-struct __cppobj cWinCPanel : cGZWin {
-  char byte_e0;
-  char byte_e1;
-  _BYTE gap_E2[2];
-  int dword_e4;
-  int dword_e8;
-  int dword_ec;
-  int dword_f0;
-  int dword_f4;
-  int dword_f8;
-  int dword_fc;
-  int dword_100;
-  int dword_104;
-  _DWORD dword_108;
-  int dword_10c;
-  int dword_110;
-  int dword_114;
-  int dword_118;
-};
-#pragma pack(pop)
-
-/* 575 */
-struct /*VFT*/ CPState_vtbl {
-  void *(__thiscall *CPState_vtbl_func_0)(void *this, char a2);
-};
-
-/* 576 */
-struct CPState {
-  CPState_vtbl *__vftable /*VFT*/;
-  int dword_4;
-  int dword_8;
-  int dword_c;
-  int dword_10;
-  cRZString field_14;
-  char byte_24;
-  _BYTE gap_25[3];
-  cRZString field_28;
-  int dword_38;
-  int dword_3c;
-  int dword_40;
-  char byte_44;
-  _BYTE gap_45[3];
-  int dword_48;
-  int dword_4c;
-  int dword_50;
-  int dword_54;
-  int dword_58;
-  int dword_5c;
-  int dword_60;
-  int dword_64;
-  char byte_68;
-  _BYTE gap_69[3];
-  int dword_6c;
-  _BYTE gap_70[48];
-  int dword_a0;
-  int dword_a4;
-  int dword_a8;
-  int dword_ac;
-  int dword_b0;
-  int dword_b4;
-  int dword_b8;
-  _BYTE gap_BC[192];
-  int dword_17c;
-  int dword_180;
-  int dword_184;
-  char byte_188;
-  char byte_189;
-  _BYTE gap_18A[2];
-  float dword_18c;
-  _DWORD dword_190;
-  _BYTE gap_194[12];
-  _DWORD dword_1a0;
-  _BYTE gap_1A4[12];
-  int dword_1b0;
-  int dword_1b4;
-  int dword_1b8;
-  int dword_1bc;
-  int dword_1c0;
-  _DWORD dword_1c4;
-  _BYTE gap_1C8[260];
-  _DWORD dword_2cc;
-};
-
-/* 577 */
-struct __cppobj cGZWinSplashScreen : cGZWin {
-  int dword_e0;
-  _BYTE byte_e4[16];
-  _BYTE byte_f4[16];
-  _BYTE byte_104[64];
-  int dword_144;
-  cRZString field_148;
-  _BYTE gap_158[24];
-  _DWORD dword_170;
-  _BYTE gap_174[12];
-  _DWORD dword_180;
-  _BYTE gap_184[12];
-  char byte_190;
-  _BYTE gap_191[3];
-  _BYTE byte_194[16];
-  _BYTE byte_1a4[16];
-  _BYTE byte_1b4[16];
-  _BYTE byte_1c4[12];
-  char mbPlayIntro;
-  char byte_1d1;
-  _BYTE gap_1D2[2];
-  int dword_1d4;
-};
-
 /* 578 */
 struct __declspec(align(4)) cGlobs {
   House *gHouse;
@@ -4509,22 +4839,252 @@ struct __declspec(align(4)) cGlobs {
   _DWORD gSound;
   PalWrap *gPalWrap;
   _DWORD gGameTools;
-  _DWORD field_1C;
+  cSimulator *gSimulator;
   _DWORD gTerrain;
-  _DWORD field_24;
+  _DWORD gNeighborhood;
   ObjectFolder *gObjectFolder;
   _BYTE *gAnimDevice;
   _DWORD gDevice3D;
   int dword_34;
   int dword_38;
-  _BYTE gap_3C[16];
+  _DWORD field_3C;
+  _DWORD gSimsView;
+  _BYTE gap_44[8];
   _DWORD dword_4c;
   cGZWinMgrW95 *gWinMgr;
   int field_54;
   int field_58;
   int field_5C;
   int field_60;
+  int field_64;
+  int field_68;
+  int field_6C;
 };
+
+/* 622 */
+struct __cppobj House : Commander {
+  int fFamily;
+  ObjectModule *mObjectModule;
+  int dword_18;
+  int dword_1c;
+  cSimulator *simulator;
+  int mpRoomManager;
+  string field_28;
+  int dword_30;
+  int dword_34;
+  _BYTE gap_38[36];
+  _DWORD dword_5c;
+  _BYTE gap_60[4];
+  int dword_64;
+  int dword_68;
+};
+
+/* 611 */
+#pragma pack(push, 1)
+struct __cppobj ChainResFile : iResFile {
+  char byte_c;
+};
+#pragma pack(pop)
+
+/* 602 */
+struct cStringBuffer {
+  char *buf;
+  _DWORD fCapacity;
+};
+
+/* 612 */
+struct __cppobj SeqResFile : ChainResFile {
+  _BYTE gap_D[159];
+  _DWORD field_AC;
+  cStringBuffer field_B0;
+  _BYTE gapB8;
+  char field_B9[167];
+};
+
+/* 614 */
+#pragma pack(push, 1)
+struct __cppobj StdResFile : SeqResFile {};
+#pragma pack(pop)
+
+/* 597 */
+struct __cppobj PalWrap {
+  PalWrap_vtbl *__vftable /*VFT*/;
+  HPALETTE fPalette;
+  int dword_8;
+  _BYTE gap_C[8];
+  int dword_14;
+  float dword_18;
+  int dword_1c;
+};
+
+/* 643 */
+struct __cppobj cSimulator : Commander {
+  _WORD fGlobals[32];
+  _DWORD funds1;
+  _DWORD funds2;
+  _DWORD field_58;
+  int dword_5c;
+  _DWORD dword_60;
+  int dword_64;
+  _DWORD field_68;
+  _DWORD field_6C;
+  ObjectModule *mObjectModule;
+  int dword_74;
+  int dword_78;
+  int dword_7c;
+  _DWORD dword_80;
+  int dword_84;
+  char byte_88;
+  _BYTE gap_89[3];
+  int dword_8c;
+  _BYTE gap_90[144];
+  _DWORD dword_120;
+  _BYTE gap_124[8];
+  _DWORD mExpenseReport;
+  int field_130;
+  int field_134;
+  int field_138;
+  int field_13C;
+  int field_140;
+  int field_144;
+  int field_148;
+  int field_14C;
+};
+
+/* 600 */
+#pragma pack(push, 1)
+struct __cppobj BehaviorFinder {
+  BehaviorFinder_vtbl *__vftable /*VFT*/;
+};
+#pragma pack(pop)
+
+/* 601 */
+#pragma pack(push, 1)
+struct struc_4989F0 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 603 */
+#pragma pack(push, 1)
+struct cPathBuffer {
+  cStringBuffer buf;
+  char *c_str;
+};
+#pragma pack(pop)
+
+/* 604 */
+#pragma pack(push, 1)
+struct struc_498BF0 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 605 */
+#pragma pack(push, 1)
+struct struc_498DE0 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 606 */
+#pragma pack(push, 1)
+struct struc_434CF0 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 607 */
+#pragma pack(push, 1)
+struct struc_43F740 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 608 */
+struct __cppobj ObjectFolder : BehaviorFinder, Commander {
+  char byte_14;
+  _BYTE gap_15[3];
+  int dword_18;
+  int dword_1c;
+  struc_4989F0 field_20;
+  ObjResFile *fGlobalFile;
+  cPathBuffer field_30;
+  _BYTE gap_3C[256];
+  cPathBuffer field_13c;
+  _BYTE gap_148[256];
+  cPathBuffer field_248;
+  _BYTE gap_254[256];
+  cPathBuffer field_354;
+  _BYTE gap_360[256];
+  cPathBuffer field_460;
+  _BYTE gap_46C[256];
+  cPathBuffer field_56c;
+  _BYTE gap_578[256];
+  char byte_678;
+  _BYTE gap_679[3];
+  struc_498BF0 field_67c;
+  struc_498DE0 field_688;
+  _BYTE byte_694[12];
+  struc_434CF0 field_6a0;
+  struc_43F740 field_6ac;
+};
+
+/* 596 */
+struct /*VFT*/ PalWrap_vtbl {
+  void *(__thiscall *PalWrap_vtbl_func_0)(void *this, char a2);
+};
+
+/* 599 */
+struct /*VFT*/ BehaviorFinder_vtbl {
+  void(__stdcall __noreturn *__purecall)();
+};
+
+/* 616 */
+#pragma pack(push, 1)
+struct stru_4C13F0 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 617 */
+#pragma pack(push, 1)
+struct stru_4C10B0 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 618 */
+#pragma pack(push, 1)
+struct stru_4C1270 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 620 */
+#pragma pack(push, 1)
+struct __cppobj ObjResFile : StdResFile {
+  stru_4C13F0 field_160;
+  stru_4C10B0 field_16c;
+  stru_4C1270 field_178;
+};
+#pragma pack(pop)
 
 /* 579 */
 struct /*VFT*/ cIGZUnknown_vtbl {
@@ -5027,22 +5587,6 @@ struct __cppobj cWinPictureDialog : cGZWinDlg {
   int dword_150;
 };
 
-/* 596 */
-struct /*VFT*/ PalWrap_vtbl {
-  void *(__thiscall *PalWrap_vtbl_func_0)(void *this, char a2);
-};
-
-/* 597 */
-struct __cppobj PalWrap {
-  PalWrap_vtbl *__vftable /*VFT*/;
-  HPALETTE fPalette;
-  int dword_8;
-  _BYTE gap_C[8];
-  int dword_14;
-  float dword_18;
-  int dword_1c;
-};
-
 /* 598 */
 enum GamePath {
   kGameData_Folder = 0x0,
@@ -5074,106 +5618,6 @@ enum GamePath {
   kWebTemplates_Folder = 0x1A,
   kExport_Folder = 0x1B,
   kImport_Folder = 0x1C,
-};
-
-/* 599 */
-struct /*VFT*/ BehaviorFinder_vtbl {
-  void(__stdcall __noreturn *__purecall)();
-};
-
-/* 600 */
-#pragma pack(push, 1)
-struct __cppobj BehaviorFinder {
-  BehaviorFinder_vtbl *__vftable /*VFT*/;
-};
-#pragma pack(pop)
-
-/* 601 */
-#pragma pack(push, 1)
-struct struc_4989F0 {
-  _DWORD dword_0;
-  int dword_4;
-  int dword_8;
-};
-#pragma pack(pop)
-
-/* 602 */
-struct cStringBuffer {
-  char *buf;
-  _DWORD fCapacity;
-};
-
-/* 603 */
-#pragma pack(push, 1)
-struct cPathBuffer {
-  cStringBuffer buf;
-  char *c_str;
-};
-#pragma pack(pop)
-
-/* 604 */
-#pragma pack(push, 1)
-struct struc_498BF0 {
-  _DWORD dword_0;
-  int dword_4;
-  int dword_8;
-};
-#pragma pack(pop)
-
-/* 605 */
-#pragma pack(push, 1)
-struct struc_498DE0 {
-  _DWORD dword_0;
-  int dword_4;
-  int dword_8;
-};
-#pragma pack(pop)
-
-/* 606 */
-#pragma pack(push, 1)
-struct struc_434CF0 {
-  _DWORD dword_0;
-  int dword_4;
-  int dword_8;
-};
-#pragma pack(pop)
-
-/* 607 */
-#pragma pack(push, 1)
-struct struc_43F740 {
-  _DWORD dword_0;
-  int dword_4;
-  int dword_8;
-};
-#pragma pack(pop)
-
-/* 608 */
-struct __cppobj ObjectFolder : BehaviorFinder, Commander {
-  char byte_14;
-  _BYTE gap_15[3];
-  int dword_18;
-  int dword_1c;
-  struc_4989F0 field_20;
-  ObjResFile *fGlobalFile;
-  cPathBuffer field_30;
-  _BYTE gap_3C[256];
-  cPathBuffer field_13c;
-  _BYTE gap_148[256];
-  cPathBuffer field_248;
-  _BYTE gap_254[256];
-  cPathBuffer field_354;
-  _BYTE gap_360[256];
-  cPathBuffer field_460;
-  _BYTE gap_46C[256];
-  cPathBuffer field_56c;
-  _BYTE gap_578[256];
-  char byte_678;
-  _BYTE gap_679[3];
-  struc_498BF0 field_67c;
-  struc_498DE0 field_688;
-  _BYTE byte_694[12];
-  struc_434CF0 field_6a0;
-  struc_43F740 field_6ac;
 };
 
 /* 609 */
@@ -5231,22 +5675,6 @@ struct /*VFT*/ ChainResFile_vtbl {
   __int16(__thiscall *ChainResFile_vtbl_func_35)(_WORD *this, int a2);
 };
 
-/* 611 */
-#pragma pack(push, 1)
-struct __cppobj ChainResFile : iResFile {
-  char byte_c;
-};
-#pragma pack(pop)
-
-/* 612 */
-struct __cppobj SeqResFile : ChainResFile {
-  _BYTE gap_D[159];
-  _DWORD field_AC;
-  cStringBuffer field_B0;
-  _BYTE gapB8;
-  char field_B9[167];
-};
-
 /* 613 */
 #pragma pack(push, 1)
 struct struc_4FD850 {
@@ -5254,11 +5682,6 @@ struct struc_4FD850 {
   _BYTE gap_4[168];
   int dword_ac;
 };
-#pragma pack(pop)
-
-/* 614 */
-#pragma pack(push, 1)
-struct __cppobj StdResFile : SeqResFile {};
 #pragma pack(pop)
 
 /* 615 */
@@ -5310,33 +5733,6 @@ struct /*VFT*/ StdResFile_vtbl {
   __int16(__thiscall *ChainResFile_vtbl_func_35)(_WORD *this, int a2);
 };
 
-/* 616 */
-#pragma pack(push, 1)
-struct stru_4C13F0 {
-  _DWORD dword_0;
-  int dword_4;
-  int dword_8;
-};
-#pragma pack(pop)
-
-/* 617 */
-#pragma pack(push, 1)
-struct stru_4C10B0 {
-  _DWORD dword_0;
-  int dword_4;
-  int dword_8;
-};
-#pragma pack(pop)
-
-/* 618 */
-#pragma pack(push, 1)
-struct stru_4C1270 {
-  _DWORD dword_0;
-  int dword_4;
-  int dword_8;
-};
-#pragma pack(pop)
-
 /* 619 */
 struct /*VFT*/ ObjResFile_vtbl {
   void *(__thiscall *ObjResFile_vtbl_func_0)(void *this, char a2);
@@ -5386,37 +5782,1784 @@ struct /*VFT*/ ObjResFile_vtbl {
   __int16(__thiscall *ChainResFile_vtbl_func_35)(_WORD *this, int a2);
 };
 
-/* 620 */
-#pragma pack(push, 1)
-struct __cppobj ObjResFile : StdResFile {
-  stru_4C13F0 field_160;
-  stru_4C10B0 field_16c;
-  stru_4C1270 field_178;
-};
-#pragma pack(pop)
-
 /* 621 */
 struct /*VFT*/ House_vtbl {
   void *(__thiscall *House_vtbl_func_0)(void *this, char a2);
   __int16(__thiscall *House_vtbl_func_1)(_DWORD *this, __int16 a2, int a3);
 };
 
-/* 622 */
+/* 623 */
+struct _EH4_SCOPETABLE_RECORD {
+  int EnclosingLevel;
+  void *FilterFunc;
+  void *HandlerFunc;
+};
+
+/* 624 */
+struct _EH4_SCOPETABLE {
+  DWORD GSCookieOffset;
+  DWORD GSCookieXOROffset;
+  DWORD EHCookieOffset;
+  DWORD EHCookieXOROffset;
+  struct _EH4_SCOPETABLE_RECORD ScopeRecord[];
+};
+
+/* 625 */
+enum MACRO_WM {
+  WM_NULL = 0x0,
+  WM_CREATE = 0x1,
+  WM_DESTROY = 0x2,
+  WM_MOVE = 0x3,
+  WM_SIZEWAIT = 0x4,
+  WM_SIZE = 0x5,
+  WM_ACTIVATE = 0x6,
+  WM_SETFOCUS = 0x7,
+  WM_KILLFOCUS = 0x8,
+  WM_SETVISIBLE = 0x9,
+  WM_ENABLE = 0xA,
+  WM_SETREDRAW = 0xB,
+  WM_SETTEXT = 0xC,
+  WM_GETTEXT = 0xD,
+  WM_GETTEXTLENGTH = 0xE,
+  WM_PAINT = 0xF,
+  WM_CLOSE = 0x10,
+  WM_QUERYENDSESSION = 0x11,
+  WM_QUIT = 0x12,
+  WM_QUERYOPEN = 0x13,
+  WM_ERASEBKGND = 0x14,
+  WM_SYSCOLORCHANGE = 0x15,
+  WM_ENDSESSION = 0x16,
+  WM_SYSTEMERROR = 0x17,
+  WM_SHOWWINDOW = 0x18,
+  WM_CTLCOLOR = 0x19,
+  WM_SETTINGCHANGE = 0x1A,
+  WM_WININICHANGE = 0x1A,
+  WM_DEVMODECHANGE = 0x1B,
+  WM_ACTIVATEAPP = 0x1C,
+  WM_FONTCHANGE = 0x1D,
+  WM_TIMECHANGE = 0x1E,
+  WM_CANCELMODE = 0x1F,
+  WM_SETCURSOR = 0x20,
+  WM_MOUSEACTIVATE = 0x21,
+  WM_CHILDACTIVATE = 0x22,
+  WM_QUEUESYNC = 0x23,
+  WM_GETMINMAXINFO = 0x24,
+  WM_LOGOFF = 0x25,
+  WM_PAINTICON = 0x26,
+  WM_ICONERASEBKGND = 0x27,
+  WM_NEXTDLGCTL = 0x28,
+  WM_ALTTABACTIVE = 0x29,
+  WM_SPOOLERSTATUS = 0x2A,
+  WM_DRAWITEM = 0x2B,
+  WM_MEASUREITEM = 0x2C,
+  WM_DELETEITEM = 0x2D,
+  WM_VKEYTOITEM = 0x2E,
+  WM_CHARTOITEM = 0x2F,
+  WM_SETFONT = 0x30,
+  WM_GETFONT = 0x31,
+  WM_SETHOTKEY = 0x32,
+  WM_GETHOTKEY = 0x33,
+  WM_FILESYSCHANGE = 0x34,
+  WM_ISACTIVEICON = 0x35,
+  WM_QUERYPARKICON = 0x36,
+  WM_QUERYDRAGICON = 0x37,
+  WM_WINHELP = 0x38,
+  WM_COMPAREITEM = 0x39,
+  WM_FULLSCREEN = 0x3A,
+  WM_CLIENTSHUTDOWN = 0x3B,
+  WM_DDEMLEVENT = 0x3C,
+  WM_GETOBJECT = 0x3D,
+  MM_CALCSCROLL = 0x3F,
+  WM_TESTING = 0x40,
+  WM_COMPACTING = 0x41,
+  WM_OTHERWINDOWCREATED = 0x42,
+  WM_OTHERWINDOWDESTROYED = 0x43,
+  WM_COMMNOTIFY = 0x44,
+  WM_MEDIASTATUSCHANGE = 0x45,
+  WM_WINDOWPOSCHANGING = 0x46,
+  WM_WINDOWPOSCHANGED = 0x47,
+  WM_POWER = 0x48,
+  WM_COPYGLOBALDATA = 0x49,
+  WM_COPYDATA = 0x4A,
+  WM_CANCELJOURNAL = 0x4B,
+  WM_LOGONNOTIFY = 0x4C,
+  WM_KEYF1 = 0x4D,
+  WM_NOTIFY = 0x4E,
+  WM_ACCESS_WINDOW = 0x4F,
+  WM_INPUTLANGCHANGEREQUEST = 0x50,
+  WM_INPUTLANGCHANGE = 0x51,
+  WM_TCARD = 0x52,
+  WM_HELP = 0x53,
+  WM_USERCHANGED = 0x54,
+  WM_NOTIFYFORMAT = 0x55,
+  WM_QM_ACTIVATE = 0x60,
+  WM_HOOK_DO_CALLBACK = 0x61,
+  WM_SYSCOPYDATA = 0x62,
+  WM_FINALDESTROY = 0x70,
+  WM_MEASUREITEM_CLIENTDATA = 0x71,
+  WM_CONTEXTMENU = 0x7B,
+  WM_STYLECHANGING = 0x7C,
+  WM_STYLECHANGED = 0x7D,
+  WM_DISPLAYCHANGE = 0x7E,
+  WM_GETICON = 0x7F,
+  WM_SETICON = 0x80,
+  WM_NCCREATE = 0x81,
+  WM_NCDESTROY = 0x82,
+  WM_NCCALCSIZE = 0x83,
+  WM_NCHITTEST = 0x84,
+  WM_NCPAINT = 0x85,
+  WM_NCACTIVATE = 0x86,
+  WM_GETDLGCODE = 0x87,
+  WM_SYNCPAINT = 0x88,
+  WM_SYNCTASK = 0x89,
+  WM_NCMOUSEMOVE = 0xA0,
+  WM_NCLBUTTONDOWN = 0xA1,
+  WM_NCLBUTTONUP = 0xA2,
+  WM_NCLBUTTONDBLCLK = 0xA3,
+  WM_NCRBUTTONDOWN = 0xA4,
+  WM_NCRBUTTONUP = 0xA5,
+  WM_NCRBUTTONDBLCLK = 0xA6,
+  WM_NCMBUTTONDOWN = 0xA7,
+  WM_NCMBUTTONUP = 0xA8,
+  WM_NCMBUTTONDBLCLK = 0xA9,
+  WM_NCXBUTTONDOWN = 0xAB,
+  WM_NCXBUTTONUP = 0xAC,
+  WM_NCXBUTTONDBLCLK = 0xAD,
+  EM_GETSEL = 0xB0,
+  EM_SETSEL = 0xB1,
+  EM_GETRECT = 0xB2,
+  EM_SETRECT = 0xB3,
+  EM_SETRECTNP = 0xB4,
+  EM_SCROLL = 0xB5,
+  EM_LINESCROLL = 0xB6,
+  EM_SCROLLCARET = 0xB7,
+  EM_GETMODIFY = 0xB8,
+  EM_SETMODIFY = 0xB9,
+  EM_GETLINECOUNT = 0xBA,
+  EM_LINEINDEX = 0xBB,
+  EM_SETHANDLE = 0xBC,
+  EM_GETHANDLE = 0xBD,
+  EM_GETTHUMB = 0xBE,
+  EM_LINELENGTH = 0xC1,
+  EM_REPLACESEL = 0xC2,
+  EM_SETFONT = 0xC3,
+  EM_GETLINE = 0xC4,
+  EM_LIMITTEXT = 0xC5,
+  EM_SETLIMITTEXT = 0xC5,
+  EM_CANUNDO = 0xC6,
+  EM_UNDO = 0xC7,
+  EM_FMTLINES = 0xC8,
+  EM_LINEFROMCHAR = 0xC9,
+  EM_SETWORDBREAK = 0xCA,
+  EM_SETTABSTOPS = 0xCB,
+  EM_SETPASSWORDCHAR = 0xCC,
+  EM_EMPTYUNDOBUFFER = 0xCD,
+  EM_GETFIRSTVISIBLELINE = 0xCE,
+  EM_SETREADONLY = 0xCF,
+  EM_SETWORDBREAKPROC = 0xD0,
+  EM_GETWORDBREAKPROC = 0xD1,
+  EM_GETPASSWORDCHAR = 0xD2,
+  EM_SETMARGINS = 0xD3,
+  EM_GETMARGINS = 0xD4,
+  EM_GETLIMITTEXT = 0xD5,
+  EM_POSFROMCHAR = 0xD6,
+  EM_CHARFROMPOS = 0xD7,
+  EM_SETIMESTATUS = 0xD8,
+  EM_GETIMESTATUS = 0xD9,
+  SBM_SETPOS = 0xE0,
+  SBM_GETPOS = 0xE1,
+  SBM_SETRANGE = 0xE2,
+  SBM_GETRANGE = 0xE3,
+  SBM_ENABLE_ARROWS = 0xE4,
+  SBM_SETRANGEREDRAW = 0xE6,
+  SBM_SETSCROLLINFO = 0xE9,
+  SBM_GETSCROLLINFO = 0xEA,
+  SBM_GETSCROLLBARINFO = 0xEB,
+  BM_GETCHECK = 0xF0,
+  BM_SETCHECK = 0xF1,
+  BM_GETSTATE = 0xF2,
+  BM_SETSTATE = 0xF3,
+  BM_SETSTYLE = 0xF4,
+  BM_CLICK = 0xF5,
+  BM_GETIMAGE = 0xF6,
+  BM_SETIMAGE = 0xF7,
+  BM_SETDONTCLICK = 0xF8,
+  WM_INPUT = 0xFF,
+  WM_KEYDOWN = 0x100,
+  WM_KEYFIRST = 0x100,
+  WM_KEYUP = 0x101,
+  WM_CHAR = 0x102,
+  WM_DEADCHAR = 0x103,
+  WM_SYSKEYDOWN = 0x104,
+  WM_SYSKEYUP = 0x105,
+  WM_SYSCHAR = 0x106,
+  WM_SYSDEADCHAR = 0x107,
+  WM_KEYLAST = 0x109,
+  WM_YOMICHAR = 0x108,
+  WM_UNICHAR = 0x109,
+  WM_WNT_CONVERTREQUESTEX = 0x109,
+  WM_CONVERTREQUEST = 0x10A,
+  WM_CONVERTRESULT = 0x10B,
+  WM_INTERIM = 0x10C,
+  WM_IM_INFO = 0x10C,
+  WM_IME_STARTCOMPOSITION = 0x10D,
+  WM_IME_ENDCOMPOSITION = 0x10E,
+  WM_IME_COMPOSITION = 0x10F,
+  WM_IME_KEYLAST = 0x10F,
+  WM_INITDIALOG = 0x110,
+  WM_COMMAND = 0x111,
+  WM_SYSCOMMAND = 0x112,
+  WM_TIMER = 0x113,
+  WM_HSCROLL = 0x114,
+  WM_VSCROLL = 0x115,
+  WM_INITMENU = 0x116,
+  WM_INITMENUPOPUP = 0x117,
+  WM_SYSTIMER = 0x118,
+  WM_MENUSELECT = 0x11F,
+  WM_MENUCHAR = 0x120,
+  WM_ENTERIDLE = 0x121,
+  WM_MENURBUTTONUP = 0x122,
+  WM_MENUDRAG = 0x123,
+  WM_MENUGETOBJECT = 0x124,
+  WM_UNINITMENUPOPUP = 0x125,
+  WM_MENUCOMMAND = 0x126,
+  WM_CHANGEUISTATE = 0x127,
+  WM_UPDATEUISTATE = 0x128,
+  WM_QUERYUISTATE = 0x129,
+  WM_LBTRACKPOINT = 0x131,
+  WM_CTLCOLORMSGBOX = 0x132,
+  WM_CTLCOLOREDIT = 0x133,
+  WM_CTLCOLORLISTBOX = 0x134,
+  WM_CTLCOLORBTN = 0x135,
+  WM_CTLCOLORDLG = 0x136,
+  WM_CTLCOLORSCROLLBAR = 0x137,
+  WM_CTLCOLORSTATIC = 0x138,
+  CB_GETEDITSEL = 0x140,
+  CB_LIMITTEXT = 0x141,
+  CB_SETEDITSEL = 0x142,
+  CB_ADDSTRING = 0x143,
+  CB_DELETESTRING = 0x144,
+  CB_DIR = 0x145,
+  CB_GETCOUNT = 0x146,
+  CB_GETCURSEL = 0x147,
+  CB_GETLBTEXT = 0x148,
+  CB_GETLBTEXTLEN = 0x149,
+  CB_INSERTSTRING = 0x14A,
+  CB_RESETCONTENT = 0x14B,
+  CB_FINDSTRING = 0x14C,
+  CB_SELECTSTRING = 0x14D,
+  CB_SETCURSEL = 0x14E,
+  CB_SHOWDROPDOWN = 0x14F,
+  CB_GETITEMDATA = 0x150,
+  CB_SETITEMDATA = 0x151,
+  CB_GETDROPPEDCONTROLRECT = 0x152,
+  CB_SETITEMHEIGHT = 0x153,
+  CB_GETITEMHEIGHT = 0x154,
+  CB_SETEXTENDEDUI = 0x155,
+  CB_GETEXTENDEDUI = 0x156,
+  CB_GETDROPPEDSTATE = 0x157,
+  CB_FINDSTRINGEXACT = 0x158,
+  CB_SETLOCALE = 0x159,
+  CB_GETLOCALE = 0x15A,
+  CB_GETTOPINDEX = 0x15B,
+  CB_SETTOPINDEX = 0x15C,
+  CB_GETHORIZONTALEXTENT = 0x15D,
+  CB_SETHORIZONTALEXTENT = 0x15E,
+  CB_GETDROPPEDWIDTH = 0x15F,
+  CB_SETDROPPEDWIDTH = 0x160,
+  CB_INITSTORAGE = 0x161,
+  CB_MULTIPLEADDSTRING = 0x163,
+  CB_GETCOMBOBOXINFO = 0x164,
+  CB_SETMINVISIBLE = 0x1701,
+  CB_GETMINVISIBLE = 0x1702,
+  CB_SETCUEBANNER = 0x1703,
+  CB_GETCUEBANNER = 0x1704,
+  STM_SETICON = 0x170,
+  STM_GETICON = 0x171,
+  STM_SETIMAGE = 0x172,
+  STM_GETIMAGE = 0x173,
+  LB_ADDSTRING = 0x180,
+  LB_INSERTSTRING = 0x181,
+  LB_DELETESTRING = 0x182,
+  LB_SELITEMRANGEEX = 0x183,
+  LB_RESETCONTENT = 0x184,
+  LB_SETSEL = 0x185,
+  LB_SETCURSEL = 0x186,
+  LB_GETSEL = 0x187,
+  LB_GETCURSEL = 0x188,
+  LB_GETTEXT = 0x189,
+  LB_GETTEXTLEN = 0x18A,
+  LB_GETCOUNT = 0x18B,
+  LB_SELECTSTRING = 0x18C,
+  LB_DIR = 0x18D,
+  LB_GETTOPINDEX = 0x18E,
+  LB_FINDSTRING = 0x18F,
+  LB_GETSELCOUNT = 0x190,
+  LB_GETSELITEMS = 0x191,
+  LB_SETTABSTOPS = 0x192,
+  LB_GETHORIZONTALEXTENT = 0x193,
+  LB_SETHORIZONTALEXTENT = 0x194,
+  LB_SETCOLUMNWIDTH = 0x195,
+  LB_ADDFILE = 0x196,
+  LB_SETTOPINDEX = 0x197,
+  LB_GETITEMRECT = 0x198,
+  LB_GETITEMDATA = 0x199,
+  LB_SETITEMDATA = 0x19A,
+  LB_SELITEMRANGE = 0x19B,
+  LB_SETANCHORINDEX = 0x19C,
+  LB_GETANCHORINDEX = 0x19D,
+  LB_SETCARETINDEX = 0x19E,
+  LB_GETCARETINDEX = 0x19F,
+  LB_SETITEMHEIGHT = 0x1A0,
+  LB_GETITEMHEIGHT = 0x1A1,
+  LB_FINDSTRINGEXACT = 0x1A2,
+  LBCB_CARETON = 0x1A3,
+  LBCB_CARETOFF = 0x1A4,
+  LB_SETLOCALE = 0x1A5,
+  LB_GETLOCALE = 0x1A6,
+  LB_SETCOUNT = 0x1A7,
+  LB_INITSTORAGE = 0x1A8,
+  LB_ITEMFROMPOINT = 0x1A9,
+  LB_INSERTSTRINGUPPER = 0x1AA,
+  LB_INSERTSTRINGLOWER = 0x1AB,
+  LB_ADDSTRINGUPPER = 0x1AC,
+  LB_ADDSTRINGLOWER = 0x1AD,
+  LB_MULTIPLEADDSTRING = 0x1B1,
+  LB_GETLISTBOXINFO = 0x1B2,
+  MN_SETHMENU = 0x1E0,
+  MN_GETHMENU = 0x1E1,
+  MN_SIZEWINDOW = 0x1E2,
+  MN_OPENHIERARCHY = 0x1E3,
+  MN_CLOSEHIERARCHY = 0x1E4,
+  MN_SELECTITEM = 0x1E5,
+  MN_CANCELMENUS = 0x1E6,
+  MN_SELECTFIRSTVALIDITEM = 0x1E7,
+  MN_GETPPOPUPMENU = 0x1EA,
+  MN_FINDMENUWINDOWFROMPOINT = 0x1EB,
+  MN_SHOWPOPUPWINDOW = 0x1EC,
+  MN_BUTTONDOWN = 0x1ED,
+  MN_MOUSEMOVE = 0x1EE,
+  MN_BUTTONUP = 0x1EF,
+  MN_SETTIMERTOOPENHIERARCHY = 0x1F0,
+  MN_DBLCLK = 0x1F1,
+  WM_MOUSEFIRST = 0x200,
+  WM_MOUSEMOVE = 0x200,
+  WM_LBUTTONDOWN = 0x201,
+  WM_LBUTTONUP = 0x202,
+  WM_LBUTTONDBLCLK = 0x203,
+  WM_RBUTTONDOWN = 0x204,
+  WM_RBUTTONUP = 0x205,
+  WM_RBUTTONDBLCLK = 0x206,
+  WM_MBUTTONDOWN = 0x207,
+  WM_MBUTTONUP = 0x208,
+  WM_MBUTTONDBLCLK = 0x209,
+  WM_MOUSELAST = 0x20E,
+  WM_MOUSEWHEEL = 0x20A,
+  WM_XBUTTONDOWN = 0x20B,
+  WM_XBUTTONUP = 0x20C,
+  WM_XBUTTONDBLCLK = 0x20D,
+  WM_PARENTNOTIFY = 0x210,
+  WM_ENTERMENULOOP = 0x211,
+  WM_EXITMENULOOP = 0x212,
+  WM_NEXTMENU = 0x213,
+  WM_SIZING = 0x214,
+  WM_CAPTURECHANGED = 0x215,
+  WM_MOVING = 0x216,
+  WM_POWERBROADCAST = 0x218,
+  WM_DEVICECHANGE = 0x219,
+  WM_MDICREATE = 0x220,
+  WM_MDIDESTROY = 0x221,
+  WM_MDIACTIVATE = 0x222,
+  WM_MDIRESTORE = 0x223,
+  WM_MDINEXT = 0x224,
+  WM_MDIMAXIMIZE = 0x225,
+  WM_MDITILE = 0x226,
+  WM_MDICASCADE = 0x227,
+  WM_MDIICONARRANGE = 0x228,
+  WM_MDIGETACTIVE = 0x229,
+  WM_DROPOBJECT = 0x22A,
+  WM_QUERYDROPOBJECT = 0x22B,
+  WM_BEGINDRAG = 0x22C,
+  WM_DRAGLOOP = 0x22D,
+  WM_DRAGSELECT = 0x22E,
+  WM_DRAGMOVE = 0x22F,
+  WM_MDISETMENU = 0x230,
+  WM_ENTERSIZEMOVE = 0x231,
+  WM_EXITSIZEMOVE = 0x232,
+  WM_DROPFILES = 0x233,
+  WM_MDIREFRESHMENU = 0x234,
+  WM_IME_REPORT = 0x280,
+  WM_HANGEULFIRST = 0x280,
+  WM_KANJIFIRST = 0x280,
+  WM_IME_SETCONTEXT = 0x281,
+  WM_IME_NOTIFY = 0x282,
+  WM_IME_CONTROL = 0x283,
+  WM_IME_COMPOSITIONFULL = 0x284,
+  WM_IME_SELECT = 0x285,
+  WM_IME_CHAR = 0x286,
+  WM_IME_SYSTEM = 0x287,
+  WM_IME_REQUEST = 0x288,
+  WM_IMEKEYDOWN = 0x290,
+  WM_IME_KEYDOWN = 0x290,
+  WM_IMEKEYUP = 0x291,
+  WM_IME_KEYUP = 0x291,
+  WM_HANGEULLAST = 0x29F,
+  WM_KANJILAST = 0x29F,
+  WM_NCMOUSEHOVER = 0x2A0,
+  WM_MOUSEHOVER = 0x2A1,
+  WM_NCMOUSELEAVE = 0x2A2,
+  WM_MOUSELEAVE = 0x2A3,
+  WM_TRACKMOUSEEVENT_LAST = 0x2AF,
+  WM_WTSSESSION_CHANGE = 0x2B1,
+  WM_TABLET_FIRST = 0x2C0,
+  WM_TABLET_LAST = 0x2DF,
+  WM_CUT = 0x300,
+  WM_COPY = 0x301,
+  WM_PASTE = 0x302,
+  WM_CLEAR = 0x303,
+  WM_UNDO = 0x304,
+  WM_RENDERFORMAT = 0x305,
+  WM_RENDERALLFORMATS = 0x306,
+  WM_DESTROYCLIPBOARD = 0x307,
+  WM_DRAWCLIPBOARD = 0x308,
+  WM_PAINTCLIPBOARD = 0x309,
+  WM_VSCROLLCLIPBOARD = 0x30A,
+  WM_SIZECLIPBOARD = 0x30B,
+  WM_ASKCBFORMATNAME = 0x30C,
+  WM_CHANGECBCHAIN = 0x30D,
+  WM_HSCROLLCLIPBOARD = 0x30E,
+  WM_QUERYNEWPALETTE = 0x30F,
+  WM_PALETTEISCHANGING = 0x310,
+  WM_PALETTECHANGED = 0x311,
+  WM_HOTKEY = 0x312,
+  WM_SYSMENU = 0x313,
+  WM_HOOKMSG = 0x314,
+  WM_EXITPROCESS = 0x315,
+  WM_WAKETHREAD = 0x316,
+  WM_PRINT = 0x317,
+  WM_PRINTCLIENT = 0x318,
+  WM_APPCOMMAND = 0x319,
+  WM_THEMECHANGED = 0x31A,
+  WM_HANDHELDFIRST = 0x358,
+  WM_HANDHELDLAST = 0x35F,
+  WM_AFXFIRST = 0x360,
+  WM_AFXLAST = 0x37F,
+  WM_PENWINFIRST = 0x380,
+  WM_RCRESULT = 0x381,
+  WM_HOOKRCRESULT = 0x382,
+  WM_GLOBALRCCHANGE = 0x383,
+  WM_PENMISCINFO = 0x383,
+  WM_SKB = 0x384,
+  WM_HEDITCTL = 0x385,
+  WM_PENCTL = 0x385,
+  WM_PENMISC = 0x386,
+  WM_CTLINIT = 0x387,
+  WM_PENEVENT = 0x388,
+  WM_PENWINLAST = 0x38F,
+  WM_INTERNAL_COALESCE_FIRST = 0x390,
+  WM_COALESCE_FIRST = 0x390,
+  WM_COALESCE_LAST = 0x39F,
+  WM_MM_RESERVED_FIRST = 0x3A0,
+  WM_INTERNAL_COALESCE_LAST = 0x3B0,
+  WM_MM_RESERVED_LAST = 0x3DF,
+  WM_DDE_INITIATE = 0x3E0,
+  WM_DDE_TERMINATE = 0x3E1,
+  WM_DDE_ADVISE = 0x3E2,
+  WM_DDE_UNADVISE = 0x3E3,
+  WM_DDE_ACK = 0x3E4,
+  WM_DDE_DATA = 0x3E5,
+  WM_DDE_REQUEST = 0x3E6,
+  WM_DDE_POKE = 0x3E7,
+  WM_DDE_EXECUTE = 0x3E8,
+  WM_DBNOTIFICATION = 0x3FD,
+  WM_NETCONNECT = 0x3FE,
+  WM_HIBERNATE = 0x3FF,
+  WM_USER = 0x400,
+  DDM_SETFMT = 0x400,
+  DDM_DRAW = 0x401,
+  DDM_CLOSE = 0x402,
+  DDM_BEGIN = 0x403,
+  DDM_END = 0x404,
+  DM_GETDEFID = 0x400,
+  DM_SETDEFID = 0x401,
+  DM_REPOSITION = 0x402,
+  NIN_SELECT = 0x400,
+  NIN_KEYSELECT = 0x401,
+  NIN_BALLOONSHOW = 0x402,
+  NIN_BALLOONHIDE = 0x403,
+  NIN_BALLOONTIMEOUT = 0x404,
+  NIN_BALLOONUSERCLICK = 0x405,
+  NIN_POPUPOPEN = 0x406,
+  NIN_POPUPCLOSE = 0x407,
+  TBM_GETPOS = 0x400,
+  TBM_GETRANGEMIN = 0x401,
+  TBM_GETRANGEMAX = 0x402,
+  TBM_GETTIC = 0x403,
+  TBM_SETTIC = 0x404,
+  TBM_SETPOS = 0x405,
+  TBM_SETRANGE = 0x406,
+  TBM_SETRANGEMIN = 0x407,
+  TBM_SETRANGEMAX = 0x408,
+  TBM_CLEARTICS = 0x409,
+  TBM_SETSEL = 0x40A,
+  TBM_SETSELSTART = 0x40B,
+  TBM_SETSELEND = 0x40C,
+  TBM_GETPTICS = 0x40E,
+  TBM_GETTICPOS = 0x40F,
+  TBM_GETNUMTICS = 0x410,
+  TBM_GETSELSTART = 0x411,
+  TBM_GETSELEND = 0x412,
+  TBM_CLEARSEL = 0x413,
+  TBM_SETTICFREQ = 0x414,
+  TBM_SETPAGESIZE = 0x415,
+  TBM_GETPAGESIZE = 0x416,
+  TBM_SETLINESIZE = 0x417,
+  TBM_GETLINESIZE = 0x418,
+  TBM_GETTHUMBRECT = 0x419,
+  TBM_GETCHANNELRECT = 0x41A,
+  TBM_SETTHUMBLENGTH = 0x41B,
+  TBM_GETTHUMBLENGTH = 0x41C,
+  TBM_SETTOOLTIPS = 0x41D,
+  TBM_GETTOOLTIPS = 0x41E,
+  TBM_SETTIPSIDE = 0x41F,
+  TBM_SETBUDDY = 0x420,
+  TBM_GETBUDDY = 0x421,
+  TBM_SETPOSNOTIFY = 0x422,
+  WM_PSD_PAGESETUPDLG = 0x400,
+  WM_PSD_FULLPAGERECT = 0x401,
+  WM_PSD_MINMARGINRECT = 0x402,
+  WM_PSD_MARGINRECT = 0x403,
+  WM_PSD_GREEKTEXTRECT = 0x404,
+  WM_PSD_ENVSTAMPRECT = 0x405,
+  WM_PSD_YAFULLPAGERECT = 0x406,
+  WM_CHOOSEFONT_GETLOGFONT = 0x401,
+  WM_CHOOSEFONT_SETLOGFONT = 0x465,
+  WM_CHOOSEFONT_SETFLAGS = 0x466,
+  HKM_SETHOTKEY = 0x401,
+  HKM_GETHOTKEY = 0x402,
+  HKM_SETRULES = 0x403,
+  PBM_SETRANGE = 0x401,
+  PBM_SETPOS = 0x402,
+  PBM_DELTAPOS = 0x403,
+  PBM_SETSTEP = 0x404,
+  PBM_STEPIT = 0x405,
+  PBM_SETRANGE32 = 0x406,
+  PBM_GETRANGE = 0x407,
+  PBM_GETPOS = 0x408,
+  PBM_SETBARCOLOR = 0x409,
+  PBM_SETMARQUEE = 0x40A,
+  PBM_GETSTEP = 0x40D,
+  PBM_GETBKCOLOR = 0x40E,
+  PBM_GETBARCOLOR = 0x40F,
+  PBM_SETSTATE = 0x410,
+  PBM_GETSTATE = 0x411,
+  RB_INSERTBANDA = 0x401,
+  RB_DELETEBAND = 0x402,
+  RB_GETBARINFO = 0x403,
+  RB_SETBARINFO = 0x404,
+  RB_SETBANDINFOA = 0x406,
+  RB_SETPARENT = 0x407,
+  RB_HITTEST = 0x408,
+  RB_GETRECT = 0x409,
+  RB_INSERTBANDW = 0x40A,
+  RB_SETBANDINFOW = 0x40B,
+  RB_GETBANDCOUNT = 0x40C,
+  RB_GETROWCOUNT = 0x40D,
+  RB_GETROWHEIGHT = 0x40E,
+  RB_IDTOINDEX = 0x410,
+  RB_GETTOOLTIPS = 0x411,
+  RB_SETTOOLTIPS = 0x412,
+  RB_SETBKCOLOR = 0x413,
+  RB_GETBKCOLOR = 0x414,
+  RB_SETTEXTCOLOR = 0x415,
+  RB_GETTEXTCOLOR = 0x416,
+  RB_SIZETORECT = 0x417,
+  RB_BEGINDRAG = 0x418,
+  RB_ENDDRAG = 0x419,
+  RB_DRAGMOVE = 0x41A,
+  RB_GETBARHEIGHT = 0x41B,
+  RB_GETBANDINFOW = 0x41C,
+  RB_GETBANDINFOA = 0x41D,
+  RB_MINIMIZEBAND = 0x41E,
+  RB_MAXIMIZEBAND = 0x41F,
+  RB_GETBANDBORDERS = 0x422,
+  RB_SHOWBAND = 0x423,
+  RB_SETPALETTE = 0x425,
+  RB_GETPALETTE = 0x426,
+  RB_MOVEBAND = 0x427,
+  RB_PUSHCHEVRON = 0x42B,
+  RB_GETBANDMARGINS = 0x428,
+  RB_SETEXTENDEDSTYLE = 0x429,
+  RB_GETEXTENDEDSTYLE = 0x42A,
+  RB_SETBANDWIDTH = 0x42C,
+  RB_SETWINDOWTHEME = 0x200B,
+  CBEM_INSERTITEMA = 0x401,
+  CBEM_SETIMAGELIST = 0x402,
+  CBEM_GETIMAGELIST = 0x403,
+  CBEM_GETITEMA = 0x404,
+  CBEM_SETITEMA = 0x405,
+  CBEM_GETCOMBOCONTROL = 0x406,
+  CBEM_GETEDITCONTROL = 0x407,
+  CBEM_SETEXSTYLE = 0x408,
+  CBEM_GETEXSTYLE = 0x409,
+  CBEM_GETEXTENDEDSTYLE = 0x409,
+  CBEM_HASEDITCHANGED = 0x40A,
+  CBEM_INSERTITEMW = 0x40B,
+  CBEM_SETITEMW = 0x40C,
+  CBEM_GETITEMW = 0x40D,
+  CBEM_SETEXTENDEDSTYLE = 0x40E,
+  SB_SETTEXTA = 0x401,
+  SB_GETTEXTA = 0x402,
+  SB_GETTEXTLENGTHA = 0x403,
+  SB_SETPARTS = 0x404,
+  SB_GETPARTS = 0x406,
+  SB_GETBORDERS = 0x407,
+  SB_SETMINHEIGHT = 0x408,
+  SB_SIMPLE = 0x409,
+  SB_GETRECT = 0x40A,
+  SB_SETTEXTW = 0x40B,
+  SB_GETTEXTLENGTHW = 0x40C,
+  SB_GETTEXTW = 0x40D,
+  SB_ISSIMPLE = 0x40E,
+  SB_SETICON = 0x40F,
+  SB_SETTIPTEXTA = 0x410,
+  SB_SETTIPTEXTW = 0x411,
+  SB_GETTIPTEXTA = 0x412,
+  SB_GETTIPTEXTW = 0x413,
+  SB_GETICON = 0x414,
+  TTM_ACTIVATE = 0x401,
+  TTM_SETDELAYTIME = 0x403,
+  TTM_ADDTOOLA = 0x404,
+  TTM_DELTOOLA = 0x405,
+  TTM_NEWTOOLRECTA = 0x406,
+  TTM_RELAYEVENT = 0x407,
+  TTM_GETTOOLINFOA = 0x408,
+  TTM_SETTOOLINFOA = 0x409,
+  TTM_HITTESTA = 0x40A,
+  TTM_GETTEXTA = 0x40B,
+  TTM_UPDATETIPTEXTA = 0x40C,
+  TTM_GETTOOLCOUNT = 0x40D,
+  TTM_ENUMTOOLSA = 0x40E,
+  TTM_GETCURRENTTOOLA = 0x40F,
+  TTM_WINDOWFROMPOINT = 0x410,
+  TTM_TRACKACTIVATE = 0x411,
+  TTM_TRACKPOSITION = 0x412,
+  TTM_SETTIPBKCOLOR = 0x413,
+  TTM_SETTIPTEXTCOLOR = 0x414,
+  TTM_GETDELAYTIME = 0x415,
+  TTM_GETTIPBKCOLOR = 0x416,
+  TTM_GETTIPTEXTCOLOR = 0x417,
+  TTM_SETMAXTIPWIDTH = 0x418,
+  TTM_GETMAXTIPWIDTH = 0x419,
+  TTM_SETMARGIN = 0x41A,
+  TTM_GETMARGIN = 0x41B,
+  TTM_POP = 0x41C,
+  TTM_UPDATE = 0x41D,
+  TTM_GETBUBBLESIZE = 0x41E,
+  TTM_ADJUSTRECT = 0x41F,
+  TTM_SETTITLEA = 0x420,
+  TTM_SETTITLEW = 0x421,
+  TTM_ADDTOOLW = 0x432,
+  TTM_DELTOOLW = 0x433,
+  TTM_NEWTOOLRECTW = 0x434,
+  TTM_GETTOOLINFOW = 0x435,
+  TTM_SETTOOLINFOW = 0x436,
+  TTM_HITTESTW = 0x437,
+  TTM_GETTEXTW = 0x438,
+  TTM_UPDATETIPTEXTW = 0x439,
+  TTM_ENUMTOOLSW = 0x43A,
+  TTM_GETCURRENTTOOLW = 0x43B,
+  WIZ_QUERYNUMPAGES = 0x40A,
+  WIZ_NEXT = 0x40B,
+  WIZ_PREV = 0x40C,
+  MSG_FTS_JUMP_VA = 0x421,
+  MSG_FTS_JUMP_QWORD = 0x423,
+  MSG_REINDEX_REQUEST = 0x424,
+  MSG_FTS_WHERE_IS_IT = 0x425,
+  MSG_GET_DEFFONT = 0x42D,
+  TB_ENABLEBUTTON = 0x401,
+  TB_CHECKBUTTON = 0x402,
+  TB_PRESSBUTTON = 0x403,
+  TB_HIDEBUTTON = 0x404,
+  TB_INDETERMINATE = 0x405,
+  TB_MARKBUTTON = 0x406,
+  TB_ISBUTTONENABLED = 0x409,
+  TB_ISBUTTONCHECKED = 0x40A,
+  TB_ISBUTTONPRESSED = 0x40B,
+  TB_ISBUTTONHIDDEN = 0x40C,
+  TB_ISBUTTONINDETERMINATE = 0x40D,
+  TB_ISBUTTONHIGHLIGHTED = 0x40E,
+  TB_SETSTATE = 0x411,
+  TB_GETSTATE = 0x412,
+  TB_ADDBITMAP = 0x413,
+  TB_ADDBUTTONSA = 0x414,
+  TB_INSERTBUTTONA = 0x415,
+  TB_DELETEBUTTON = 0x416,
+  TB_GETBUTTON = 0x417,
+  TB_BUTTONCOUNT = 0x418,
+  TB_COMMANDTOINDEX = 0x419,
+  TB_SAVERESTOREA = 0x41A,
+  TB_CUSTOMIZE = 0x41B,
+  TB_ADDSTRINGA = 0x41C,
+  TB_GETITEMRECT = 0x41D,
+  TB_BUTTONSTRUCTSIZE = 0x41E,
+  TB_SETBUTTONSIZE = 0x41F,
+  TB_SETBITMAPSIZE = 0x420,
+  TB_AUTOSIZE = 0x421,
+  TB_GETTOOLTIPS = 0x423,
+  TB_SETTOOLTIPS = 0x424,
+  TB_SETPARENT = 0x425,
+  TB_SETROWS = 0x427,
+  TB_GETROWS = 0x428,
+  TB_GETBITMAPFLAGS = 0x429,
+  TB_SETCMDID = 0x42A,
+  TB_CHANGEBITMAP = 0x42B,
+  TB_GETBITMAP = 0x42C,
+  TB_GETBUTTONTEXTA = 0x42D,
+  TB_REPLACEBITMAP = 0x42E,
+  TB_SETINDENT = 0x42F,
+  TB_SETIMAGELIST = 0x430,
+  TB_GETIMAGELIST = 0x431,
+  TB_LOADIMAGES = 0x432,
+  TB_GETRECT = 0x433,
+  TB_SETHOTIMAGELIST = 0x434,
+  TB_GETHOTIMAGELIST = 0x435,
+  TB_SETDISABLEDIMAGELIST = 0x436,
+  TB_GETDISABLEDIMAGELIST = 0x437,
+  TB_SETSTYLE = 0x438,
+  TB_GETSTYLE = 0x439,
+  TB_GETBUTTONSIZE = 0x43A,
+  TB_SETBUTTONWIDTH = 0x43B,
+  TB_SETMAXTEXTROWS = 0x43C,
+  TB_GETTEXTROWS = 0x43D,
+  TB_GETOBJECT = 0x43E,
+  TB_GETBUTTONINFOW = 0x43F,
+  TB_SETBUTTONINFOW = 0x440,
+  TB_GETBUTTONINFOA = 0x441,
+  TB_SETBUTTONINFOA = 0x442,
+  TB_INSERTBUTTONW = 0x443,
+  TB_ADDBUTTONSW = 0x444,
+  TB_HITTEST = 0x445,
+  TB_SETDRAWTEXTFLAGS = 0x446,
+  TB_GETHOTITEM = 0x447,
+  TB_SETHOTITEM = 0x448,
+  TB_SETANCHORHIGHLIGHT = 0x449,
+  TB_GETANCHORHIGHLIGHT = 0x44A,
+  TB_GETBUTTONTEXTW = 0x44B,
+  TB_SAVERESTOREW = 0x44C,
+  TB_ADDSTRINGW = 0x44D,
+  TB_MAPACCELERATORA = 0x44E,
+  TB_GETINSERTMARK = 0x44F,
+  TB_SETINSERTMARK = 0x450,
+  TB_INSERTMARKHITTEST = 0x451,
+  TB_MOVEBUTTON = 0x452,
+  TB_GETMAXSIZE = 0x453,
+  TB_SETEXTENDEDSTYLE = 0x454,
+  TB_GETEXTENDEDSTYLE = 0x455,
+  TB_GETPADDING = 0x456,
+  TB_SETPADDING = 0x457,
+  TB_SETINSERTMARKCOLOR = 0x458,
+  TB_GETINSERTMARKCOLOR = 0x459,
+  TB_MAPACCELERATORW = 0x45A,
+  TB_GETSTRINGW = 0x45B,
+  TB_GETSTRINGA = 0x45C,
+  TB_SETBOUNDINGSIZE = 0x45D,
+  TB_SETHOTITEM2 = 0x45E,
+  TB_HASACCELERATOR = 0x45F,
+  TB_SETLISTGAP = 0x460,
+  TB_GETIMAGELISTCOUNT = 0x462,
+  TB_GETIDEALSIZE = 0x463,
+  TB_GETMETRICS = 0x465,
+  TB_SETMETRICS = 0x466,
+  TB_GETITEMDROPDOWNRECT = 0x467,
+  TB_SETPRESSEDIMAGELIST = 0x468,
+  TB_GETPRESSEDIMAGELIST = 0x469,
+  TB_SETWINDOWTHEME = 0x200B,
+  EM_CANPASTE = 0x432,
+  EM_DISPLAYBAND = 0x433,
+  EM_EXGETSEL = 0x434,
+  EM_EXLIMITTEXT = 0x435,
+  EM_EXLINEFROMCHAR = 0x436,
+  EM_EXSETSEL = 0x437,
+  EM_FINDTEXT = 0x438,
+  EM_FORMATRANGE = 0x439,
+  EM_GETCHARFORMAT = 0x43A,
+  EM_GETEVENTMASK = 0x43B,
+  EM_GETOLEINTERFACE = 0x43C,
+  EM_GETPARAFORMAT = 0x43D,
+  EM_GETSELTEXT = 0x43E,
+  EM_HIDESELECTION = 0x43F,
+  EM_PASTESPECIAL = 0x440,
+  EM_REQUESTRESIZE = 0x441,
+  EM_SELECTIONTYPE = 0x442,
+  EM_SETBKGNDCOLOR = 0x443,
+  EM_SETCHARFORMAT = 0x444,
+  EM_SETEVENTMASK = 0x445,
+  EM_SETOLECALLBACK = 0x446,
+  EM_SETPARAFORMAT = 0x447,
+  EM_SETTARGETDEVICE = 0x448,
+  EM_STREAMIN = 0x449,
+  EM_STREAMOUT = 0x44A,
+  EM_GETTEXTRANGE = 0x44B,
+  EM_FINDWORDBREAK = 0x44C,
+  EM_SETOPTIONS = 0x44D,
+  EM_GETOPTIONS = 0x44E,
+  EM_FINDTEXTEX = 0x44F,
+  EM_GETWORDBREAKPROCEX = 0x450,
+  EM_SETWORDBREAKPROCEX = 0x451,
+  EM_SETUNDOLIMIT = 0x452,
+  EM_REDO = 0x454,
+  EM_CANREDO = 0x455,
+  EM_GETUNDONAME = 0x456,
+  EM_GETREDONAME = 0x457,
+  EM_STOPGROUPTYPING = 0x458,
+  EM_SETTEXTMODE = 0x459,
+  EM_GETTEXTMODE = 0x45A,
+  EM_AUTOURLDETECT = 0x45B,
+  EM_GETAUTOURLDETECT = 0x45C,
+  EM_SETPALETTE = 0x45D,
+  EM_GETTEXTEX = 0x45E,
+  EM_GETTEXTLENGTHEX = 0x45F,
+  EM_SHOWSCROLLBAR = 0x460,
+  EM_SETTEXTEX = 0x461,
+  EM_SETPUNCTUATION = 0x464,
+  EM_GETPUNCTUATION = 0x465,
+  EM_SETWORDWRAPMODE = 0x466,
+  EM_GETWORDWRAPMODE = 0x467,
+  EM_SETIMECOLOR = 0x468,
+  EM_GETIMECOLOR = 0x469,
+  EM_SETIMEOPTIONS = 0x46A,
+  EM_GETIMEOPTIONS = 0x46B,
+  EM_CONVPOSITION = 0x46C,
+  EM_SETLANGOPTIONS = 0x478,
+  EM_GETLANGOPTIONS = 0x479,
+  EM_GETIMECOMPMODE = 0x47A,
+  EM_FINDTEXTW = 0x47B,
+  EM_FINDTEXTEXW = 0x47C,
+  EM_RECONVERSION = 0x47D,
+  EM_SETIMEMODEBIAS = 0x47E,
+  EM_GETIMEMODEBIAS = 0x47F,
+  EM_SETBIDIOPTIONS = 0x4C8,
+  EM_GETBIDIOPTIONS = 0x4C9,
+  EM_SETTYPOGRAPHYOPTIONS = 0x4CA,
+  EM_GETTYPOGRAPHYOPTIONS = 0x4CB,
+  EM_SETEDITSTYLE = 0x4CC,
+  EM_GETEDITSTYLE = 0x4CD,
+  EM_OUTLINE = 0x4DC,
+  EM_GETSCROLLPOS = 0x4DD,
+  EM_SETSCROLLPOS = 0x4DE,
+  EM_SETFONTSIZE = 0x4DF,
+  EM_GETZOOM = 0x4E0,
+  EM_SETZOOM = 0x4E1,
+  EM_GETVIEWKIND = 0x4E2,
+  EM_SETVIEWKIND = 0x4E3,
+  EM_GETPAGE = 0x4E4,
+  EM_SETPAGE = 0x4E5,
+  EM_GETHYPHENATEINFO = 0x4E6,
+  EM_SETHYPHENATEINFO = 0x4E7,
+  EM_INSERTTABLE = 0x4E8,
+  EM_GETAUTOCORRECTPROC = 0x4E9,
+  EM_SETAUTOCORRECTPROC = 0x4EA,
+  EM_GETPAGEROTATE = 0x4EB,
+  EM_SETPAGEROTATE = 0x4EC,
+  EM_GETCTFMODEBIAS = 0x4ED,
+  EM_SETCTFMODEBIAS = 0x4EE,
+  EM_GETCTFOPENSTATUS = 0x4F0,
+  EM_SETCTFOPENSTATUS = 0x4F1,
+  EM_GETIMECOMPTEXT = 0x4F2,
+  EM_ISIME = 0x4F3,
+  EM_GETIMEPROPERTY = 0x4F4,
+  EM_CALLAUTOCORRECTPROC = 0x4FF,
+  EM_GETTABLEPARMS = 0x509,
+  EM_GETQUERYRTFOBJ = 0x50D,
+  EM_SETQUERYRTFOBJ = 0x50E,
+  EM_SETEDITSTYLEEX = 0x513,
+  EM_GETEDITSTYLEEX = 0x514,
+  EM_GETSTORYTYPE = 0x522,
+  EM_SETSTORYTYPE = 0x523,
+  EM_GETELLIPSISMODE = 0x531,
+  EM_SETELLIPSISMODE = 0x532,
+  EM_SETTABLEPARMS = 0x533,
+  EM_GETTOUCHOPTIONS = 0x536,
+  EM_SETTOUCHOPTIONS = 0x537,
+  EM_INSERTIMAGE = 0x53A,
+  EM_SETUIANAME = 0x540,
+  EM_GETELLIPSISSTATE = 0x542,
+  TAPI_REPLY = 0x463,
+  IPM_CLEARADDRESS = 0x464,
+  IPM_SETADDRESS = 0x465,
+  IPM_GETADDRESS = 0x466,
+  IPM_SETRANGE = 0x467,
+  IPM_SETFOCUS = 0x468,
+  IPM_ISBLANK = 0x469,
+  CDM_FIRST = 0x464,
+  CDM_GETSPEC = 0x464,
+  CDM_GETFILEPATH = 0x465,
+  CDM_GETFOLDERPATH = 0x466,
+  CDM_GETFOLDERIDLIST = 0x467,
+  CDM_SETCONTROLTEXT = 0x468,
+  CDM_HIDECONTROL = 0x469,
+  CDM_SETDEFEXT = 0x46A,
+  CDM_LAST = 0x4C8,
+  BFFM_SETSTATUSTEXTA = 0x464,
+  BFFM_ENABLEOK = 0x465,
+  BFFM_SETSELECTIONA = 0x466,
+  BFFM_SETSELECTIONW = 0x467,
+  BFFM_SETSTATUSTEXTW = 0x468,
+  BFFM_SETOKTEXT = 0x469,
+  BFFM_SETEXPANDED = 0x46A,
+  ACM_OPENA = 0x464,
+  ACM_PLAY = 0x465,
+  ACM_STOP = 0x466,
+  ACM_OPENW = 0x467,
+  ACM_ISPLAYING = 0x468,
+  WM_CAP_UNICODE_START = 0x464,
+  WM_CAP_SET_CALLBACK_ERRORW = 0x466,
+  WM_CAP_SET_CALLBACK_STATUSW = 0x467,
+  WM_CAP_DRIVER_GET_NAMEW = 0x470,
+  WM_CAP_DRIVER_GET_VERSIONW = 0x471,
+  WM_CAP_FILE_SET_CAPTURE_FILEW = 0x478,
+  WM_CAP_FILE_GET_CAPTURE_FILEW = 0x479,
+  WM_CAP_FILE_SAVEASW = 0x47B,
+  WM_CAP_FILE_SAVEDIBW = 0x47D,
+  WM_CAP_SET_MCI_DEVICEW = 0x4A6,
+  WM_CAP_GET_MCI_DEVICEW = 0x4A7,
+  WM_CAP_PAL_OPENW = 0x4B4,
+  WM_CAP_PAL_SAVEW = 0x4B5,
+  PSM_SETCURSEL = 0x465,
+  PSM_REMOVEPAGE = 0x466,
+  PSM_ADDPAGE = 0x467,
+  PSM_CHANGED = 0x468,
+  PSM_RESTARTWINDOWS = 0x469,
+  PSM_REBOOTSYSTEM = 0x46A,
+  PSM_CANCELTOCLOSE = 0x46B,
+  PSM_QUERYSIBLINGS = 0x46C,
+  PSM_UNCHANGED = 0x46D,
+  PSM_APPLY = 0x46E,
+  PSM_SETTITLEA = 0x46F,
+  PSM_SETWIZBUTTONS = 0x470,
+  PSM_PRESSBUTTON = 0x471,
+  PSM_SETCURSELID = 0x472,
+  PSM_SETFINISHTEXTA = 0x473,
+  PSM_GETTABCONTROL = 0x474,
+  PSM_ISDIALOGMESSAGE = 0x475,
+  PSM_GETCURRENTPAGEHWND = 0x476,
+  PSM_INSERTPAGE = 0x477,
+  PSM_SETTITLEW = 0x478,
+  PSM_SETFINISHTEXTW = 0x479,
+  PSM_SETHEADERTITLEA = 0x47D,
+  PSM_SETHEADERTITLEW = 0x47E,
+  PSM_SETHEADERSUBTITLEA = 0x47F,
+  PSM_SETHEADERSUBTITLEW = 0x480,
+  PSM_HWNDTOINDEX = 0x481,
+  PSM_INDEXTOHWND = 0x482,
+  PSM_PAGETOINDEX = 0x483,
+  PSM_INDEXTOPAGE = 0x484,
+  PSM_IDTOINDEX = 0x485,
+  PSM_INDEXTOID = 0x486,
+  PSM_GETRESULT = 0x487,
+  PSM_RECALCPAGESIZES = 0x488,
+  PSM_SETNEXTTEXTW = 0x489,
+  PSM_SHOWWIZBUTTONS = 0x48A,
+  PSM_ENABLEWIZBUTTONS = 0x48B,
+  PSM_SETBUTTONTEXTW = 0x48C,
+  UDM_SETRANGE = 0x465,
+  UDM_GETRANGE = 0x466,
+  UDM_SETPOS = 0x467,
+  UDM_GETPOS = 0x468,
+  UDM_SETBUDDY = 0x469,
+  UDM_GETBUDDY = 0x46A,
+  UDM_SETACCEL = 0x46B,
+  UDM_GETACCEL = 0x46C,
+  UDM_SETBASE = 0x46D,
+  UDM_GETBASE = 0x46E,
+  UDM_SETRANGE32 = 0x46F,
+  UDM_GETRANGE32 = 0x470,
+  UDM_SETPOS32 = 0x471,
+  UDM_GETPOS32 = 0x472,
+  MCIWNDM_GETZOOM = 0x46D,
+  MCIWNDM_REALIZE = 0x476,
+  MCIWNDM_SETTIMEFORMATA = 0x477,
+  MCIWNDM_GETTIMEFORMATA = 0x478,
+  MCIWNDM_VALIDATEMEDIA = 0x479,
+  MCIWNDM_PLAYTO = 0x47B,
+  MCIWNDM_GETFILENAMEA = 0x47C,
+  MCIWNDM_GETDEVICEA = 0x47D,
+  MCIWNDM_GETPALETTE = 0x47E,
+  MCIWNDM_SETPALETTE = 0x47F,
+  MCIWNDM_GETERRORA = 0x480,
+  MCIWNDM_SETINACTIVETIMER = 0x483,
+  MCIWNDM_GETINACTIVETIMER = 0x485,
+  MCIWNDM_GET_SOURCE = 0x48C,
+  MCIWNDM_PUT_SOURCE = 0x48D,
+  MCIWNDM_GET_DEST = 0x48E,
+  MCIWNDM_PUT_DEST = 0x48F,
+  MCIWNDM_CAN_PLAY = 0x490,
+  MCIWNDM_CAN_WINDOW = 0x491,
+  MCIWNDM_CAN_RECORD = 0x492,
+  MCIWNDM_CAN_SAVE = 0x493,
+  MCIWNDM_CAN_EJECT = 0x494,
+  MCIWNDM_CAN_CONFIG = 0x495,
+  MCIWNDM_PALETTEKICK = 0x496,
+  MCIWNDM_NOTIFYMODE = 0x4C8,
+  MCIWNDM_NOTIFYMEDIA = 0x4CB,
+  MCIWNDM_NOTIFYERROR = 0x4CD,
+  MCIWNDM_SETTIMEFORMATW = 0x4DB,
+  MCIWNDM_GETTIMEFORMATW = 0x4DC,
+  MCIWNDM_GETFILENAMEW = 0x4E0,
+  MCIWNDM_GETDEVICEW = 0x4E1,
+  MCIWNDM_GETERRORW = 0x4E4,
+  DL_BEGINDRAG = 0x485,
+  DL_DRAGGING = 0x486,
+  DL_DROPPED = 0x487,
+  DL_CANCELDRAG = 0x488,
+  IE_GETINK = 0x496,
+  IE_MSGFIRST = 0x496,
+  IE_SETINK = 0x497,
+  IE_GETPENTIP = 0x498,
+  IE_SETPENTIP = 0x499,
+  IE_GETERASERTIP = 0x49A,
+  IE_SETERASERTIP = 0x49B,
+  IE_GETBKGND = 0x49C,
+  IE_SETBKGND = 0x49D,
+  IE_GETGRIDORIGIN = 0x49E,
+  IE_SETGRIDORIGIN = 0x49F,
+  IE_GETGRIDPEN = 0x4A0,
+  IE_SETGRIDPEN = 0x4A1,
+  IE_GETGRIDSIZE = 0x4A2,
+  IE_SETGRIDSIZE = 0x4A3,
+  IE_GETMODE = 0x4A4,
+  IE_SETMODE = 0x4A5,
+  IE_GETINKRECT = 0x4A6,
+  IE_GETAPPDATA = 0x4B8,
+  IE_SETAPPDATA = 0x4B9,
+  IE_GETDRAWOPTS = 0x4BA,
+  IE_SETDRAWOPTS = 0x4BB,
+  IE_GETFORMAT = 0x4BC,
+  IE_SETFORMAT = 0x4BD,
+  IE_GETINKINPUT = 0x4BE,
+  IE_SETINKINPUT = 0x4BF,
+  IE_GETNOTIFY = 0x4C0,
+  IE_SETNOTIFY = 0x4C1,
+  IE_GETRECOG = 0x4C2,
+  IE_SETRECOG = 0x4C3,
+  IE_GETSECURITY = 0x4C4,
+  IE_SETSECURITY = 0x4C5,
+  IE_GETSEL = 0x4C6,
+  IE_SETSEL = 0x4C7,
+  IE_DOCOMMAND = 0x4C8,
+  IE_GETCOMMAND = 0x4C9,
+  IE_GETCOUNT = 0x4CA,
+  IE_GETGESTURE = 0x4CB,
+  IE_GETMENU = 0x4CC,
+  IE_GETPAINTDC = 0x4CD,
+  IE_GETPDEVENT = 0x4CE,
+  IE_GETSELCOUNT = 0x4CF,
+  IE_GETSELITEMS = 0x4D0,
+  IE_GETSTYLE = 0x4D1,
+  FM_GETFOCUS = 0x600,
+  FM_GETDRIVEINFOA = 0x601,
+  FM_GETSELCOUNT = 0x602,
+  FM_GETSELCOUNTLFN = 0x603,
+  FM_GETFILESELA = 0x604,
+  FM_GETFILESELLFNA = 0x605,
+  FM_REFRESH_WINDOWS = 0x606,
+  FM_RELOAD_EXTENSIONS = 0x607,
+  FM_GETDRIVEINFOW = 0x611,
+  FM_GETFILESELW = 0x614,
+  FM_GETFILESELLFNW = 0x615,
+  WLX_WM_SAS = 0x659,
+  SM_GETSELCOUNT = 0x7E8,
+  SM_GETSERVERSELA = 0x7E9,
+  SM_GETSERVERSELW = 0x7EA,
+  SM_GETCURFOCUSA = 0x7EB,
+  SM_GETCURFOCUSW = 0x7EC,
+  SM_GETOPTIONS = 0x7ED,
+  WM_CPL_LAUNCH = 0x7E8,
+  WM_CPL_LAUNCHED = 0x7E9,
+  UM_GETSELCOUNT = 0x7E8,
+  UM_GETUSERSELA = 0x7E9,
+  UM_GETUSERSELW = 0x7EA,
+  UM_GETGROUPSELA = 0x7EB,
+  UM_GETGROUPSELW = 0x7EC,
+  UM_GETCURFOCUSA = 0x7ED,
+  UM_GETCURFOCUSW = 0x7EE,
+  UM_GETOPTIONS = 0x7EF,
+  UM_GETOPTIONS2 = 0x7F0,
+  LVM_FIRST = 0x1000,
+  LVM_GETBKCOLOR = 0x1000,
+  LVM_SETBKCOLOR = 0x1001,
+  LVM_GETIMAGELIST = 0x1002,
+  LVM_SETIMAGELIST = 0x1003,
+  LVM_GETITEMCOUNT = 0x1004,
+  LVM_GETITEMA = 0x1005,
+  LVM_SETITEMA = 0x1006,
+  LVM_INSERTITEMA = 0x1007,
+  LVM_DELETEITEM = 0x1008,
+  LVM_DELETEALLITEMS = 0x1009,
+  LVM_GETCALLBACKMASK = 0x100A,
+  LVM_SETCALLBACKMASK = 0x100B,
+  LVM_GETNEXTITEM = 0x100C,
+  LVM_FINDITEMA = 0x100D,
+  LVM_GETITEMRECT = 0x100E,
+  LVM_SETITEMPOSITION = 0x100F,
+  LVM_GETITEMPOSITION = 0x1010,
+  LVM_GETSTRINGWIDTHA = 0x1011,
+  LVM_HITTEST = 0x1012,
+  LVM_ENSUREVISIBLE = 0x1013,
+  LVM_SCROLL = 0x1014,
+  LVM_REDRAWITEMS = 0x1015,
+  LVM_ARRANGE = 0x1016,
+  LVM_EDITLABELA = 0x1017,
+  LVM_GETEDITCONTROL = 0x1018,
+  LVM_GETCOLUMNA = 0x1019,
+  LVM_SETCOLUMNA = 0x101A,
+  LVM_INSERTCOLUMNA = 0x101B,
+  LVM_DELETECOLUMN = 0x101C,
+  LVM_GETCOLUMNWIDTH = 0x101D,
+  LVM_SETCOLUMNWIDTH = 0x101E,
+  LVM_GETHEADER = 0x101F,
+  LVM_CREATEDRAGIMAGE = 0x1021,
+  LVM_GETVIEWRECT = 0x1022,
+  LVM_GETTEXTCOLOR = 0x1023,
+  LVM_SETTEXTCOLOR = 0x1024,
+  LVM_GETTEXTBKCOLOR = 0x1025,
+  LVM_SETTEXTBKCOLOR = 0x1026,
+  LVM_GETTOPINDEX = 0x1027,
+  LVM_GETCOUNTPERPAGE = 0x1028,
+  LVM_GETORIGIN = 0x1029,
+  LVM_UPDATE = 0x102A,
+  LVM_SETITEMSTATE = 0x102B,
+  LVM_GETITEMSTATE = 0x102C,
+  LVM_GETITEMTEXTA = 0x102D,
+  LVM_SETITEMTEXTA = 0x102E,
+  LVM_SETITEMCOUNT = 0x102F,
+  LVM_SORTITEMS = 0x1030,
+  LVM_SETITEMPOSITION32 = 0x1031,
+  LVM_GETSELECTEDCOUNT = 0x1032,
+  LVM_GETITEMSPACING = 0x1033,
+  LVM_GETISEARCHSTRINGA = 0x1034,
+  LVM_SETICONSPACING = 0x1035,
+  LVM_SETEXTENDEDLISTVIEWSTYLE = 0x1036,
+  LVM_GETEXTENDEDLISTVIEWSTYLE = 0x1037,
+  LVM_GETSUBITEMRECT = 0x1038,
+  LVM_SUBITEMHITTEST = 0x1039,
+  LVM_SETCOLUMNORDERARRAY = 0x103A,
+  LVM_GETCOLUMNORDERARRAY = 0x103B,
+  LVM_SETHOTITEM = 0x103C,
+  LVM_GETHOTITEM = 0x103D,
+  LVM_SETHOTCURSOR = 0x103E,
+  LVM_GETHOTCURSOR = 0x103F,
+  LVM_APPROXIMATEVIEWRECT = 0x1040,
+  LVM_SETWORKAREAS = 0x1041,
+  LVM_GETSELECTIONMARK = 0x1042,
+  LVM_SETSELECTIONMARK = 0x1043,
+  LVM_SETBKIMAGEA = 0x1044,
+  LVM_GETBKIMAGEA = 0x1045,
+  LVM_GETWORKAREAS = 0x1046,
+  LVM_SETHOVERTIME = 0x1047,
+  LVM_GETHOVERTIME = 0x1048,
+  LVM_GETNUMBEROFWORKAREAS = 0x1049,
+  LVM_SETTOOLTIPS = 0x104A,
+  LVM_GETITEMW = 0x104B,
+  LVM_SETITEMW = 0x104C,
+  LVM_INSERTITEMW = 0x104D,
+  LVM_GETTOOLTIPS = 0x104E,
+  LVM_SORTITEMSEX = 0x1051,
+  LVM_FINDITEMW = 0x1053,
+  LVM_GETSTRINGWIDTHW = 0x1057,
+  LVM_GETGROUPSTATE = 0x105C,
+  LVM_GETFOCUSEDGROUP = 0x105D,
+  LVM_GETCOLUMNW = 0x105F,
+  LVM_SETCOLUMNW = 0x1060,
+  LVM_INSERTCOLUMNW = 0x1061,
+  LVM_GETGROUPRECT = 0x1062,
+  LVM_GETITEMTEXTW = 0x1073,
+  LVM_SETITEMTEXTW = 0x1074,
+  LVM_GETISEARCHSTRINGW = 0x1075,
+  LVM_EDITLABELW = 0x1076,
+  LVM_GETBKIMAGEW = 0x108B,
+  LVM_SETSELECTEDCOLUMN = 0x108C,
+  LVM_SETTILEWIDTH = 0x108D,
+  LVM_SETVIEW = 0x108E,
+  LVM_GETVIEW = 0x108F,
+  LVM_INSERTGROUP = 0x1091,
+  LVM_SETGROUPINFO = 0x1093,
+  LVM_GETGROUPINFO = 0x1095,
+  LVM_REMOVEGROUP = 0x1096,
+  LVM_MOVEGROUP = 0x1097,
+  LVM_GETGROUPCOUNT = 0x1098,
+  LVM_GETGROUPINFOBYINDEX = 0x1099,
+  LVM_MOVEITEMTOGROUP = 0x109A,
+  LVM_SETGROUPMETRICS = 0x109B,
+  LVM_GETGROUPMETRICS = 0x109C,
+  LVM_ENABLEGROUPVIEW = 0x109D,
+  LVM_SORTGROUPS = 0x109E,
+  LVM_INSERTGROUPSORTED = 0x109F,
+  LVM_REMOVEALLGROUPS = 0x10A0,
+  LVM_HASGROUP = 0x10A1,
+  LVM_SETTILEVIEWINFO = 0x10A2,
+  LVM_GETTILEVIEWINFO = 0x10A3,
+  LVM_SETTILEINFO = 0x10A4,
+  LVM_GETTILEINFO = 0x10A5,
+  LVM_SETINSERTMARK = 0x10A6,
+  LVM_GETINSERTMARK = 0x10A7,
+  LVM_INSERTMARKHITTEST = 0x10A8,
+  LVM_GETINSERTMARKRECT = 0x10A9,
+  LVM_SETINSERTMARKCOLOR = 0x10AA,
+  LVM_GETINSERTMARKCOLOR = 0x10AB,
+  LVM_SETINFOTIP = 0x10AD,
+  LVM_GETSELECTEDCOLUMN = 0x10AE,
+  LVM_ISGROUPVIEWENABLED = 0x10AF,
+  LVM_GETOUTLINECOLOR = 0x10B0,
+  LVM_SETOUTLINECOLOR = 0x10B1,
+  LVM_CANCELEDITLABEL = 0x10B3,
+  LVM_MAPINDEXTOID = 0x10B4,
+  LVM_MAPIDTOINDEX = 0x10B5,
+  LVM_ISITEMVISIBLE = 0x10B6,
+  LVM_GETEMPTYTEXT = 0x10CC,
+  LVM_GETFOOTERRECT = 0x10CD,
+  LVM_GETFOOTERINFO = 0x10CE,
+  LVM_GETFOOTERITEMRECT = 0x10CF,
+  LVM_GETFOOTERITEM = 0x10D0,
+  LVM_GETITEMINDEXRECT = 0x10D1,
+  LVM_SETITEMINDEXSTATE = 0x10D2,
+  LVM_GETNEXTITEMINDEX = 0x10D3,
+  LVM_SETUNICODEFORMAT = 0x2005,
+  LVM_GETUNICODEFORMAT = 0x2006,
+  OCM__BASE = 0x2000,
+  OCM_CTLCOLOR = 0x2019,
+  OCM_DRAWITEM = 0x202B,
+  OCM_MEASUREITEM = 0x202C,
+  OCM_DELETEITEM = 0x202D,
+  OCM_VKEYTOITEM = 0x202E,
+  OCM_CHARTOITEM = 0x202F,
+  OCM_COMPAREITEM = 0x2039,
+  OCM_NOTIFY = 0x204E,
+  OCM_COMMAND = 0x2111,
+  OCM_HSCROLL = 0x2114,
+  OCM_VSCROLL = 0x2115,
+  OCM_CTLCOLORMSGBOX = 0x2132,
+  OCM_CTLCOLOREDIT = 0x2133,
+  OCM_CTLCOLORLISTBOX = 0x2134,
+  OCM_CTLCOLORBTN = 0x2135,
+  OCM_CTLCOLORDLG = 0x2136,
+  OCM_CTLCOLORSCROLLBAR = 0x2137,
+  OCM_CTLCOLORSTATIC = 0x2138,
+  OCM_PARENTNOTIFY = 0x2210,
+  WM_APP = 0x8000,
+  WM_RASDIALEVENT = 0xCCCD,
+  CBEM_DELETEITEM = 0x144,
+  CBEM_SETUNICODEFORMAT = 0x2005,
+  CBEM_GETUNICODEFORMAT = 0x2006,
+  IE_GETMODIFY = 0xB8,
+  IE_SETMODIFY = 0xB9,
+  IE_CANUNDO = 0xC6,
+  IE_UNDO = 0xC7,
+  IE_EMPTYUNDOBUFFER = 0xCD,
+  LVM_SETBKIMAGEW = 0x108A,
+  MCIWNDM_GETDEVICEID = 0x464,
+  MCIWNDM_GETSTART = 0x467,
+  MCIWNDM_GETLENGTH = 0x468,
+  MCIWNDM_GETEND = 0x469,
+  MCIWNDM_EJECT = 0x46B,
+  MCIWNDM_SETZOOM = 0x46C,
+  MCIWNDM_SETVOLUME = 0x46E,
+  MCIWNDM_GETVOLUME = 0x46F,
+  MCIWNDM_SETSPEED = 0x470,
+  MCIWNDM_GETSPEED = 0x471,
+  MCIWNDM_SETREPEAT = 0x472,
+  MCIWNDM_GETREPEAT = 0x473,
+  MCIWNDM_PLAYFROM = 0x47A,
+  MCIWNDM_SETTIMERS = 0x481,
+  MCIWNDM_SETACTIVETIMER = 0x482,
+  MCIWNDM_GETACTIVETIMER = 0x484,
+  MCIWNDM_CHANGESTYLES = 0x487,
+  MCIWNDM_GETSTYLES = 0x488,
+  MCIWNDM_GETALIAS = 0x489,
+  MCIWNDM_PLAYREVERSE = 0x48B,
+  MCIWNDM_OPENINTERFACE = 0x497,
+  MCIWNDM_SETOWNER = 0x498,
+  MCIWNDM_SENDSTRINGA = 0x465,
+  MCIWNDM_GETPOSITIONA = 0x466,
+  MCIWNDM_GETMODEA = 0x46A,
+  MCIWNDM_NEWA = 0x486,
+  MCIWNDM_RETURNSTRINGA = 0x48A,
+  MCIWNDM_OPENA = 0x499,
+  MCIWNDM_SENDSTRINGW = 0x4C9,
+  MCIWNDM_GETPOSITIONW = 0x4CA,
+  MCIWNDM_GETMODEW = 0x4CE,
+  MCIWNDM_NEWW = 0x4EA,
+  MCIWNDM_RETURNSTRINGW = 0x4EE,
+  MCIWNDM_OPENW = 0x4FC,
+  MCIWNDM_NOTIFYPOS = 0x4C9,
+  MCIWNDM_NOTIFYSIZE = 0x4CA,
+  MSG_FTS_JUMP_HASH = 0x420,
+  MSG_FTS_GET_TITLE = 0x422,
+  PBM_SETBKCOLOR = 0x2001,
+  RB_SETCOLORSCHEME = 0x2002,
+  RB_GETCOLORSCHEME = 0x2003,
+  RB_GETDROPTARGET = 0x2004,
+  RB_SETUNICODEFORMAT = 0x2005,
+  RB_GETUNICODEFORMAT = 0x2006,
+  SB_SETUNICODEFORMAT = 0x2005,
+  SB_GETUNICODEFORMAT = 0x2006,
+  SB_SETBKCOLOR = 0x2001,
+  STM_MSGMAX = 0x174,
+  TBM_SETUNICODEFORMAT = 0x2005,
+  TBM_GETUNICODEFORMAT = 0x2006,
+  TB_SETCOLORSCHEME = 0x2002,
+  TB_GETCOLORSCHEME = 0x2003,
+  TB_SETUNICODEFORMAT = 0x2005,
+  TB_GETUNICODEFORMAT = 0x2006,
+  UDM_SETUNICODEFORMAT = 0x2005,
+  UDM_GETUNICODEFORMAT = 0x2006,
+  WM_CAP_START = 0x400,
+  WM_CAP_GET_CAPSTREAMPTR = 0x401,
+  WM_CAP_SET_CALLBACK_ERRORA = 0x402,
+  WM_CAP_SET_CALLBACK_STATUSA = 0x403,
+  WM_CAP_SET_CALLBACK_YIELD = 0x404,
+  WM_CAP_SET_CALLBACK_FRAME = 0x405,
+  WM_CAP_SET_CALLBACK_VIDEOSTREAM = 0x406,
+  WM_CAP_SET_CALLBACK_WAVESTREAM = 0x407,
+  WM_CAP_GET_USER_DATA = 0x408,
+  WM_CAP_SET_USER_DATA = 0x409,
+  WM_CAP_DRIVER_CONNECT = 0x40A,
+  WM_CAP_DRIVER_DISCONNECT = 0x40B,
+  WM_CAP_DRIVER_GET_NAMEA = 0x40C,
+  WM_CAP_DRIVER_GET_VERSIONA = 0x40D,
+  WM_CAP_DRIVER_GET_CAPS = 0x40E,
+  WM_CAP_FILE_SET_CAPTURE_FILEA = 0x414,
+  WM_CAP_FILE_GET_CAPTURE_FILEA = 0x415,
+  WM_CAP_FILE_SAVEASA = 0x417,
+  WM_CAP_FILE_SAVEDIBA = 0x419,
+  WM_CAP_FILE_ALLOCATE = 0x416,
+  WM_CAP_FILE_SET_INFOCHUNK = 0x418,
+  WM_CAP_EDIT_COPY = 0x41E,
+  WM_CAP_SET_AUDIOFORMAT = 0x423,
+  WM_CAP_GET_AUDIOFORMAT = 0x424,
+  WM_CAP_DLG_VIDEOFORMAT = 0x429,
+  WM_CAP_DLG_VIDEOSOURCE = 0x42A,
+  WM_CAP_DLG_VIDEODISPLAY = 0x42B,
+  WM_CAP_GET_VIDEOFORMAT = 0x42C,
+  WM_CAP_SET_VIDEOFORMAT = 0x42D,
+  WM_CAP_DLG_VIDEOCOMPRESSION = 0x42E,
+  WM_CAP_SET_PREVIEW = 0x432,
+  WM_CAP_SET_OVERLAY = 0x433,
+  WM_CAP_SET_PREVIEWRATE = 0x434,
+  WM_CAP_SET_SCALE = 0x435,
+  WM_CAP_GET_STATUS = 0x436,
+  WM_CAP_SET_SCROLL = 0x437,
+  WM_CAP_GRAB_FRAME = 0x43C,
+  WM_CAP_GRAB_FRAME_NOSTOP = 0x43D,
+  WM_CAP_SEQUENCE = 0x43E,
+  WM_CAP_SEQUENCE_NOFILE = 0x43F,
+  WM_CAP_SET_SEQUENCE_SETUP = 0x440,
+  WM_CAP_GET_SEQUENCE_SETUP = 0x441,
+  WM_CAP_SET_MCI_DEVICEA = 0x442,
+  WM_CAP_GET_MCI_DEVICEA = 0x443,
+  WM_CAP_STOP = 0x444,
+  WM_CAP_ABORT = 0x445,
+  WM_CAP_SINGLE_FRAME_OPEN = 0x446,
+  WM_CAP_SINGLE_FRAME_CLOSE = 0x447,
+  WM_CAP_SINGLE_FRAME = 0x448,
+  WM_CAP_PAL_OPENA = 0x450,
+  WM_CAP_PAL_SAVEA = 0x451,
+  WM_CAP_PAL_PASTE = 0x452,
+  WM_CAP_PAL_AUTOCREATE = 0x453,
+  WM_CAP_PAL_MANUALCREATE = 0x454,
+  WM_CAP_SET_CALLBACK_CAPCONTROL = 0x455,
+  WM_CAP_UNICODE_END = 0x4B5,
+  WM_CAP_END = 0x4B5,
+  WM_DDE_FIRST = 0x3E0,
+  WM_DDE_LAST = 0x3E8,
+  WM_DLGBORDER = 0x11EF,
+  WM_DLGSUBCLASS = 0x11F0,
+  WM_ADSPROP_NOTIFY_PAGEINIT = 0x84D,
+  WM_ADSPROP_NOTIFY_PAGEHWND = 0x84E,
+  WM_ADSPROP_NOTIFY_CHANGE = 0x84F,
+  WM_ADSPROP_NOTIFY_APPLY = 0x850,
+  WM_ADSPROP_NOTIFY_SETFOCUS = 0x851,
+  WM_ADSPROP_NOTIFY_FOREGROUND = 0x852,
+  WM_ADSPROP_NOTIFY_EXIT = 0x853,
+  WM_ADSPROP_NOTIFY_ERROR = 0x856,
+  WM_TOUCH = 0x240,
+  WM_TOUCHHITTESTING = 0x24D,
+  WM_DPICHANGED = 0x2E0,
+  WM_DPICHANGED_BEFOREPARENT = 0x2E2,
+  WM_DPICHANGED_AFTERPARENT = 0x2E3,
+  WM_CLIPBOARDUPDATE = 0x31D,
+  WM_DWMCOMPOSITIONCHANGED = 0x31E,
+  WM_DWMNCRENDERINGCHANGED = 0x31F,
+  WM_DWMCOLORIZATIONCOLORCHANGED = 0x320,
+  WM_DWMWINDOWMAXIMIZEDCHANGE = 0x321,
+  WM_DWMSENDICONICTHUMBNAIL = 0x323,
+  WM_DWMSENDICONICLIVEPREVIEWBITMAP = 0x326,
+  WM_INPUT_DEVICE_CHANGE = 0xFE,
+  WM_GESTURE = 0x119,
+  WM_GESTURENOTIFY = 0x11A,
+  WM_MOUSEHWHEEL = 0x20E,
+  WM_POINTERDEVICECHANGE = 0x238,
+  WM_POINTERDEVICEINRANGE = 0x239,
+  WM_POINTERDEVICEOUTOFRANGE = 0x23A,
+  WM_NCPOINTERUPDATE = 0x241,
+  WM_NCPOINTERDOWN = 0x242,
+  WM_NCPOINTERUP = 0x243,
+  WM_POINTERUPDATE = 0x245,
+  WM_POINTERDOWN = 0x246,
+  WM_POINTERUP = 0x247,
+  WM_POINTERENTER = 0x249,
+  WM_POINTERLEAVE = 0x24A,
+  WM_POINTERACTIVATE = 0x24B,
+  WM_POINTERCAPTURECHANGED = 0x24C,
+  WM_POINTERWHEEL = 0x24E,
+  WM_POINTERHWHEEL = 0x24F,
+  WM_POINTERROUTEDTO = 0x251,
+  WM_POINTERROUTEDAWAY = 0x252,
+  WM_POINTERROUTEDRELEASED = 0x253,
+  WM_TABLET_ADDED = 0x2C8,
+  WM_TABLET_DELETED = 0x2C9,
+  WM_TABLET_FLICK = 0x2CB,
+  WM_TABLET_QUERYSYSTEMGESTURESTATUS = 0x2CC,
+  WM_GETDPISCALEDSIZE = 0x2E4,
+  WM_GETTITLEBARINFOEX = 0x33F,
+};
+
+/* 639 */
+typedef unsigned __int16 UInt16;
+
+/* 626 */
+typedef UInt16 StdPrm;
+
+/* 627 */
 #pragma pack(push, 1)
-struct __cppobj House : Commander {
+struct EdithRandomParam {
+  StdPrm destData;
+  StdPrm destOwner;
+  StdPrm rangeData;
+  StdPrm rangeOwner;
+};
+#pragma pack(pop)
+
+/* 628 */
+#pragma pack(push, 1)
+struct EdithUpdateParam {
+  StdPrm who;
+  StdPrm what;
+};
+#pragma pack(pop)
+
+/* 629 */
+typedef unsigned __int8 UInt8;
+
+/* 630 */
+enum EdithBurnParamFlags : unsigned __int8 {
+  kStackObj = 0x0,
+  kTileInFrontOfStackObj = 0x1,
+  kFloorUnderStackObj = 0x2,
+};
+
+/* 631 */
+struct EdithBurnParam {
+  UInt8 what;
+  EdithBurnParamFlags flags;
+};
+
+/* 632 */
+struct EdithInstruction {
+  __int16 opcode;
+  UInt8 tDest;
+  UInt8 fDest;
+  UInt8 operands[8];
+};
+
+/* 633 */
+struct EdithExpressionParam {
+  StdPrm lhs;
+  StdPrm rhs;
+  UInt8 isSigned;
+  UInt8 operator;
+  UInt8 lhsOwner;
+  UInt8 rhsOwner;
+};
+
+/* 634 */
+enum DialogType : unsigned __int8 {
+  kMessage = 0x0,
+  kChoice = 0x1,
+  kTriChoice = 0x2,
+  kTextEntry = 0x3,
+  kTutorial = 0x4,
+};
+
+/* 635 */
+enum DialogIconType : unsigned __int8 {
+  kAuto = 0x0,
+  kNone = 0x1,
+  kNeighbor = 0x2,
+  kPrivateIndexed = 0x3,
+  kGlobalNamed = 0x4,
+};
+
+/* 636 */
+enum DialogBehavior {
+  kEngageAndPause = 0x0,
+  kReturnAndPause = 0x1,
+  kEngageAndContinue = 0x2,
+  kReturnAndContinue = 0x3,
+};
+
+/* 637 */
+union DialogParam::$80FCA22150BDCCF58BF705F0435E4F99 {
+  DialogIconType iconIndex;
+  UInt8 iconNameStr;
+};
+
+/* 638 */
+struct DialogParam {
+  UInt8 cancelStr;
+  union {
+    DialogIconType iconIndex;
+    UInt8 iconNameStr;
+  };
+  UInt8 messageStr;
+  UInt8 yesStr;
+  UInt8 noStr;
+  DialogType type;
+  UInt8 titleStr;
+  UInt8 flags;
+};
+
+/* 640 */
+typedef char SInt8;
+
+/* 641 */
+struct PlaySoundParam {
+  StdPrm soundID;
+  UInt16 sampleRate;
+  UInt8 flags;
+  SInt8 volume;
+};
+
+/* 642 */
+struct /*VFT*/ cSimulator_vtbl {
+  void *(__thiscall *cSimulator_vtbl_func_0)(void *this, char a2);
+  __int16(__thiscall *cSimulator_vtbl_func_1)(int this, __int16 a2, int a3);
+};
+
+/* 644 */
+enum SimulatorGlobals : unsigned __int16 {
+  kHour = 0x0,
+  kDayOfMonth = 0x1,
+  kZoomLevel = 0x2,
+  kSelectedPersonID = 0x3,
+  kTimeOfDay = 0x4,
+  kMinute = 0x5,
+  kSecond = 0x6,
+  kMonth = 0x7,
+  kYear = 0x8,
+  kCurrentFamily = 0x9,
+  kCurrentHouse = 0xA,
+  kUnused1 = 0xB,
+  kLastGZButtonID = 0xC,
+  kBudgetMod10000 = 0xD,
+  kBudgetDiv10000 = 0xE,
+  kCurrentLanguage = 0xF,
+  kSpeed = 0x10,
+  kPaused = 0x11,
+  kHeldSimSpeed = 0x12,
+  kMode = 0x13,
+  kLotPriceDiv1000 = 0x14,
+  kInhibitMoveIn = 0x15,
+  kLotSize = 0x16,
+  kDemo = 0x17,
+  kDebugFlags = 0x18,
+  kIsTutorialHouse = 0x19,
+  kIndoorTiles = 0x1A,
+  kDaysRunning = 0x1B,
+  kMaxDayNumber = 0x1C,
+  kFreeWill = 0x1D,
+  kHouseRadioStation = 0x1E,
+  kLotValue = 0x1F,
+  kArchitectureValue = 0x20,
+  kObjectsValue = 0x21,
+  kFunds = 0x22,
+};
+
+/* 661 */
+struct __cppobj __declspec(align(2)) cFixedWorld : Commander {
+  int fSize;
+  int dword_14;
+  int dword_18;
+  int dword_1c;
+  int dword_20;
+  _BYTE x24[48];
+  WallManager *mpWallManager;
+  _BYTE x58[8];
+  int dword_60;
+  int dword_64;
+  _BYTE x68[24];
+  char byte_80;
+  char byte_81;
+  __int16 field_82;
+  int fRotation;
+  int field_88;
+  int field_8C;
+  int field_90;
+  int field_94;
+  int field_98;
+  int field_9C;
+  int field_A0;
+};
+
+/* 670 */
+#pragma pack(push, 1)
+struct WallManager {
+  WallManager_vtbl *__vftable /*VFT*/;
+  int dword_4;
+  _BYTE gap_8[16];
+  stru_73EA40 *field_18;
+  int dword_1c;
+  int dword_20;
+  int dword_24;
+  int dword_28;
+  int dword_2c;
+  int dword_30;
+  int dword_34;
+};
+#pragma pack(pop)
+
+/* 669 */
+struct /*VFT*/ WallManager_vtbl {
+  int(__stdcall *WallManager_vtbl_func_0)(int a1);
+};
+
+/* 667 */
+struct CTilePt {
+  _BYTE mX;
+  _BYTE mY;
+  _BYTE mLevel;
+  _BYTE byte_3;
+};
+
+/* 666 */
+#pragma pack(push, 1)
+struct stru_48D5A0 {
+  _BYTE gap_0[2];
+  char byte_2;
+};
+#pragma pack(pop)
+
+/* 668 */
+#pragma pack(push, 1)
+struct stru_73EA40 {
+  CTilePt field_0;
+  int dword_4;
+  _BYTE byte_8[1];
+  _BYTE byte_9[1];
+  _BYTE byte_a[1];
+  _BYTE byte_b[1];
+  _BYTE byte_c[4];
   int dword_10;
   int dword_14;
   int dword_18;
   int dword_1c;
   int dword_20;
-  int dword_24;
-  string field_28;
-  int dword_30;
-  int dword_34;
-  _BYTE gap_38[36];
-  _DWORD dword_5c;
-  _BYTE gap_60[4];
-  int dword_64;
-  int dword_68;
+  char byte_24;
+  char byte_25;
+  _BYTE gap_26[2];
+  stru_48D5A0 field_28;
+  _BYTE gap_2B[17];
+  stru_48D5A0 field_3c;
+  _BYTE gap_3F[17];
+  char byte_50;
 };
 #pragma pack(pop)
+
+/* 662 */
+struct /*VFT*/ cFixedWorld_vtbl {
+  void *(__thiscall *cFixedWorld_vtbl_func_0)(void *this, char a2);
+  __int16(__thiscall *cFixedWorld_vtbl_func_1)(_DWORD *this, __int16 a2,
+                                               unsigned int a3);
+};
+
+/* 663 */
+#pragma pack(push, 1)
+struct stru_74D8A0 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 664 */
+#pragma pack(push, 1)
+struct stru_74DA90 {
+  _DWORD dword_0;
+  int dword_4;
+  int dword_8;
+};
+#pragma pack(pop)
+
+/* 665 */
+#pragma pack(push, 1)
+struct stru_5282D0 {
+  char byte_0;
+};
+#pragma pack(pop)
+
+/* 679 */
+struct RTTICompleteObjectLocator {
+  int signature;
+  int offset;
+  int cdOffset;
+  void *pTypeDescriptor;
+  void *pClassDescriptor;
+};
+
+/* 680 */
+struct RTTITypeDescriptor {
+  void *pVFTable;
+  int spare;
+  char name[];
+};
+
+/* 681 */
+struct RTTIClassHierarchyDescriptor {
+  int signature;
+  int attribute;
+  int numBaseClasses;
+  void *pBaseClassArray;
+};
+
+/* 682 */
+struct RTTIBaseClassDescriptor {
+  void *pTypeDescriptor;
+  int numContainerBases;
+  void *PMD;
+  int attributes;
+};
+
+/* 683 */
+struct IFFResNode {
+  _DWORD fFileoffset;
+  _BYTE gap_4[4];
+  __int16 word_8;
+  _WORD word_a;
+  _DWORD dword_c;
+};
+
+/* 686 */
+struct HouseStats {
+  _DWORD sqFeet;
+  _DWORD dword4;
+  _DWORD dword8;
+  _DWORD dwordC;
+  _DWORD dword10;
+  _DWORD lotSize;
+  _DWORD layoutScore;
+  _DWORD dword1C;
+  _DWORD dword20;
+  _DWORD dword24;
+  _DWORD objectCount;
+};

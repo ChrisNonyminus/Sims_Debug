@@ -14,6 +14,8 @@
 
 #include "Sims/SimsApp.h"
 
+#include "msrc/Util/SRand.h"
+
 void *crt_new(size_t n) { return ::operator new(n); }
 
 void crt_del(void *p) { ::operator delete(p); }
@@ -62,6 +64,9 @@ void SetupMSVCRTHooks() {
 void SetupHooks() {
   SetupMSVCRTHooks();
   SetupFrameworkHooks();
+
+  // msrc
+  InstallSRandHooks();
 
 #ifndef NO_FUNNY_BUSINESS
   InstallHookTests();
